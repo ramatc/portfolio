@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Onest } from "next/font/google";
 import "@/app/globals.css";
-import Header from "../../portfolio/app/components/Header";
-import Footer from "../../portfolio/app/components/Footer";
+import Header from "@/app/components/Header";
+import Footer from "@/app/components/Footer";
 
 const onest = Onest({ subsets: ["latin"] });
 

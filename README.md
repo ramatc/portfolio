@@ -1,36 +1,31 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Hi there! <img src="https://user-images.githubusercontent.com/1303154/88677602-1635ba80-d120-11ea-84d8-d263ba5fc3c0.gif" width='28' alt="hi"> I'm [Rama Tanquias](https://www.linkedin.com/in/ramiro-tanquias/).
 
-## Getting Started
+[![Linkedin Badge](https://img.shields.io/badge/-Ramiro-0e76a8?style=flat&labelColor=0e76a8&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ramiro-tanquias/)
+[![Github Badge](https://img.shields.io/badge/-ramatc-rgb(36,%2041,%2046)?style=flat&labelColor=rgb(36,%2041,%2046)&logo=github&logoColor=white)](https://github.com/ramatc)
+[![Mail Badge](https://img.shields.io/badge/-rtanquiascornejo-c0392b?style=flat&labelColor=c0392b&logo=gmail&logoColor=white)](mailto:rtanquiascornejo@gmail.com)
+<img align='right' src='https://user-images.githubusercontent.com/5713670/87202985-820dcb80-c2b6-11ea-9f56-7ec461c497c3.gif' width='190'>
 
-First, run the development server:
+### Web Developer Full Stack💻.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+💪🏼I am a passionate programmer from Argentina.
+- 🕵 I’m currently learning **TypeScript** and **Next.js**
+- 📫 How to reach me: rtanquiascornejo@gmail.com <br>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Languages, Frameworks and Tools:**  &nbsp;
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+![HTML](https://img.shields.io/badge/-HTML-E34F26?style=for-the-badge&logo=html5&logoColor=fafafa)
+![CSS](https://img.shields.io/badge/-CSS-1572B6?style=for-the-badge&logo=css3&logoColor=fafafa)
+![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=333)
+![React](https://img.shields.io/badge/-React-61DAFB?style=for-the-badge&logo=react&logoColor=333)
+![Next.js](https://img.shields.io/badge/-next.js-000?style=for-the-badge&logo=next.js&logoColor=fff)
+![TypeScript](https://img.shields.io/badge/-TypeScript-3178c6?style=for-the-badge&logo=typescript&logoColor=fafafa)
+![Node.js](https://img.shields.io/badge/-Node.js-339933?style=for-the-badge&logo=node.js&logoColor=FAFAFA)
+![Express](https://img.shields.io/badge/-Express-FAFAFA?style=for-the-badge&logo=express&logoColor=333)
+![MySQL](https://img.shields.io/badge/-MYSQL-00618b?style=for-the-badge&logo=mysql&logoColor=fafafa)
+![Firebase](https://img.shields.io/badge/-Firebase-0396de?style=for-the-badge&logo=Firebase&logoColor=f5820c)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+**:octocat: Github Statistics**
+<p>
+    <img align="center" src="https://github-readme-stats.vercel.app/api?username=ramatc&hide=contribs,prs&theme=tokyonight&show_icons=true"/>
+    <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ramatc&layout=compact&theme=tokyonight"/>
+</p>
