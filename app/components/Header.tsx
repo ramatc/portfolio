@@ -6,9 +6,6 @@ const Header = () => {
       <nav className={styles.nav}>
         <ul className={styles.ul}>
           <li>
-            <a href="#experiencia">Experiencia</a>
-          </li>
-          <li>
             <a href="#proyectos">Proyectos</a>
           </li>
           <li>
