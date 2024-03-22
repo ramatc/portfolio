@@ -32,6 +32,16 @@ p {
   max-width: 75ch
 }
 
+h4 {
+  display: flex;
+  font-size: 1.875rem;
+  align-items: center;
+}
+
+section {
+  padding-bottom: 8rem;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
