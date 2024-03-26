@@ -37,6 +37,10 @@
   margin-bottom: 15px;
 }
 
+.border_white {
+  border: 1px solid #ffffff6e;
+}
+
 /* Mobile */
 @media (max-width: 700px) {
 
