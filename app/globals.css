@@ -29,7 +29,7 @@ a {
 }
 
 p {
-  max-width: 75ch
+  max-width: 75ch;
 }
 
 h4 {
@@ -38,6 +38,11 @@ h4 {
   align-items: center;
   font-weight: bold;
   margin-bottom: 30px;
+}
+
+h5 {
+  font-size: 1.5rem;
+  padding-top: 20px;
 }
 
 section {

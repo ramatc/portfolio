@@ -9,7 +9,7 @@ const PROJECTS = [
     repo: "https://github.com/ramatc/rick-and-morty-wiki",
     image: "ricky.png",
     description:
-      "Una aplicación web creada con React para visualizar todos los personajes, episodios y ubicaciones de Rick and Morty.",
+      "Una aplicación web que te sumerge en el universo de Rick and Morty. Explora todos los personajes, episodios y ubicaciones. Creada desde cero con React y CSS.",
   },
   {
     title: "Guess Pokémon",
@@ -17,23 +17,24 @@ const PROJECTS = [
     repo: "https://github.com/ramatc/guess-pokemon",
     image: "poke.png",
     description:
-      "Un juego realizado con React para adivinar cual es el Pokémon mediante su silueta.",
+      "Un emocionante juego que desafía tus conocimientos sobre Pokémon. Pon a prueba tu habilidad para reconocer a tus personajes favoritos a través de sus siluetas. Desarrollado con React y TypeScript.",
   },
   {
     title: "Memotest",
     url: "https://memotest-inky.vercel.app/",
     repo: "https://github.com/ramatc/memotest",
     image: "memo.png",
-    description: "Un juego de memotest hecho con React, TypeScript y Vite.",
-  },
-  {
-    title: "VinylWRLD",
-    url: "https://vinyl-wrld.vercel.app/",
-    repo: "https://github.com/ramatc/vinyl-wrld-js",
-    image: "viny.png",
     description:
-      "Proyecto final para el curso de JavaScript de CoderHouse. Simulación de un E-commerce con carrito.",
+      "Un divertido juego de memoria que te desafía a recordar las ubicaciones de las cartas. Hecho con React, TypeScript y Vite.",
   },
+  // {
+  //   title: "VinylWRLD",
+  //   url: "https://vinyl-wrld.vercel.app/",
+  //   repo: "https://github.com/ramatc/vinyl-wrld-js",
+  //   image: "viny.png",
+  //   description:
+  //     "Un simulador de E-commerce que te permite explorar y comprar vinilos. Creado como proyecto final para el curso de JavaScript de CoderHouse, este E-commerce simula una experiencia de compra auténtica y fluida.",
+  // },
 ];
 
 const Projects = () => {

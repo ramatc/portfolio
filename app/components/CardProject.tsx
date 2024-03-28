@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useRef, useState } from "react";
+import ButtonAnimatedGradient from "@/app/components/ButtonAnimatedGradient ";
 
 interface Project {
   title: string;
@@ -52,10 +53,10 @@ const CardProject = ({ project }: { project: Project }) => {
       onBlur={handleBlur}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="relative h-[400px] w-[100%] overflow-hidden rounded-xl border border-gray-800 bg-gradient-to-r from-black to-gray-950 shadow-2xl"
+      className="flex justify-between relative h-[300px] w-[100%] overflow-hidden rounded-xl border border-gray-800 bg-gradient-to-r from-black to-gray-950 shadow-2xl"
     >
       <div
-        className="pointer-events-none absolute -inset-px opacity-0 transition duration-300"
+        className="absolute pointer-events-none -inset-px opacity-0 transition duration-300"
         style={{
           opacity,
           background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(255,182,255,.1), transparent 40%)`,
@@ -64,15 +65,17 @@ const CardProject = ({ project }: { project: Project }) => {
       <a href={url} target="_blank">
         <Image
           src={`/projects/${image}`}
-          width={500}
-          height={500}
-          alt=""
+          width={450}
+          height={450}
+          alt={title}
           priority={false}
         />
       </a>
-      <div>
+      <div className="w-[57%] px-2">
         <h5>{title}</h5>
-        <p>{description}</p>
+        <p className="text-gray-300">{description}</p>
+        <ButtonAnimatedGradient title="Repo" url={repo} />
+        <ButtonAnimatedGradient title="Demo" url={url} />
       </div>
     </article>
   );

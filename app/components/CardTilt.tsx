@@ -1,5 +1,11 @@
 "use client";
 import { useState, MouseEvent, useCallback } from "react";
+import Image from "next/image";
+
+interface Skill {
+  title: string;
+  img: string;
+}
 
 function throttle<T extends (...args: any[]) => any>(
   func: T,
@@ -16,7 +22,8 @@ function throttle<T extends (...args: any[]) => any>(
   };
 }
 
-const CardTilt = () => {
+const CardTilt = ({ skill }: { skill: Skill }) => {
+  const { title, img } = skill;
   const [rotate, setRotate] = useState({ x: 0, y: 0 });
 
   const onMouseMove = useCallback(
@@ -42,7 +49,7 @@ const CardTilt = () => {
   return (
     <>
       <div
-        className="card relative h-52 w-52 transition-[all_400ms_cubic-bezier(0.03,0.98,0.52,0.99)_0s] will-change-transform"
+        className="card relative h-48 w-48 transition-[all_400ms_cubic-bezier(0.03,0.98,0.52,0.99)_0s] will-change-transform"
         onMouseMove={onMouseMove}
         onMouseLeave={onMouseLeave}
         style={{
@@ -52,7 +59,13 @@ const CardTilt = () => {
       >
         <div className="group relative flex h-full w-full select-none items-center justify-center rounded-lg border border-gray-900 bg-gradient-to-tr from-gray-950 to-gray-900 text-sm font-light text-gray-300">
           <span className="text-md bg-gradient-to-t from-gray-400 to-white bg-clip-text font-bold text-transparent">
-            Hover me
+            <Image
+              src={`/skills/${img}.svg`}
+              width={100}
+              height={100}
+              alt={title}
+            />
+            <p className="text-center text-lg">{title}</p>
           </span>
         </div>
       </div>
