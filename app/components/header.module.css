@@ -13,8 +13,8 @@
 
 .ul a{
   transition: all 0.5s ease;
+  font-weight: 600;
 }
-
 
 .ul a:hover{
   color: #aeaecb

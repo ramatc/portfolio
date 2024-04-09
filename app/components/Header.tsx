@@ -17,6 +17,11 @@ const Header = () => {
           <li>
             <a href="#contacto">Contacto</a>
           </li>
+          <li>
+            <a href="CV-RAMIRO-TANQUIAS.pdf" target="_blank">
+              CV
+            </a>
+          </li>
         </ul>
       </nav>
     </header>

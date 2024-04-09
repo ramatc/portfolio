@@ -42,11 +42,22 @@ h4 {
 
 h5 {
   font-size: 1.5rem;
-  padding-top: 20px;
 }
 
 section {
   padding-bottom: 8rem;
+}
+
+.title-rick {
+  color: #d3a6d4;
+}
+
+.title-pokemon {
+  color: #ffd368;
+}
+
+.title-memo {
+  color: #6b8e23;
 }
 
 @media (prefers-color-scheme: dark) {
