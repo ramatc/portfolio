@@ -9,7 +9,8 @@ const PROJECTS = [
     repo: "https://github.com/ramatc/rick-and-morty-wiki",
     image: "ricky.png",
     description:
-      "Una aplicación web que te sumerge en el universo de Rick and Morty. Explora todos los personajes, episodios y ubicaciones. Creada desde cero con React y CSS.",
+      "Una aplicación desarrollada con React y CSS, utilizando la API de Rick and Morty. Permite a los usuarios explorar y descubrir todo el universo de Rick and Morty, incluyendo personajes, episodios y ubicaciones.",
+    color: 0,
   },
   {
     title: "Guess Pokémon",
@@ -17,7 +18,8 @@ const PROJECTS = [
     repo: "https://github.com/ramatc/guess-pokemon",
     image: "poke.png",
     description:
-      "Un emocionante juego que desafía tus conocimientos sobre Pokémon. Pon a prueba tu habilidad para reconocer a tus personajes favoritos a través de sus siluetas. Desarrollado con React y TypeScript.",
+      "Un divertido juego realizado con React y TypeScript que desafía a los usuarios a adivinar el nombre de diferentes Pokémon a partir de su silueta.",
+    color: 1,
   },
   {
     title: "Memotest",
@@ -25,7 +27,8 @@ const PROJECTS = [
     repo: "https://github.com/ramatc/memotest",
     image: "memo.png",
     description:
-      "Un divertido juego de memoria que te desafía a recordar las ubicaciones de las cartas. Hecho con React, TypeScript y Vite.",
+      "Un juego de memoria implementado con React y TypeScript, aprovechando la potencia de Vite. Pon a prueba tu memoria y diviértete emparejando cartas.",
+    color: 2,
   },
   // {
   //   title: "VinylWRLD",

@@ -1,5 +1,5 @@
 import Code from "@/app/ui/icons/Code";
-import CardTilt from "@/app/components/CardTilt";
+import CardSkill from "@/app/components/CardSkill";
 
 const SKILLS = [
   {
@@ -65,7 +65,7 @@ const Skills = () => {
       </h4>
       <div className="grid grid-cols-5 gap-[20px]">
         {SKILLS.map((skill, i) => (
-          <CardTilt key={i} skill={skill} />
+          <CardSkill key={i} skill={skill} />
         ))}
       </div>
     </section>

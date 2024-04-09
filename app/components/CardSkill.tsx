@@ -22,7 +22,7 @@ function throttle<T extends (...args: any[]) => any>(
   };
 }
 
-const CardTilt = ({ skill }: { skill: Skill }) => {
+const CardSkill = ({ skill }: { skill: Skill }) => {
   const { title, img } = skill;
   const [rotate, setRotate] = useState({ x: 0, y: 0 });
 
@@ -49,7 +49,7 @@ const CardTilt = ({ skill }: { skill: Skill }) => {
   return (
     <>
       <div
-        className="card relative h-48 w-48 transition-[all_400ms_cubic-bezier(0.03,0.98,0.52,0.99)_0s] will-change-transform"
+        className="card relative h-44 w-48 transition-[all_400ms_cubic-bezier(0.03,0.98,0.52,0.99)_0s] will-change-transform"
         onMouseMove={onMouseMove}
         onMouseLeave={onMouseLeave}
         style={{
@@ -73,4 +73,4 @@ const CardTilt = ({ skill }: { skill: Skill }) => {
   );
 };
 
-export default CardTilt;
+export default CardSkill;

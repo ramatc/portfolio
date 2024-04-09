@@ -1,18 +1,22 @@
 "use client";
 import Image from "next/image";
 import { useRef, useState } from "react";
-import ButtonAnimatedGradient from "@/app/components/ButtonAnimatedGradient ";
-
+import ButtonProject from "@/app/components/ButtonProject";
+import ExternalLink from "@/app/ui/icons/ExternalLink";
+import Repo from "@/app/ui/icons/Repo";
 interface Project {
   title: string;
   url: string;
   repo: string;
   image: string;
   description: string;
+  color: number;
 }
 
+const COLORS = ["#d3a6d4", "#ffd368", "#6b8e23"];
+
 const CardProject = ({ project }: { project: Project }) => {
-  const { title, url, repo, image, description } = project;
+  const { title, url, repo, image, description, color } = project;
   const divRef = useRef<HTMLDivElement>(null);
   const [isFocused, setIsFocused] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -62,7 +66,7 @@ const CardProject = ({ project }: { project: Project }) => {
           background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(255,182,255,.1), transparent 40%)`,
         }}
       />
-      <a href={url} target="_blank">
+      <a href={url} target="_blank" rel="noopener noreferrer">
         <Image
           src={`/projects/${image}`}
           width={450}
@@ -72,10 +76,10 @@ const CardProject = ({ project }: { project: Project }) => {
         />
       </a>
       <div className="w-[57%] px-2">
-        <h5>{title}</h5>
-        <p className="text-gray-300">{description}</p>
-        <ButtonAnimatedGradient title="Repo" url={repo} />
-        <ButtonAnimatedGradient title="Demo" url={url} />
+        <h5 className={`font-bold text-[${COLORS[color]}]`}>{title}</h5>
+        <p className="text-gray-300 mb-5 text-[18px]">{description}</p>
+        <ButtonProject title="demo" url={url} icon={<ExternalLink />} />
+        <ButtonProject title="code" url={repo} icon={<Repo />} />
       </div>
     </article>
   );
