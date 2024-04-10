@@ -1,6 +1,5 @@
 import Desktop from "@/app/ui/icons/Desktop";
 import CardProject from "@/app/components/CardProject";
-import styles from "@/app/components/projects.module.css";
 
 const PROJECTS = [
   {
@@ -39,18 +38,20 @@ const PROJECTS = [
   //   repo: "https://github.com/ramatc/vinyl-wrld-js",
   //   image: "viny.jpg",
   //   description:
-  //     "Un simulador de E-commerce que te permite explorar y comprar vinilos. Creado como proyecto final para el curso de JavaScript de CoderHouse, este E-commerce simula una experiencia de compra auténtica y fluida.",
+  //     "Un E-commerce que te permite explorar y comprar vinilos. Creado como proyecto final para el curso de JavaScript de CoderHouse, este E-commerce simula una experiencia de compra auténtica y fluida.",
+  //   color: "title-rick",
+  //   technologies: ["javascript", "css"],
   // },
 ];
 
 const Projects = () => {
   return (
     <section id="proyectos" data-section="proyectos">
-      <h4 className={styles.title}>
+      <h4>
         <Desktop />
         &nbsp;Proyectos
       </h4>
-      <div className={styles.container}>
+      <div className="flex flex-wrap gap-[30px]">
         {PROJECTS.map((project, i) => (
           <CardProject project={project} key={i} />
         ))}

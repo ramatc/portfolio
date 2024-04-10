@@ -2,7 +2,7 @@ import styles from "@/app/components/header.module.css";
 
 const Header = () => {
   return (
-    <header>
+    <header className={styles.fixed}>
       <nav className={styles.nav}>
         <ul className={styles.ul}>
           <li>

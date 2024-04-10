@@ -49,7 +49,7 @@ const CardSkill = ({ skill }: { skill: Skill }) => {
   return (
     <>
       <div
-        className="card relative h-44 w-48 transition-[all_400ms_cubic-bezier(0.03,0.98,0.52,0.99)_0s] will-change-transform"
+        className="card relative h-40 w-48 transition-[all_400ms_cubic-bezier(0.03,0.98,0.52,0.99)_0s] will-change-transform"
         onMouseMove={onMouseMove}
         onMouseLeave={onMouseLeave}
         style={{
@@ -58,11 +58,11 @@ const CardSkill = ({ skill }: { skill: Skill }) => {
         }}
       >
         <div className="group relative flex h-full w-full select-none items-center justify-center rounded-lg border border-gray-900 bg-gradient-to-tr from-gray-950 to-gray-900 text-sm font-light text-gray-300">
-          <span className="text-md bg-gradient-to-t from-gray-400 to-white bg-clip-text font-bold text-transparent">
+          <span className="flex flex-col items-center text-md bg-gradient-to-t from-gray-400 to-white bg-clip-text font-bold text-transparent">
             <Image
               src={`/skills/${img}.svg`}
-              width={100}
-              height={100}
+              width={75}
+              height={75}
               alt={title}
             />
             <p className="text-center text-lg">{title}</p>

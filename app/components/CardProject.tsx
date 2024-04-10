@@ -72,8 +72,9 @@ const CardProject = ({ project }: { project: Project }) => {
           src={`/projects/${image}`}
           width={450}
           height={450}
-          alt={title}
+          alt={`Proyecto - ${title}`}
           priority={false}
+          className="h-full"
         />
       </a>
       <div className="w-[57%] px-2">

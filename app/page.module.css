@@ -5,18 +5,6 @@
   margin: 0 auto;
 }
 
-.principal {
-  display: flex;
-  justify-content: space-between;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(25%, auto));
-  max-width: 100%;
-  width: var(--max-width);
-}
-
 .name {
   font-size: 4.5rem;
   font-weight: bold;
@@ -35,10 +23,6 @@
   font-size: 1.5rem;
   line-height: 1;
   margin-bottom: 15px;
-}
-
-.border_white {
-  border: 1px solid #ffffff6e;
 }
 
 /* Mobile */
