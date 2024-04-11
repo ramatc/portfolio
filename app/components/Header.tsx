@@ -1,24 +1,46 @@
-import styles from "@/app/components/header.module.css";
-
 const Header = () => {
   return (
-    <header className={styles.fixed}>
-      <nav className={styles.nav}>
-        <ul className={styles.ul}>
+    <header className="fixed top-0 right-0 left-0 z-[1030]">
+      <nav className="p-5 text-[18px] bg-[#00000033]">
+        <ul className="flex flex-wrap gap-5 justify-center font-semibold">
           <li>
-            <a href="#proyectos">Proyectos</a>
+            <a
+              href="#proyectos"
+              className="hover:text-[#b6bfda] transition-all duration-500 ease-in-out"
+            >
+              Proyectos
+            </a>
           </li>
           <li>
-            <a href="#habilidades">Habilidades</a>
+            <a
+              href="#habilidades"
+              className="hover:text-[#b6bfda] transition-all duration-500 ease-in-out"
+            >
+              Habilidades
+            </a>
           </li>
           <li>
-            <a href="#sobre-mi">Sobre Mí</a>
+            <a
+              href="#sobre-mi"
+              className="hover:text-[#b6bfda] transition-all duration-500 ease-in-out"
+            >
+              Sobre Mí
+            </a>
           </li>
           <li>
-            <a href="#contacto">Contacto</a>
+            <a
+              href="#contacto"
+              className="hover:text-[#b6bfda] transition-all duration-500 ease-in-out"
+            >
+              Contacto
+            </a>
           </li>
           <li>
-            <a href="CV-RAMIRO-TANQUIAS.pdf" target="_blank">
+            <a
+              href="CV-RAMIRO-TANQUIAS.pdf"
+              target="_blank"
+              className="hover:text-[#b6bfda] transition-all duration-500 ease-in-out"
+            >
               CV
             </a>
           </li>
