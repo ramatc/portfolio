@@ -16,7 +16,7 @@ const About = () => {
             height={350}
             alt="Foto de Ramiro Tanquias Cornejo"
             priority={false}
-            className="rounded-lg"
+            className="rounded-lg object-cover aspect-square"
           />
         </div>
         <div className="text-[18px] text-pretty [&>p>span]:text-[#b2a8fd] w-[67%]">
@@ -36,11 +36,12 @@ const About = () => {
             aprendizaje.
           </p>
           <p>
-            Estoy emocionado por la oportunidad de seguir <span>creciendo</span>{" "}
-            en el campo del desarrollo web y contribuir al <span>éxito</span> de
-            proyectos desafiantes. Si estás interesado en colaborar o tienes
-            alguna <span>oportunidad laboral</span> que creas que pueda ser
-            adecuada para mí, ¡me encantaría que nos pongamos en contacto!
+            Estoy entusiasmado por la oportunidad de seguir{" "}
+            <span>creciendo</span> en el campo del desarrollo web y contribuir
+            al <span>éxito</span> de proyectos desafiantes. Si estás interesado
+            en colaborar o tenes alguna <span>oportunidad laboral</span> que
+            creas que pueda ser adecuada para mí, ¡me encantaría que nos
+            pongamos en contacto!
           </p>
         </div>
       </div>
