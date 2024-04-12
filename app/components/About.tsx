@@ -11,11 +11,11 @@ const About = () => {
       <div className="flex justify-between">
         <div className="self-center">
           <Image
-            src="/picture.jpeg"
+            src="/picture.jpg"
             width={300}
-            height={350}
+            height={300}
             alt="Foto de Ramiro Tanquias Cornejo"
-            priority={false}
+            priority={true}
             className="rounded-lg object-cover aspect-square"
           />
         </div>
@@ -39,7 +39,7 @@ const About = () => {
             Estoy entusiasmado por la oportunidad de seguir{" "}
             <span>creciendo</span> en el campo del desarrollo web y contribuir
             al <span>éxito</span> de proyectos desafiantes. Si estás interesado
-            en colaborar o tenes alguna <span>oportunidad laboral</span> que
+            en colaborar o tenés alguna <span>oportunidad laboral</span> que
             creas que pueda ser adecuada para mí, ¡me encantaría que nos
             pongamos en contacto!
           </p>
