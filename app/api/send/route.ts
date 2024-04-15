@@ -1,4 +1,4 @@
-import { type NextRequest, NextResponse } from "next/server";
+import { type NextRequest } from "next/server";
 import { EmailTemplate } from "@/app/components/EmailTemplate";
 import { Resend } from "resend";
 
@@ -12,7 +12,7 @@ export async function POST(request: NextRequest) {
       throw new Error("Falta información en la solicitud.");
     }
 
-    const emailSubject = `Nuevo mensaje de ${name} (${email})`;
+    const emailSubject = `👋 Nuevo mensaje de ${name}`;
 
     const data = await resend.emails.send({
       from: "Portfolio | Ramatc <onboarding@resend.dev>",
