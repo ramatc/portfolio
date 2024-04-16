@@ -23,15 +23,25 @@ const PROJECTS = [
     technologies: ["react.js", "typescript"],
   },
   {
-    title: "Memotest",
-    url: "https://memotest-inky.vercel.app/",
-    repo: "https://github.com/ramatc/memotest",
-    image: "memo.jpg",
+    title: "Grails",
+    url: "https://grails-react-js.vercel.app/",
+    repo: "https://github.com/ramatc/grails-react-js",
+    image: "grails.jpg",
     description:
-      "Un juego de memoria implementado con React y TypeScript, aprovechando la potencia de Vite. Pon a prueba tu memoria y diviértete emparejando cartas.",
+      "Un e-commerce ficticio desarrollado como proyecto final. Se trata de una tienda online con un carrito de compras, utilizando componentes de React y Firebase como servidor en la nube.",
     color: "title-memo",
-    technologies: ["react.js", "typescript", "vite"],
+    technologies: ["react.js", "javascript", "firebase"],
   },
+  // {
+  //   title: "Memotest",
+  //   url: "https://memotest-inky.vercel.app/",
+  //   repo: "https://github.com/ramatc/memotest",
+  //   image: "memo.jpg",
+  //   description:
+  //     "Un juego de memoria implementado con React y TypeScript, aprovechando la potencia de Vite. Pon a prueba tu memoria y diviértete emparejando cartas.",
+  //   color: "title-memo",
+  //   technologies: ["react.js", "typescript", "vite"],
+  // },
   // {
   //   title: "VinylWRLD",
   //   url: "https://vinyl-wrld.vercel.app/",
@@ -56,6 +66,9 @@ const Projects = () => {
           <CardProject project={project} key={i} />
         ))}
       </div>
+      {/* <button className="mt-6 inline-flex w-full h-12 items-center justify-center rounded-md bg-white px-6 font-medium text-gray-950 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50">
+        Más proyectos
+      </button> */}
     </section>
   );
 };

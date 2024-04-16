@@ -62,6 +62,7 @@ const Form: FC = () => {
               id="name"
               type="text"
               placeholder="Nombre"
+              autoComplete="off"
               {...register("name", { required: true })}
             />
             <UserSearch />
@@ -86,13 +87,20 @@ const Form: FC = () => {
               id="email"
               type="email"
               placeholder="Correo electrónico"
-              {...register("email", { required: true })}
+              autoComplete="off"
+              {...register("email", {
+                required: "Por favor, introduce tu correo electrónico",
+                pattern: {
+                  value: /^\S+@\S+$/i,
+                  message: "Por favor, introduce un correo electrónico válido",
+                },
+              })}
             />
             <At />
           </div>
           {errors.email && (
             <span className="mt-1 text-red-300 text-xs">
-              Por favor, introduce tu correo electrónico
+              {errors.email.message}
             </span>
           )}
         </div>
@@ -109,6 +117,7 @@ const Form: FC = () => {
               className="peer resize-none block h-36 w-full rounded-md border border-double border-slate-800 border-transparent bg-[linear-gradient(#000,#000),linear-gradient(to_right,#334454,#334454)]	bg-origin-border pr-3 py-2 pl-10 text-slate-200 transition-all duration-500 [background-clip:padding-box,_border-box] placeholder:text-slate-500 focus:bg-[linear-gradient(#000,#000),linear-gradient(to_right,#c7d2fe,#8678f9)] focus:outline-none"
               id="msg"
               placeholder="Escribe tu mensaje..."
+              autoComplete="off"
               {...register("message", { required: true })}
             />
             <Message />
