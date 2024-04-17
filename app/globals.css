@@ -38,18 +38,28 @@ p {
 
 h4 {
   display: flex;
-  font-size: 1.875rem;
+  font-size: 1.5rem;
   align-items: center;
   font-weight: bold;
   margin-bottom: 25px;
 }
 
 h5 {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
 section {
-  padding-bottom: 7rem;
+  padding-bottom: 3.725rem;
+}
+
+.location {
+  display: flex;
+  padding-left: 2px;
+  opacity: .6;
+  font-size: 1rem;
+  line-height: 1;
+  margin-bottom: 15px;
+  align-items: center;
 }
 
 .title-rick {
@@ -74,4 +84,22 @@ section {
 	html {
 		scroll-behavior: auto;
 	}
+}
+
+@media (min-width: 768px) {
+  section {
+    padding-bottom: 7rem;
+  }
+
+  .location {
+    font-size: 1.5rem;
+  }
+
+  h4 {
+    font-size: 1.875rem;
+  }
+
+  h5 {
+    font-size: 1.5rem;
+  }
 }

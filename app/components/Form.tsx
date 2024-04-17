@@ -44,8 +44,8 @@ const Form: FC = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <p className="text-gray-200 mb-5 md:text-[18px]">
-        ¡Listo para dar vida a tu proyecto! Si tienes alguna consulta o deseas
-        discutir una idea, estoy disponible para ayudarte. Encuentra mis enlaces
+        ¡Listo para dar vida a tu proyecto! Si tenés alguna consulta o deseas
+        discutir una idea, estoy disponible para ayudarte. Encontrá mis enlaces
         a redes sociales y mi correo electrónico abajo.
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -69,7 +69,7 @@ const Form: FC = () => {
           </div>
           {errors.name && (
             <span className="mt-1 text-red-300 text-xs">
-              Por favor, introduce tu nombre
+              Por favor, introducí tu nombre
             </span>
           )}
         </div>
@@ -89,10 +89,10 @@ const Form: FC = () => {
               placeholder="Correo electrónico"
               autoComplete="off"
               {...register("email", {
-                required: "Por favor, introduce tu correo electrónico",
+                required: "Por favor, introducí tu correo electrónico",
                 pattern: {
                   value: /^\S+@\S+$/i,
-                  message: "Por favor, introduce un correo electrónico válido",
+                  message: "Por favor, introducí un correo electrónico válido",
                 },
               })}
             />
@@ -116,7 +116,7 @@ const Form: FC = () => {
             <textarea
               className="peer resize-none block h-36 w-full rounded-md border border-double border-slate-800 border-transparent bg-[linear-gradient(#000,#000),linear-gradient(to_right,#334454,#334454)]	bg-origin-border pr-3 py-2 pl-10 text-slate-200 transition-all duration-500 [background-clip:padding-box,_border-box] placeholder:text-slate-500 focus:bg-[linear-gradient(#000,#000),linear-gradient(to_right,#c7d2fe,#8678f9)] focus:outline-none"
               id="msg"
-              placeholder="Escribe tu mensaje..."
+              placeholder="Escribí tu mensaje..."
               autoComplete="off"
               {...register("message", { required: true })}
             />
@@ -124,7 +124,7 @@ const Form: FC = () => {
           </div>
           {errors.message && (
             <span className="mt-1 text-red-300 text-xs">
-              Por favor, escribe un mensaje
+              Por favor, escribí un mensaje
             </span>
           )}
         </div>

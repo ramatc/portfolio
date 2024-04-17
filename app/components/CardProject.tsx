@@ -74,7 +74,7 @@ const CardProject = ({ project }: { project: Project }) => {
           height={450}
           alt={`Proyecto - ${title}`}
           priority={false}
-          className="h-full w-full object-cover lg:object-fill lg:w-[revert-layer]"
+          className="sm:h-[300px] lg:h-full w-full object-cover lg:object-fill lg:w-[revert-layer]"
         />
       </a>
       <div className="lg:w-[75%] xl:w-[57%] p-4 xl:py-0 xl:px-2">
