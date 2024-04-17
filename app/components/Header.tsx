@@ -1,7 +1,7 @@
 const Header = () => {
   return (
     <header className="fixed top-0 right-0 left-0 z-[1030]">
-      <nav className="p-5 text-[18px] bg-[#00000033]">
+      <nav className="p-5 md:text-[18px] bg-[#00000033]">
         <ul className="flex flex-wrap gap-5 justify-center font-semibold">
           <li>
             <a

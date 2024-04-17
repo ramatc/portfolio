@@ -61,7 +61,7 @@ const Projects = () => {
         <Desktop />
         &nbsp;Proyectos
       </h4>
-      <div className="flex flex-wrap gap-[30px]">
+      <div className="lg:flex flex-wrap gap-[30px]">
         {PROJECTS.map((project, i) => (
           <CardProject project={project} key={i} />
         ))}

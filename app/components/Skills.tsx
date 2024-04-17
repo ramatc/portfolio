@@ -63,7 +63,7 @@ const Skills = () => {
         <Code />
         &nbsp;Habilidades
       </h4>
-      <div className="grid grid-cols-5 gap-[20px]">
+      <div className="flex flex-wrap justify-between gap-3 md:grid md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 md:gap-4 xl:gap-5">
         {SKILLS.map((skill, i) => (
           <CardSkill key={i} skill={skill} />
         ))}

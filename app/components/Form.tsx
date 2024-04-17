@@ -43,7 +43,7 @@ const Form: FC = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <p className="text-gray-200 mb-5 text-[18px]">
+      <p className="text-gray-200 mb-5 md:text-[18px]">
         ¡Listo para dar vida a tu proyecto! Si tienes alguna consulta o deseas
         discutir una idea, estoy disponible para ayudarte. Encuentra mis enlaces
         a redes sociales y mi correo electrónico abajo.
@@ -131,7 +131,7 @@ const Form: FC = () => {
       </div>
 
       <div className="flex justify-end mt-6">
-        <button className="relative inline-flex h-12 items-center justify-center rounded-md bg-white px-6 font-medium text-gray-950 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50">
+        <button className="w-full lg:w-48 inline-flex h-12 items-center justify-center rounded-md bg-white px-6 font-medium text-gray-950 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50">
           Enviar mensaje
         </button>
       </div>

@@ -1,4 +1,3 @@
-import styles from "@/app/page.module.css";
 import Image from "next/image";
 import Location from "@/app/ui/icons/Location";
 import Links from "@/app/components/Links";
@@ -9,21 +8,21 @@ import Contact from "@/app/components/Contact";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
+    <main className="px-12 pt-12 pb-4 min-h-screen max-w-[1250px] mx-auto md:px-20 md:pt-20">
       <section className="flex justify-between pt-16">
-        <div>
+        <div className="w-full">
           <span className="border border-[white] border-opacity-50 inline-flex items-center justify-center rounded-full bg-gray-950 px-3 py-1 text-2xl font-medium text-gray-300 backdrop-blur-3xl">
-            <span className="bg-gradient-to-t from-[#fff] to-[#8678f9] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-t from-[#fff] to-[#8678f9] bg-clip-text text-transparent text-xl lg:text-2xl">
               Hola! Soy
             </span>
           </span>
-          <h1 className={styles.name}>Ramiro Tanquias</h1>
-          <h2
-            className={`${styles.title} animate-text-gradient bg-gradient-to-r from-[#b2a8fd] via-[#8678f9] to-[#c7d2fe] bg-[200%_auto] bg-clip-text text-transparent`}
-          >
+          <h1 className="text-5xl lg:text-7xl font-bold leading-none">
+            Ramiro Tanquias
+          </h1>
+          <h2 className="text-3xl lg:text-5xl leading-normal animate-text-gradient bg-gradient-to-r from-[#b2a8fd] via-[#8678f9] to-[#c7d2fe] bg-[200%_auto] bg-clip-text text-transparent">
             Desarrollador Web Fullstack
           </h2>
-          <h3 className={styles.location}>
+          <h3 className="flex pl-0.5 opacity-60 text-xl lg:text-2xl leading-none mb-4">
             <Location />
             Buenos Aires, Argentina.
           </h3>
@@ -41,9 +40,9 @@ export default function Home() {
 
           <Image
             src="/avatar.png"
-            width={150}
-            height={150}
-            className="block md:hidden"
+            width={200}
+            height={200}
+            className="block md:hidden w-full"
             alt="Avatar de Ramiro Tanquias Cornejo"
             priority={true}
           />

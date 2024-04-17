@@ -8,18 +8,27 @@ const About = () => {
         <User />
         &nbsp;Sobre Mí
       </h4>
-      <div className="flex justify-between">
-        <div className="self-center">
+      <div className="flex justify-between flex-col lg:flex-row">
+        <div className="mb-5 flex xl:self-center lg:mb-0">
           <Image
-            src="/picture.jpg"
+            src="/phone.jpg"
+            width={250}
+            height={250}
+            alt="Foto de Ramiro Tanquias Cornejo"
+            priority={true}
+            className="block lg:hidden rounded-lg w-full"
+          />
+
+          <Image
+            src="/desktop.jpg"
             width={300}
             height={300}
             alt="Foto de Ramiro Tanquias Cornejo"
             priority={true}
-            className="rounded-lg object-cover aspect-square"
+            className="hidden lg:block rounded-lg object-cover aspect-square"
           />
         </div>
-        <div className="text-[18px] text-pretty [&>p>span]:text-[#b2a8fd] w-[67%]">
+        <div className="w-full text-pretty [&>p>span]:text-[#b2a8fd] md:text-[18px] lg:w-[62%] xl:w-[67%]">
           <p className="mb-4">
             <span>Desarrollador Web</span> y{" "}
             <span>Técnico Universitario en Programación</span> de la Universidad

@@ -58,7 +58,7 @@ const CardProject = ({ project }: { project: Project }) => {
       onBlur={handleBlur}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="flex justify-between relative h-[300px] w-[100%] overflow-hidden rounded-xl border border-gray-800 bg-gradient-to-r from-black to-gray-950 shadow-2xl"
+      className="lg:flex mb-8 lg:mb-0 justify-between relative w-full overflow-hidden rounded-xl border border-gray-800 bg-gradient-to-r from-black to-gray-950 shadow-2xl lg:h-[300px]"
     >
       <div
         className="absolute pointer-events-none -inset-px opacity-0 transition duration-300"
@@ -74,14 +74,16 @@ const CardProject = ({ project }: { project: Project }) => {
           height={450}
           alt={`Proyecto - ${title}`}
           priority={false}
-          className="h-full"
+          className="h-full w-full object-cover lg:object-fill lg:w-[revert-layer]"
         />
       </a>
-      <div className="w-[57%] px-2">
-        <h5 className={`font-bold pt-6 ${color}`}>{title}</h5>
-        <p className="text-gray-200 mb-5 text-[18px]">{description}</p>
-        <ButtonProject title="demo" url={url} icon={<ExternalLink />} />
-        <ButtonProject title="code" url={repo} icon={<Repo />} />
+      <div className="lg:w-[75%] xl:w-[57%] p-4 xl:py-0 xl:px-2">
+        <h5 className={`font-bold xl:pt-6 ${color}`}>{title}</h5>
+        <p className="text-gray-200 mb-5 md:text-[18px]">{description}</p>
+        <div className="flex flex-wrap justify-between lg:block">
+          <ButtonProject title="demo" url={url} icon={<ExternalLink />} />
+          <ButtonProject title="code" url={repo} icon={<Repo />} />
+        </div>
         <div className="mt-6">
           {technologies.map((technologie, i) => (
             <BadgeTextGradient title={technologie} key={i} />

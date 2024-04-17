@@ -49,7 +49,7 @@ const CardSkill = ({ skill }: { skill: Skill }) => {
   return (
     <>
       <div
-        className="card relative h-40 w-48 transition-[all_400ms_cubic-bezier(0.03,0.98,0.52,0.99)_0s] will-change-transform"
+        className="card relative h-28 w-[45%] sm:w-32 md:h-40 md:w-44 lg:w-48 transition-[all_400ms_cubic-bezier(0.03,0.98,0.52,0.99)_0s] will-change-transform"
         onMouseMove={onMouseMove}
         onMouseLeave={onMouseLeave}
         style={{
@@ -63,9 +63,20 @@ const CardSkill = ({ skill }: { skill: Skill }) => {
               src={`/skills/${img}.svg`}
               width={75}
               height={75}
+              className="hidden md:block"
               alt={title}
+              priority={true}
             />
-            <p className="text-center text-lg">{title}</p>
+
+            <Image
+              src={`/skills/${img}.svg`}
+              width={50}
+              height={50}
+              className="block md:hidden"
+              alt={title}
+              priority={true}
+            />
+            <p className="text-center md:text-lg">{title}</p>
           </span>
         </div>
       </div>
