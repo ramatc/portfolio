@@ -6,17 +6,14 @@ import Projects from "@/app/components/Projects";
 import Skills from "@/app/components/Skills";
 import About from "@/app/components/About";
 import Contact from "@/app/components/Contact";
+import IntroPage from "./components/Intro";
 
 export default function Home() {
   return (
     <main className="px-12 pt-12 pb-4 min-h-screen max-w-[1250px] mx-auto md:px-20 md:pt-20">
-      <section className="flex justify-between pt-16 sm:mt-0">
+      <section className="flex justify-between pt-12 sm:mt-0">
         <div className="w-full">
-          <span className="border border-[white] border-opacity-50 inline-flex items-center justify-center rounded-full bg-gray-950 px-3 py-1 font-medium text-gray-300 backdrop-blur-3xl">
-            <span className="bg-gradient-to-t from-[#fff] to-[#8678f9] bg-clip-text text-transparent text-base md:text-xl lg:text-2xl">
-              Hola! Soy
-            </span>
-          </span>
+          <IntroPage />
           <h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold leading-none py-1 md:py-0">
             Ramiro Tanquias
           </h1>
