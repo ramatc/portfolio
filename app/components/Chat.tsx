@@ -1,12 +1,17 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { Message } from "@/app/lib/definitions";
 import { sendQuestion } from "@/app/lib/actions";
 
 function Chat() {
   const [messages, setMessages] = useState<Message[]>([
-    { id: "0", type: "bot", text: "Preguntame algo!" },
+    {
+      id: "0",
+      type: "bot",
+      text: "¡Hola, soy el asistente virtual de Ramiro! Estoy acá para resolver tus dudas.",
+    },
   ]);
   const [question, setQuestion] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
@@ -42,13 +47,20 @@ function Chat() {
   }, [messages, isCollapsed]);
 
   return (
-    <div className="fixed bottom-5 right-5">
+    <div className="fixed bottom-5 right-5 z-[9999]">
       {isCollapsed ? (
         <button
-          className="bg-[#666baa] p-4 rounded-full w-14"
+          className="bg-[#5b5d9a] p-2 rounded-full w-20 hover:bg-[#666baa] transition-all duration-500 ease-in-out"
           onClick={() => toggleCollapsed(false)}
         >
-          ?
+          <Image
+            src="/bot.png"
+            width={200}
+            height={200}
+            className="w-full h-full transition-transform duration-500 ease-in-out transform hover:scale-110"
+            alt="Avatar de Ramiro Tanquias Cornejo"
+            priority={true}
+          />
         </button>
       ) : (
         <div>
@@ -58,7 +70,7 @@ function Chat() {
           >
             ✕
           </button>
-          <div className="flex flex-col gap-4 m-auto border border-neutral-500/20 p-4 rounded-xl w-[400px] bg-[#0a0a0a]">
+          <div className="flex flex-col gap-4 m-auto border border-neutral-500/20 p-4 rounded-xl w-[300px] md:w-[450px] bg-[#0a0a0a]">
             <div
               ref={container}
               className="flex flex-col gap-4 h-[480px] overflow-y-auto"
@@ -66,7 +78,7 @@ function Chat() {
               {messages.map((message) => (
                 <div
                   key={message.id}
-                  className={`p-4 max-w-[80%] rounded-3xl text-white ${
+                  className={`p-4 max-w-[80%] rounded-3xl text-white break-words ${
                     message.type === "bot"
                       ? "bg-[#424366] text-left self-start rounded-bl-none"
                       : "bg-[#7983b8] text-right self-end rounded-br-none"
@@ -78,9 +90,9 @@ function Chat() {
             </div>
             <form className="flex items-center" onSubmit={handleSubmit}>
               <input
-                className="rounded rounded-r-none flex-1 border border-neutral-500/20 text-white py-2 px-4"
+                className="rounded rounded-r-none flex-1 border border-neutral-500/20 text-white py-2 px-4 bg-[#3b3b3b]"
                 name="question"
-                placeholder="¿Quién sos?"
+                placeholder="Escribí tu pregunta..."
                 type="text"
                 value={question}
                 required
@@ -92,6 +104,10 @@ function Chat() {
                 }`}
                 disabled={loading || !question.trim()}
                 type="submit"
+                style={{
+                  cursor:
+                    loading || !question.trim() ? "not-allowed" : "pointer",
+                }}
               >
                 {loading ? "Loading..." : "↩"}
               </button>

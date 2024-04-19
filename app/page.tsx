@@ -47,12 +47,12 @@ export default function Home() {
             priority={true}
           />
         </div>
+        <Chat />
       </section>
       <Projects />
       <Skills />
       <About />
       <Contact />
-      <Chat />
     </main>
   );
 }
