@@ -2,19 +2,14 @@
 
 import { FC } from "react";
 import { useForm } from "react-hook-form";
-import { sendEmail } from "@/app/utils/send-email";
+import { sendEmail } from "@/app/lib/utils";
 import UserSearch from "@/app/ui/icons/UserSearch";
 import At from "@/app/ui/icons/At";
 import Message from "@/app/ui/icons/Message";
 import { ToastContainer, toast } from "react-toastify";
+import { FormData } from "@/app/lib/definitions";
 
 import "react-toastify/dist/ReactToastify.css";
-
-export type FormData = {
-  name: string;
-  email: string;
-  message: string;
-};
 
 const Form: FC = () => {
   const {

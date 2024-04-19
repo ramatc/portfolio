@@ -1,11 +1,7 @@
 "use client";
 import { useState, MouseEvent, useCallback } from "react";
 import Image from "next/image";
-
-interface Skill {
-  title: string;
-  img: string;
-}
+import { Skill } from "@/app/lib/definitions";
 
 function throttle<T extends (...args: any[]) => any>(
   func: T,

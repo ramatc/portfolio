@@ -6,7 +6,8 @@ import Projects from "@/app/components/Projects";
 import Skills from "@/app/components/Skills";
 import About from "@/app/components/About";
 import Contact from "@/app/components/Contact";
-import IntroPage from "./components/Intro";
+import IntroPage from "@/app/components/Intro";
+import Chat from "@/app/components/Chat";
 
 export default function Home() {
   return (
@@ -51,6 +52,7 @@ export default function Home() {
       <Skills />
       <About />
       <Contact />
+      <Chat />
     </main>
   );
 }

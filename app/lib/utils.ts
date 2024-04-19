@@ -1,4 +1,4 @@
-import { FormData } from "@/app/components/Form";
+import { FormData } from "@/app/lib/definitions";
 
 export async function sendEmail(data: FormData) {
   try {

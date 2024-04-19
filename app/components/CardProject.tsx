@@ -5,16 +5,7 @@ import ButtonProject from "@/app/components/ButtonProject";
 import BadgeTextGradient from "@/app/components/BadgeTextGradient";
 import ExternalLink from "@/app/ui/icons/ExternalLink";
 import Repo from "@/app/ui/icons/Repo";
-
-interface Project {
-  title: string;
-  url: string;
-  repo: string;
-  image: string;
-  description: string;
-  color: string;
-  technologies: string[];
-}
+import { Project } from "@/app/lib/definitions";
 
 const CardProject = ({ project }: { project: Project }) => {
   const { title, url, repo, image, description, color, technologies } = project;

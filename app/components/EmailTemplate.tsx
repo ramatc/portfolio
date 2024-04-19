@@ -1,10 +1,6 @@
-interface EmailTemplateProps {
-  name: string;
-  email: string;
-  message: string;
-}
+import { FormData } from "@/app/lib/definitions";
 
-export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
+export const EmailTemplate: React.FC<Readonly<FormData>> = ({
   name,
   email,
   message,
