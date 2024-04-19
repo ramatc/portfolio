@@ -47,7 +47,7 @@ function Chat() {
   }, [messages, isCollapsed]);
 
   return (
-    <div className="fixed bottom-5 right-5 z-[9999]">
+    <div className="fixed bottom-5 right-5 z-[9999] fade-in">
       {isCollapsed ? (
         <button
           className="bg-[#5b5d9a] p-2 rounded-full w-20 hover:bg-[#666baa] transition-all duration-500 ease-in-out"
