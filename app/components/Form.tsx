@@ -58,7 +58,10 @@ const Form: FC = () => {
               type="text"
               placeholder="Nombre"
               autoComplete="off"
-              {...register("name", { required: true })}
+              {...register("name", {
+                required: true,
+                pattern: /^[A-Za-z\s]+$/,
+              })}
             />
             <UserSearch />
           </div>
