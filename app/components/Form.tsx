@@ -129,7 +129,10 @@ const Form: FC = () => {
       </div>
 
       <div className="flex justify-end mt-6">
-        <button className="w-full lg:w-48 inline-flex h-12 items-center justify-center rounded-md bg-white px-6 font-medium text-gray-950 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50">
+        <button
+          type="submit"
+          className="w-full lg:w-48 inline-flex h-12 items-center justify-center rounded-md bg-white px-6 font-medium text-gray-950 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50"
+        >
           Enviar mensaje
         </button>
       </div>
