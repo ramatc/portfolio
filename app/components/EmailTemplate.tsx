@@ -5,14 +5,14 @@ export const EmailTemplate: React.FC<Readonly<FormData>> = ({
   email,
   message,
 }) => (
-  <div className="p-8 bg-white rounded-lg shadow-lg">
-    <h2 className="text-2xl font-bold mb-4">Nuevo mensaje del Portfolio</h2>
-    <p className="text-lg mb-6">¡Hola Ramiro!</p>
+  <div className="rounded-lg bg-white p-8 shadow-lg">
+    <h2 className="mb-4 text-2xl font-bold">Nuevo mensaje del Portfolio</h2>
+    <p className="mb-6 text-lg">¡Hola Ramiro!</p>
     <p className="mb-4">
       Has recibido un nuevo mensaje a través del formulario de contacto de tu
       portfolio:
     </p>
-    <div className="bg-gray-100 p-4 rounded-md mb-6">
+    <div className="mb-6 rounded-md bg-gray-100 p-4">
       <p>
         <strong>Nombre:</strong> {name}
       </p>

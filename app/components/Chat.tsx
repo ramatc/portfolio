@@ -25,7 +25,7 @@ function Chat() {
 
     setLoading(true);
     setMessages((messages) =>
-      messages.concat({ id: String(Date.now()), type: "user", text: question })
+      messages.concat({ id: String(Date.now()), type: "user", text: question }),
     );
     setQuestion("");
 
@@ -36,7 +36,7 @@ function Chat() {
         id: String(Date.now()),
         type: "bot",
         text,
-      })
+      }),
     );
 
     setLoading(false);
@@ -47,17 +47,17 @@ function Chat() {
   }, [messages, isCollapsed]);
 
   return (
-    <div className="fixed bottom-5 right-5 z-[9999] fade-in">
+    <div className="fade-in fixed bottom-5 right-5 z-[9999]">
       {isCollapsed ? (
         <button
-          className="bg-[#5b5d9a] p-2 rounded-full w-20 hover:bg-[#666baa] transition-all duration-500 ease-in-out"
+          className="w-20 rounded-full bg-[#5b5d9a] p-2 transition-all duration-500 ease-in-out hover:bg-[#666baa]"
           onClick={() => toggleCollapsed(false)}
         >
           <Image
             src="/bot.png"
             width={200}
             height={200}
-            className="w-full h-full transition-transform duration-500 ease-in-out transform hover:scale-110"
+            className="h-full w-full transform transition-transform duration-500 ease-in-out hover:scale-110"
             alt="Avatar de Ramiro Tanquias Cornejo"
             priority={true}
           />
@@ -65,23 +65,23 @@ function Chat() {
       ) : (
         <div>
           <button
-            className="rounded-full bg-slate-200 w-8 h-8 absolute right-4 top-4 text-black"
+            className="absolute right-4 top-4 h-8 w-8 rounded-full bg-slate-200 text-black"
             onClick={() => toggleCollapsed(true)}
           >
             ✕
           </button>
-          <div className="flex flex-col gap-4 m-auto border border-neutral-500/20 p-4 rounded-xl w-[300px] md:w-[450px] bg-[#0a0a0a]">
+          <div className="m-auto flex w-[300px] flex-col gap-4 rounded-xl border border-neutral-500/20 bg-[#0a0a0a] p-4 md:w-[450px]">
             <div
               ref={container}
-              className="flex flex-col gap-4 h-[480px] overflow-y-auto"
+              className="flex h-[480px] flex-col gap-4 overflow-y-auto"
             >
               {messages.map((message) => (
                 <div
                   key={message.id}
-                  className={`p-4 max-w-[80%] rounded-3xl text-white break-words ${
+                  className={`max-w-[80%] break-words rounded-3xl p-4 text-white ${
                     message.type === "bot"
-                      ? "bg-[#424366] text-left self-start rounded-bl-none"
-                      : "bg-[#7983b8] text-right self-end rounded-br-none"
+                      ? "self-start rounded-bl-none bg-[#424366] text-left"
+                      : "self-end rounded-br-none bg-[#7983b8] text-right"
                   }`}
                 >
                   {message.text}
@@ -90,7 +90,7 @@ function Chat() {
             </div>
             <form className="flex items-center" onSubmit={handleSubmit}>
               <input
-                className="rounded rounded-r-none flex-1 border border-neutral-500/20 text-white py-2 px-4 bg-[#3b3b3b]"
+                className="flex-1 rounded rounded-r-none border border-neutral-500/20 bg-[#3b3b3b] px-4 py-2 text-white"
                 name="question"
                 placeholder="Escribí tu pregunta..."
                 type="text"
@@ -99,7 +99,7 @@ function Chat() {
                 onChange={(event) => setQuestion(event.target.value)}
               />
               <button
-                className={`px-4 py-2 text-slate-50 bg-[#939ec7] rounded-lg rounded-l-none ${
+                className={`rounded-lg rounded-l-none bg-[#939ec7] px-4 py-2 text-slate-50 ${
                   loading ? "bg-slate-300" : "bg-[#939ec7]"
                 }`}
                 disabled={loading || !question.trim()}

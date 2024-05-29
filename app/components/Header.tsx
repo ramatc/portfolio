@@ -1,12 +1,12 @@
 const Header = () => {
   return (
-    <header className="fixed top-0 right-0 left-0 z-[1030]">
-      <nav className="py-5 md:p-5 text-sm sm:text-base md:text-[18px] bg-[#00000033]">
-        <ul className="flex flex-wrap gap-3 md:gap-5 justify-center font-semibold">
+    <header className="fixed left-0 right-0 top-0 z-[1030]">
+      <nav className="bg-[#00000033] py-5 text-sm sm:text-base md:p-5 md:text-[18px]">
+        <ul className="flex flex-wrap justify-center gap-3 font-semibold md:gap-5">
           <li>
             <a
               href="#proyectos"
-              className="hover:text-[#b6bfda] transition-all duration-500 ease-in-out"
+              className="transition-all duration-500 ease-in-out hover:text-[#b6bfda]"
             >
               Proyectos
             </a>
@@ -14,7 +14,7 @@ const Header = () => {
           <li>
             <a
               href="#habilidades"
-              className="hover:text-[#b6bfda] transition-all duration-500 ease-in-out"
+              className="transition-all duration-500 ease-in-out hover:text-[#b6bfda]"
             >
               Habilidades
             </a>
@@ -22,7 +22,7 @@ const Header = () => {
           <li>
             <a
               href="#sobre-mi"
-              className="hover:text-[#b6bfda] transition-all duration-500 ease-in-out"
+              className="transition-all duration-500 ease-in-out hover:text-[#b6bfda]"
             >
               Sobre Mí
             </a>
@@ -30,7 +30,7 @@ const Header = () => {
           <li>
             <a
               href="#contacto"
-              className="hover:text-[#b6bfda] transition-all duration-500 ease-in-out"
+              className="transition-all duration-500 ease-in-out hover:text-[#b6bfda]"
             >
               Contacto
             </a>
@@ -39,7 +39,7 @@ const Header = () => {
             <a
               href="CV-RAMIRO-TANQUIAS.pdf"
               target="_blank"
-              className="hover:text-[#b6bfda] transition-all duration-500 ease-in-out"
+              className="transition-all duration-500 ease-in-out hover:text-[#b6bfda]"
             >
               CV
             </a>

@@ -49,10 +49,10 @@ const CardProject = ({ project }: { project: Project }) => {
       onBlur={handleBlur}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="lg:flex mb-8 lg:mb-0 justify-between relative w-full overflow-hidden rounded-xl border border-gray-800 bg-gradient-to-r from-black to-gray-950 shadow-2xl lg:h-[300px]"
+      className="relative mb-8 w-full justify-between overflow-hidden rounded-xl border border-gray-800 bg-gradient-to-r from-black to-gray-950 shadow-2xl lg:mb-0 lg:flex lg:h-[300px]"
     >
       <div
-        className="absolute pointer-events-none -inset-px opacity-0 transition duration-300"
+        className="pointer-events-none absolute -inset-px opacity-0 transition duration-300"
         style={{
           opacity,
           background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(255,182,255,.1), transparent 40%)`,
@@ -65,12 +65,12 @@ const CardProject = ({ project }: { project: Project }) => {
           height={450}
           alt={`Proyecto - ${title}`}
           priority={false}
-          className="sm:h-[300px] lg:h-full w-full object-cover lg:object-fill lg:w-[revert-layer]"
+          className="w-full object-cover sm:h-[300px] lg:h-full lg:w-[revert-layer] lg:object-fill"
         />
       </a>
-      <div className="lg:w-[75%] xl:w-[57%] p-4 xl:py-0 xl:px-2">
+      <div className="p-4 lg:w-[75%] xl:w-[57%] xl:px-2 xl:py-0">
         <h5 className={`font-bold xl:pt-6 ${color}`}>{title}</h5>
-        <p className="text-gray-200 mb-5 md:text-[18px]">{description}</p>
+        <p className="mb-5 text-gray-200 md:text-[18px]">{description}</p>
         <div className="flex flex-wrap justify-between lg:block">
           <ButtonProject title="demo" url={url} icon={<ExternalLink />} />
           <ButtonProject title="code" url={repo} icon={<Repo />} />

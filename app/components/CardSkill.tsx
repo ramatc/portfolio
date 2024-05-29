@@ -5,7 +5,7 @@ import { Skill } from "@/app/lib/definitions";
 
 function throttle<T extends (...args: any[]) => any>(
   func: T,
-  delay: number
+  delay: number,
 ): (...args: Parameters<T>) => void {
   let lastCall = 0;
   return (...args: Parameters<T>) => {
@@ -35,7 +35,7 @@ const CardSkill = ({ skill }: { skill: Skill }) => {
 
       setRotate({ x: rotateX, y: rotateY });
     }, 100),
-    []
+    [],
   );
 
   const onMouseLeave = () => {
@@ -45,7 +45,7 @@ const CardSkill = ({ skill }: { skill: Skill }) => {
   return (
     <>
       <div
-        className="card relative h-28 w-[45%] sm:w-32 md:h-40 md:w-44 lg:w-48 transition-[all_400ms_cubic-bezier(0.03,0.98,0.52,0.99)_0s] will-change-transform"
+        className="card relative h-28 w-[45%] transition-[all_400ms_cubic-bezier(0.03,0.98,0.52,0.99)_0s] will-change-transform sm:w-32 md:h-40 md:w-44 lg:w-48"
         onMouseMove={onMouseMove}
         onMouseLeave={onMouseLeave}
         style={{
@@ -54,7 +54,7 @@ const CardSkill = ({ skill }: { skill: Skill }) => {
         }}
       >
         <div className="group relative flex h-full w-full select-none items-center justify-center rounded-lg border border-gray-900 bg-gradient-to-tr from-gray-950 to-gray-900 text-sm font-light text-gray-300">
-          <span className="flex flex-col items-center text-md bg-gradient-to-t from-gray-400 to-white bg-clip-text font-bold text-transparent">
+          <span className="text-md flex flex-col items-center bg-gradient-to-t from-gray-400 to-white bg-clip-text font-bold text-transparent">
             <Image
               src={`/skills/${img}.svg`}
               width={75}

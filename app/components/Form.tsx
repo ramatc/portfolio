@@ -38,12 +38,12 @@ const Form: FC = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <p className="text-gray-200 mb-5 md:text-[18px]">
+      <p className="mb-5 text-gray-200 md:text-[18px]">
         ¡Listo para dar vida a tu proyecto! Si tenés alguna consulta o deseas
         discutir una idea, estoy disponible para ayudarte. Encontrá mis enlaces
         a redes sociales y mi correo electrónico abajo.
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         <div>
           <label
             className="mb-3 mt-5 block text-xs font-medium text-[#939ec7]"
@@ -53,7 +53,7 @@ const Form: FC = () => {
           </label>
           <div className="relative">
             <input
-              className="peer block h-12 w-full rounded-md border border-double border-slate-800 border-transparent bg-[linear-gradient(#000,#000),linear-gradient(to_right,#334454,#334454)]	bg-origin-border pr-3 py-2 pl-10 text-slate-200 transition-all duration-500 [background-clip:padding-box,_border-box] placeholder:text-slate-500 focus:bg-[linear-gradient(#000,#000),linear-gradient(to_right,#c7d2fe,#8678f9)] focus:outline-none"
+              className="peer block h-12 w-full rounded-md border border-double border-slate-800 border-transparent bg-[linear-gradient(#000,#000),linear-gradient(to_right,#334454,#334454)]	bg-origin-border py-2 pl-10 pr-3 text-slate-200 transition-all duration-500 [background-clip:padding-box,_border-box] placeholder:text-slate-500 focus:bg-[linear-gradient(#000,#000),linear-gradient(to_right,#c7d2fe,#8678f9)] focus:outline-none"
               id="name"
               type="text"
               placeholder="Nombre"
@@ -66,7 +66,7 @@ const Form: FC = () => {
             <UserSearch />
           </div>
           {errors.name && (
-            <span className="mt-1 text-red-300 text-xs">
+            <span className="mt-1 text-xs text-red-300">
               Por favor, introducí tu nombre
             </span>
           )}
@@ -81,7 +81,7 @@ const Form: FC = () => {
           </label>
           <div className="relative">
             <input
-              className="peer block h-12 w-full rounded-md border border-double border-slate-800 border-transparent bg-[linear-gradient(#000,#000),linear-gradient(to_right,#334454,#334454)]	bg-origin-border pr-3 py-2 pl-10 text-slate-200 transition-all duration-500 [background-clip:padding-box,_border-box] placeholder:text-slate-500 focus:bg-[linear-gradient(#000,#000),linear-gradient(to_right,#c7d2fe,#8678f9)] focus:outline-none"
+              className="peer block h-12 w-full rounded-md border border-double border-slate-800 border-transparent bg-[linear-gradient(#000,#000),linear-gradient(to_right,#334454,#334454)]	bg-origin-border py-2 pl-10 pr-3 text-slate-200 transition-all duration-500 [background-clip:padding-box,_border-box] placeholder:text-slate-500 focus:bg-[linear-gradient(#000,#000),linear-gradient(to_right,#c7d2fe,#8678f9)] focus:outline-none"
               id="email"
               type="email"
               placeholder="Correo electrónico"
@@ -97,7 +97,7 @@ const Form: FC = () => {
             <At />
           </div>
           {errors.email && (
-            <span className="mt-1 text-red-300 text-xs">
+            <span className="mt-1 text-xs text-red-300">
               {errors.email.message}
             </span>
           )}
@@ -112,7 +112,7 @@ const Form: FC = () => {
           </label>
           <div className="relative">
             <textarea
-              className="peer resize-none block h-36 w-full rounded-md border border-double border-slate-800 border-transparent bg-[linear-gradient(#000,#000),linear-gradient(to_right,#334454,#334454)]	bg-origin-border pr-3 py-2 pl-10 text-slate-200 transition-all duration-500 [background-clip:padding-box,_border-box] placeholder:text-slate-500 focus:bg-[linear-gradient(#000,#000),linear-gradient(to_right,#c7d2fe,#8678f9)] focus:outline-none"
+              className="peer block h-36 w-full resize-none rounded-md border border-double border-slate-800 border-transparent bg-[linear-gradient(#000,#000),linear-gradient(to_right,#334454,#334454)]	bg-origin-border py-2 pl-10 pr-3 text-slate-200 transition-all duration-500 [background-clip:padding-box,_border-box] placeholder:text-slate-500 focus:bg-[linear-gradient(#000,#000),linear-gradient(to_right,#c7d2fe,#8678f9)] focus:outline-none"
               id="msg"
               placeholder="Escribí tu mensaje..."
               autoComplete="off"
@@ -121,17 +121,17 @@ const Form: FC = () => {
             <Message />
           </div>
           {errors.message && (
-            <span className="mt-1 text-red-300 text-xs">
+            <span className="mt-1 text-xs text-red-300">
               Por favor, escribí un mensaje
             </span>
           )}
         </div>
       </div>
 
-      <div className="flex justify-end mt-6">
+      <div className="mt-6 flex justify-end">
         <button
           type="submit"
-          className="w-full lg:w-48 inline-flex h-12 items-center justify-center rounded-md bg-white px-6 font-medium text-gray-950 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50"
+          className="inline-flex h-12 w-full items-center justify-center rounded-md bg-white px-6 font-medium text-gray-950 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50 lg:w-48"
         >
           Enviar mensaje
         </button>

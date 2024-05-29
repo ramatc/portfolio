@@ -8,15 +8,15 @@ const About = () => {
         <User />
         &nbsp;Sobre Mí
       </h4>
-      <div className="flex justify-between flex-col lg:flex-row">
-        <div className="mb-5 flex xl:self-center lg:mb-0">
+      <div className="flex flex-col justify-between lg:flex-row">
+        <div className="mb-5 flex lg:mb-0 xl:self-center">
           <Image
             src="/phone.jpg"
             width={250}
             height={250}
             alt="Foto de Ramiro Tanquias Cornejo"
             priority={true}
-            className="block lg:hidden rounded-lg w-full"
+            className="block w-full rounded-lg lg:hidden"
           />
 
           <Image
@@ -25,10 +25,10 @@ const About = () => {
             height={300}
             alt="Foto de Ramiro Tanquias Cornejo"
             priority={true}
-            className="hidden lg:block rounded-lg object-cover aspect-square"
+            className="hidden aspect-square rounded-lg object-cover lg:block"
           />
         </div>
-        <div className="w-full text-pretty [&>p>span]:text-[#b2a8fd] md:text-[18px] lg:w-[62%] xl:w-[67%]">
+        <div className="w-full text-pretty md:text-[18px] lg:w-[62%] xl:w-[67%] [&>p>span]:text-[#b2a8fd]">
           <p className="mb-4">
             <span>Desarrollador Web</span> y{" "}
             <span>Técnico Universitario en Programación</span> de la Universidad

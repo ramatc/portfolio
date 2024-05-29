@@ -5,8 +5,8 @@ import Mail from "@/app/ui/icons/Mail";
 const Footer = () => {
   return (
     <footer className="pb-10">
-      <ul className="flex flex-wrap gap-[20px] justify-center [&>li]:cursor-pointer opacity-70">
-        <li className="hover:text-[#939ec7] transition-all duration-500 ease-in-out">
+      <ul className="flex flex-wrap justify-center gap-[20px] opacity-70 [&>li]:cursor-pointer">
+        <li className="transition-all duration-500 ease-in-out hover:text-[#939ec7]">
           <a
             href="https://www.linkedin.com/in/ramiro-tanquias/"
             target="_blank"
@@ -15,7 +15,7 @@ const Footer = () => {
             <LinkedIn />
           </a>
         </li>
-        <li className="hover:text-[#939ec7] transition-all duration-500 ease-in-out">
+        <li className="transition-all duration-500 ease-in-out hover:text-[#939ec7]">
           <a
             href="https://github.com/ramatc"
             target="_blank"
@@ -24,7 +24,7 @@ const Footer = () => {
             <GitHub />
           </a>
         </li>
-        <li className="hover:text-[#939ec7] transition-all duration-500 ease-in-out">
+        <li className="transition-all duration-500 ease-in-out hover:text-[#939ec7]">
           <a
             href="mailto:rtanquiascornejo@gmail.com"
             target="_blank"
