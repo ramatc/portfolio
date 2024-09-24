@@ -32,26 +32,6 @@ const PROJECTS = [
     color: "title-memo",
     technologies: ["react.js", "javascript", "firebase"],
   },
-  // {
-  //   title: "Memotest",
-  //   url: "https://memotest-inky.vercel.app/",
-  //   repo: "https://github.com/ramatc/memotest",
-  //   image: "memo.jpg",
-  //   description:
-  //     "Un juego de memoria implementado con React y TypeScript, aprovechando la potencia de Vite. Pon a prueba tu memoria y diviértete emparejando cartas.",
-  //   color: "title-memo",
-  //   technologies: ["react.js", "typescript", "vite"],
-  // },
-  // {
-  //   title: "VinylWRLD",
-  //   url: "https://vinyl-wrld.vercel.app/",
-  //   repo: "https://github.com/ramatc/vinyl-wrld-js",
-  //   image: "viny.jpg",
-  //   description:
-  //     "Un E-commerce que te permite explorar y comprar vinilos. Creado como proyecto final para el curso de JavaScript de CoderHouse, este E-commerce simula una experiencia de compra auténtica y fluida.",
-  //   color: "title-rick",
-  //   technologies: ["javascript", "css"],
-  // },
 ];
 
 const Projects = () => {
@@ -66,9 +46,6 @@ const Projects = () => {
           <CardProject project={project} key={i} />
         ))}
       </div>
-      {/* <button className="mt-6 inline-flex w-full h-12 items-center justify-center rounded-md bg-white px-6 font-medium text-gray-950 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50">
-        Más proyectos
-      </button> */}
     </section>
   );
 };

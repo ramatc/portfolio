@@ -2,6 +2,7 @@ import Image from "next/image";
 import Location from "@/app/ui/icons/Location";
 import LocationDesktop from "@/app/ui/icons/LocationDesktop";
 import Links from "@/app/components/Links";
+import Experience from "@/app/components/Experience";
 import Projects from "@/app/components/Projects";
 import Skills from "@/app/components/Skills";
 import About from "@/app/components/About";
@@ -49,6 +50,7 @@ export default function Home() {
         </div>
         <Chat />
       </section>
+      <Experience />
       <Projects />
       <Skills />
       <About />

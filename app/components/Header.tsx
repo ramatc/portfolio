@@ -5,6 +5,14 @@ const Header = () => {
         <ul className="flex flex-wrap justify-center gap-3 font-semibold md:gap-5">
           <li>
             <a
+              href="#experiencia"
+              className="transition-all duration-500 ease-in-out hover:text-[#b6bfda]"
+            >
+              Experiencia
+            </a>
+          </li>
+          <li>
+            <a
               href="#proyectos"
               className="transition-all duration-500 ease-in-out hover:text-[#b6bfda]"
             >

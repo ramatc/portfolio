@@ -35,6 +35,14 @@ const SKILLS = [
     img: "typescript",
   },
   {
+    title: "Nest.js",
+    img: "nestjs",
+  },
+  {
+    title: "Jest",
+    img: "jest",
+  },
+  {
     title: "Tailwindcss",
     img: "tailwindcss",
   },
