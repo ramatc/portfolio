@@ -1,82 +1,109 @@
-import Code from "@/app/ui/icons/Code";
-import CardSkill from "@/app/components/CardSkill";
+"use client";
 
-const SKILLS = [
+import Image from "next/image";
+import { motion, useReducedMotion } from "framer-motion";
+
+import Section from "@/app/components/Section";
+
+interface Skill {
+  name: string;
+  img: string;
+}
+
+interface Category {
+  label: string;
+  items: Skill[];
+}
+
+const CATEGORIES: Category[] = [
   {
-    title: "HTML5",
-    img: "html5",
+    label: "Frontend",
+    items: [
+      { name: "React", img: "react" },
+      { name: "Next.js", img: "nextjs" },
+      { name: "TypeScript", img: "typescript" },
+      { name: "JavaScript", img: "javascript" },
+      { name: "HTML", img: "html5" },
+      { name: "CSS", img: "css" },
+      { name: "Tailwind", img: "tailwindcss" },
+    ],
   },
   {
-    title: "CSS3",
-    img: "css",
+    label: "Backend",
+    items: [
+      { name: "Node.js", img: "nodejs" },
+      { name: "Express", img: "expressjs" },
+      { name: "Nest.js", img: "nestjs" },
+    ],
   },
   {
-    title: "JavaScript",
-    img: "javascript",
+    label: "Database",
+    items: [
+      { name: "MySQL", img: "mysql" },
+      { name: "Sequelize", img: "sequelize" },
+      { name: "Firebase", img: "firebase" },
+    ],
   },
   {
-    title: "React.js",
-    img: "react",
+    label: "Testing",
+    items: [{ name: "Jest", img: "jest" }],
   },
   {
-    title: "Next.js",
-    img: "nextjs",
-  },
-  {
-    title: "Node.js",
-    img: "nodejs",
-  },
-  {
-    title: "Express.js",
-    img: "expressjs",
-  },
-  {
-    title: "TypeScript",
-    img: "typescript",
-  },
-  {
-    title: "Nest.js",
-    img: "nestjs",
-  },
-  {
-    title: "Jest",
-    img: "jest",
-  },
-  {
-    title: "Tailwindcss",
-    img: "tailwindcss",
-  },
-  {
-    title: "Git",
-    img: "git",
-  },
-  {
-    title: "MySQL",
-    img: "mysql",
-  },
-  {
-    title: "Sequelize",
-    img: "sequelize",
-  },
-  {
-    title: "Firebase",
-    img: "firebase",
+    label: "Tooling",
+    items: [{ name: "Git", img: "git" }],
   },
 ];
 
 const Skills = () => {
+  const reduceMotion = useReducedMotion();
+
   return (
-    <section id="habilidades" data-section="habilidades">
-      <h4>
-        <Code />
-        &nbsp;Habilidades
-      </h4>
-      <div className="flex flex-wrap justify-between gap-3 md:grid md:grid-cols-3 md:gap-4 lg:grid-cols-4 xl:grid-cols-5 xl:gap-5">
-        {SKILLS.map((skill, i) => (
-          <CardSkill key={i} skill={skill} />
+    <Section id="habilidades" number="03" title="Habilidades">
+      <ul className="flex flex-col gap-y-6">
+        {CATEGORIES.map((category, i) => (
+          <motion.li
+            key={category.label}
+            initial={
+              reduceMotion ? { opacity: 1 } : { opacity: 0, y: 12 }
+            }
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-15% 0px" }}
+            transition={
+              reduceMotion
+                ? { duration: 0 }
+                : {
+                    duration: 0.45,
+                    delay: i * 0.06,
+                    ease: [0.22, 1, 0.36, 1],
+                  }
+            }
+            className="grid grid-cols-1 gap-4 md:grid-cols-[140px_1fr] md:items-center md:gap-8"
+          >
+            <span className="font-mono text-xs uppercase tracking-wider text-fg-subtle">
+              {category.label}
+            </span>
+            <ul className="flex flex-wrap gap-2">
+              {category.items.map((skill) => (
+                <li
+                  key={skill.name}
+                  className="group inline-flex items-center gap-2 rounded-md border border-border-subtle bg-bg-elevated/60 px-3 py-1.5 text-sm text-fg-muted transition-colors hover:border-border hover:bg-bg-elevated hover:text-fg"
+                >
+                  <Image
+                    src={`/skills/${skill.img}.svg`}
+                    alt=""
+                    width={16}
+                    height={16}
+                    className="h-4 w-4 shrink-0 opacity-90 transition-opacity group-hover:opacity-100"
+                    aria-hidden="true"
+                  />
+                  <span>{skill.name}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.li>
         ))}
-      </div>
-    </section>
+      </ul>
+    </Section>
   );
 };
 
