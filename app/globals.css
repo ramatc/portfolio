@@ -2,15 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --max-width: 1100px;
-  --border-radius: 12px;
+/* =========================================================================
+   Design tokens — referenciados desde tailwind.config.ts
+   ========================================================================= */
+@layer base {
+  :root {
+    /* Surface */
+    --bg-base: 240 10% 4%;
+    --bg-elevated: 240 6% 8%;
+    --bg-overlay: 240 6% 12%;
+
+    /* Border */
+    --border-subtle: 240 6% 14%;
+    --border-default: 240 6% 20%;
+    --border-strong: 240 6% 30%;
+
+    /* Text */
+    --text-primary: 0 0% 98%;
+    --text-secondary: 240 5% 70%;
+    --text-tertiary: 240 5% 50%;
+
+    /* Brand (morado, consolidado a 3 tonos) */
+    --brand: 245 92% 73%;
+    --brand-soft: 247 100% 84%;
+    --brand-muted: 232 100% 89%;
+
+    /* Semantic */
+    --success: 142 70% 50%;
+    --danger: 0 84% 65%;
+
+    /* Layout */
+    --container-max: 1200px;
+  }
 }
 
+/* =========================================================================
+   Base resets — mínimos, el resto se maneja vía utilidades Tailwind
+   ========================================================================= */
 * {
   box-sizing: border-box;
-  padding: 0;
-  margin: 0;
 }
 
 html,
@@ -32,87 +62,24 @@ a {
   text-decoration: none;
 }
 
-p {
-  max-width: 75ch;
-}
-
-h4 {
-  display: flex;
-  font-size: 1.5rem;
-  align-items: center;
-  font-weight: bold;
-  margin-bottom: 25px;
-}
-
-h5 {
-  font-size: 1.3rem;
-}
-
-section {
-  padding-bottom: 3.725rem;
-}
-
-.location {
-  display: flex;
-  padding-left: 2px;
-  opacity: .6;
-  font-size: 1rem;
-  line-height: 1;
-  margin-bottom: 15px;
-  align-items: center;
-}
-
-.title-rick {
-  color: #d3a6d4;
-}
-
-.title-pokemon {
-  color: #ffd368;
-}
-
-.title-memo {
-  color: #6b8e23;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.fade-in {
-  animation: fadeIn 0.5s ease-in-out;
-}
-
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
 }
 
+/* Accesibilidad: respetar prefers-reduced-motion en todas las animaciones */
 @media (prefers-reduced-motion: reduce) {
-	html {
-		scroll-behavior: auto;
-	}
-}
-
-@media (min-width: 768px) {
-  section {
-    padding-bottom: 7rem;
+  html {
+    scroll-behavior: auto;
   }
 
-  .location {
-    font-size: 1.5rem;
-  }
-
-  h4 {
-    font-size: 1.875rem;
-  }
-
-  h5 {
-    font-size: 1.5rem;
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

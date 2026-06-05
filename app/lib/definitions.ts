@@ -4,19 +4,17 @@ export type FormData = {
   message: string;
 };
 
-export interface Skill {
-  title: string;
-  img: string;
-}
-
 export interface Project {
   title: string;
   url: string;
   repo: string;
   image: string;
   description: string;
-  color: string;
-  technologies: string[];
+  highlights: string[];
+  role: string;
+  stack: string[];
+  year: string;
+  accent: string;
 }
 
 export interface Message {

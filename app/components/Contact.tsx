@@ -1,15 +1,16 @@
-import ContactIcon from "@/app/ui/icons/Contact";
 import Form from "@/app/components/Form";
+import Section from "@/app/components/Section";
 
 const Contact = () => {
   return (
-    <section id="contacto" data-section="contacto">
-      <h4>
-        <ContactIcon />
-        &nbsp;Contacto
-      </h4>
+    <Section
+      id="contacto"
+      number="05"
+      title="Contacto"
+      description="¿Tenés un proyecto en mente o una propuesta laboral? Escribime y conversemos."
+    >
       <Form />
-    </section>
+    </Section>
   );
 };
 
