@@ -1,60 +1,86 @@
 import Image from "next/image";
-import User from "@/app/ui/icons/User";
+
+import Section from "@/app/components/Section";
+
+interface Stat {
+  value: string;
+  label: string;
+}
+
+const STATS: Stat[] = [
+  { value: "4+", label: "Años desarrollando" },
+  { value: "150+", label: "Alumnos" },
+  { value: "UTN", label: "Técnico graduado" },
+  { value: "AR", label: "Buenos Aires" },
+];
 
 const About = () => {
   return (
-    <section id="sobre-mi" data-section="sobre-mi">
-      <h4>
-        <User />
-        &nbsp;Sobre Mí
-      </h4>
-      <div className="flex flex-col justify-between lg:flex-row">
-        <div className="mb-5 flex lg:mb-0 xl:self-center">
-          <Image
-            src="/phone.jpg"
-            width={250}
-            height={250}
-            alt="Foto de Ramiro Tanquias Cornejo"
-            priority={true}
-            className="block w-full rounded-lg lg:hidden"
-          />
+    <Section id="sobre-mi" number="04" title="Sobre mí">
+      <div className="mb-12 grid grid-cols-2 gap-6 md:mb-16 md:grid-cols-4 md:gap-8">
+        {STATS.map((stat) => (
+          <div key={stat.label}>
+            <div className="text-2xl font-semibold tracking-tight text-fg md:text-3xl">
+              {stat.value}
+            </div>
+            <div className="mt-1.5 font-mono text-[10px] uppercase tracking-wider text-fg-subtle md:text-[11px]">
+              {stat.label}
+            </div>
+          </div>
+        ))}
+      </div>
 
-          <Image
-            src="/desktop.jpg"
-            width={300}
-            height={300}
-            alt="Foto de Ramiro Tanquias Cornejo"
-            priority={true}
-            className="hidden aspect-square rounded-lg object-cover lg:block"
-          />
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-[220px_1fr] md:gap-12 lg:grid-cols-[260px_1fr] lg:gap-16">
+        <div className="md:pt-1">
+          <div className="relative aspect-square w-full max-w-[260px] overflow-hidden rounded-lg border border-border-subtle md:max-w-none">
+            <Image
+              src="/desktop.jpg"
+              alt="Foto de Ramiro Tanquias Cornejo"
+              fill
+              priority
+              sizes="(max-width: 768px) 260px, 260px"
+              className="hidden object-cover md:block"
+            />
+            <Image
+              src="/phone.jpg"
+              alt="Foto de Ramiro Tanquias Cornejo"
+              fill
+              priority
+              sizes="260px"
+              className="object-cover md:hidden"
+            />
+          </div>
         </div>
-        <div className="w-full text-pretty md:text-[18px] lg:w-[62%] xl:w-[67%] [&>p>span]:text-[#b2a8fd]">
-          <p className="mb-4">
-            <span>Desarrollador Web</span> y{" "}
-            <span>Técnico Universitario en Programación</span> de la Universidad
-            Tecnológica Nacional, con un gran interés en <span>aprender</span> y{" "}
-            <span>desarrollar</span> mis habilidades. He completado cursos y
-            proyectos personales relacionados con las tecnologías web modernas
-            que me han permitido adquirir <span>experiencia</span> en diferentes
-            lenguajes.
-          </p>
-          <p className="mb-4">
-            Además de mi formación académica, tengo experiencia como{" "}
-            <span>tutor de React Js</span>, donde he tenido la oportunidad de{" "}
-            <span>enseñar</span> y <span>guiar</span> a otros estudiantes en su
-            aprendizaje.
+
+        <div className="space-y-4 text-base leading-relaxed text-fg-muted md:text-lg">
+          <p className="text-fg">
+            Desarrollador Web y Técnico Universitario en Programación egresado
+            de la Universidad Tecnológica Nacional.
           </p>
           <p>
-            Estoy entusiasmado por la oportunidad de seguir{" "}
-            <span>creciendo</span> en el campo del desarrollo web y contribuir
-            al <span>éxito</span> de proyectos desafiantes. Si estás interesado
-            en colaborar o tenés alguna <span>oportunidad laboral</span> que
-            creas que pueda ser adecuada para mí, ¡me encantaría que nos
-            pongamos en contacto!
+            Vengo construyendo con tecnologías web modernas desde hace varios
+            años, combinando formación académica con proyectos personales que me
+            permitieron adquirir experiencia en distintos lenguajes y stacks.
+          </p>
+          <p>
+            Trabajé como{" "}
+            <span className="text-fg">tutor de React.js en Coderhouse</span>{" "}
+            entre 2022 y 2024, enseñando y guiando a estudiantes en su
+            aprendizaje. Hoy me desempeño como Full Stack en Consultoría Global.
+          </p>
+          <p>
+            Si te interesa colaborar o tenés alguna{" "}
+            <a
+              href="#contacto"
+              className="text-brand-soft underline decoration-brand/30 decoration-1 underline-offset-4 transition-colors hover:text-brand-muted hover:decoration-brand"
+            >
+              oportunidad laboral
+            </a>{" "}
+            que pueda encajar, me encantaría que conversemos.
           </p>
         </div>
       </div>
-    </section>
+    </Section>
   );
 };
 
