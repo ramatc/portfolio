@@ -47,7 +47,7 @@ const Section = ({
           {title}
         </h2>
         {description ? (
-          <p className="mt-3 text-pretty text-base text-fg-muted md:text-lg">
+          <p className="mt-3 max-w-[40ch] text-pretty text-base text-fg-muted md:text-lg">
             {description}
           </p>
         ) : null}
