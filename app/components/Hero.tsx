@@ -34,7 +34,7 @@ const Hero = ({ visitor }: HeroProps) => {
       >
         <motion.h1
           variants={fadeUp(delay(0))}
-          className="text-balance font-semibold tracking-tighter text-fg [font-size:clamp(3rem,13vw,10.5rem)] [line-height:0.9]"
+          className="text-balance font-semibold tracking-tighter text-fg text-[clamp(3rem,9vw,5rem)] md:text-[clamp(4rem,10vw,7rem)] lg:text-[clamp(5rem,13vw,10.5rem)] [line-height:0.9]"
         >
           Ramiro
           <br />

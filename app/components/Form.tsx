@@ -56,7 +56,7 @@ const Form: FC = () => {
               id="name"
               type="text"
               autoComplete="name"
-              placeholder="Cómo te llamás"
+              placeholder="¿Cómo te llamás?"
               aria-invalid={errors.name ? "true" : "false"}
               aria-describedby={errors.name ? "name-error" : undefined}
               className={inputClass}
