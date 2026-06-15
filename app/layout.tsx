@@ -103,6 +103,9 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
+  verification: {
+    google: "AxK-jQCisZZib6K4_BB_cqoCvMwkHPQiWgMYLB0mrqQ",
+  },
 };
 
 const personSchema = {
@@ -111,7 +114,7 @@ const personSchema = {
   name: "Ramiro Tanquias Cornejo",
   alternateName: "Ramiro Tanquias",
   url: SITE_URL,
-  image: `${SITE_URL}/desktop.jpg`,
+  image: `${SITE_URL}/ramiro.jpg`,
   jobTitle: "Desarrollador Web Fullstack",
   description: DESCRIPTION,
   knowsAbout: [

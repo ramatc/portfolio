@@ -34,49 +34,50 @@ const About = () => {
         <div className="md:pt-1">
           <div className="relative aspect-square w-full max-w-[260px] overflow-hidden rounded-lg border border-border-subtle md:max-w-none">
             <Image
-              src="/desktop.jpg"
+              src="/ramiro.jpg"
               alt="Foto de Ramiro Tanquias Cornejo"
               fill
               priority
               sizes="(max-width: 768px) 260px, 260px"
-              className="hidden object-cover md:block"
-            />
-            <Image
-              src="/phone.jpg"
-              alt="Foto de Ramiro Tanquias Cornejo"
-              fill
-              priority
-              sizes="260px"
-              className="object-cover md:hidden"
+              className="object-cover"
             />
           </div>
         </div>
 
         <div className="space-y-4 text-base leading-relaxed text-fg-muted md:text-lg">
           <p className="text-fg">
-            Desarrollador Web y Técnico Universitario en Programación egresado
-            de la Universidad Tecnológica Nacional.
+            Full Stack Developer con 4 años en el rubro y foco actual en backend
+            para entornos financieros.
           </p>
           <p>
-            Vengo construyendo con tecnologías web modernas desde hace varios
-            años, combinando formación académica con proyectos personales que me
-            permitieron adquirir experiencia en distintos lenguajes y stacks.
+            Hoy trabajo en{" "}
+            <span className="text-fg">Consultoría Global S.A.</span>{" "}
+            modernizando sistemas bancarios legacy hacia arquitecturas de
+            microservicios: APIs REST con NestJS, integración fintech-banca y
+            manejo transaccional sobre Oracle y MongoDB.
           </p>
           <p>
-            Trabajé como{" "}
+            Antes fui{" "}
             <span className="text-fg">tutor de React.js en Coderhouse</span>{" "}
-            entre 2022 y 2024, enseñando y guiando a estudiantes en su
-            aprendizaje. Hoy me desempeño como Full Stack en Consultoría Global.
+            durante casi 2 años. Esa etapa me dio la disciplina de explicar el
+            por qué detrás de cada decisión técnica — algo que aplico
+            especialmente en contextos donde el código tiene que durar años y
+            pasar por muchas manos, como en banca.
           </p>
           <p>
-            Si te interesa colaborar o tenés alguna{" "}
+            Estoy abierto a oportunidades como Full Stack Developer,
+            especialmente en{" "}
+            <span className="text-fg">
+              fintech, banking o sistemas corporativos
+            </span>
+            . Si tenés algo en mente,{" "}
             <a
               href="#contacto"
               className="text-brand-soft underline decoration-brand/30 decoration-1 underline-offset-4 transition-colors hover:text-brand-muted hover:decoration-brand"
             >
-              oportunidad laboral
-            </a>{" "}
-            que pueda encajar, me encantaría que conversemos.
+              escribime
+            </a>
+            .
           </p>
         </div>
       </div>

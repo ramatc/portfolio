@@ -13,6 +13,7 @@ interface Role {
   duration?: string;
   current?: boolean;
   description: string;
+  highlights?: string[];
   stack: string[];
 }
 
@@ -23,13 +24,20 @@ const EXPERIENCE: Role[] = [
     period: "Jul 2024 — Presente",
     current: true,
     description:
-      "Desarrollo de interfaces web dinámicas con React, TypeScript, React Query y Styled Components en el frontend. Nest.js en el backend. Implementación de tests automatizados con Jest y React Testing Library. Optimización de aplicaciones fullstack.",
+      "Desarrollo backend en proyectos del sector bancario y fintech, en el cruce entre infraestructura financiera tradicional y plataformas digitales modernas.",
+    highlights: [
+      "Modernización de sistemas core bancarios legacy hacia arquitectura de microservicios con NestJS",
+      "Integración fintech-banca: APIs internas, servicios de mensajería corporativa y manejo transaccional sobre Oracle y MongoDB",
+      "Frontend en React, TypeScript y React Query cuando el módulo lo requiere",
+      "Tests automatizados con Jest y React Testing Library, code reviews y decisiones de diseño en equipo",
+    ],
     stack: [
-      "react",
-      "typescript",
-      "react-query",
-      "styled-components",
       "nest.js",
+      "node.js",
+      "typescript",
+      "oracle",
+      "mongodb",
+      "react",
       "jest",
     ],
   },
@@ -40,7 +48,12 @@ const EXPERIENCE: Role[] = [
     period: "Jun 2022 — Ene 2024",
     duration: "1 año 8 meses",
     description:
-      "Enseñanza de React.js. Seguimiento personalizado de alumnos, asesoramiento y corrección de proyectos.",
+      "Tutor del curso de React.js en una de las plataformas de educación tech más grandes de Latinoamérica.",
+    highlights: [
+      "Acompañamiento personalizado a alumnos: dudas técnicas, debugging en vivo y recomendaciones de arquitectura para proyectos finales",
+      "Corrección y feedback escrito sobre proyectos entregados, con foco en el por qué de la solución y no solo en si funcionaba",
+      "Resolución de dudas de cohorte en sesiones grupales y foros asincrónicos a lo largo de múltiples cohortes",
+    ],
     stack: ["react", "javascript"],
   },
 ];
@@ -125,8 +138,25 @@ const Experience = () => {
               {role.description}
             </p>
 
+            {role.highlights && role.highlights.length > 0 ? (
+              <ul className="mt-4 space-y-1.5">
+                {role.highlights.map((highlight) => (
+                  <li
+                    key={highlight}
+                    className="flex items-start gap-2 text-xs leading-relaxed text-fg-muted md:text-sm"
+                  >
+                    <span
+                      aria-hidden="true"
+                      className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-fg-subtle md:mt-2"
+                    />
+                    <span>{highlight}</span>
+                  </li>
+                ))}
+              </ul>
+            ) : null}
+
             {role.stack.length > 0 ? (
-              <ul className="mt-4 flex flex-wrap gap-1.5">
+              <ul className="mt-5 flex flex-wrap gap-1.5">
                 {role.stack.map((tech) => (
                   <li
                     key={tech}
