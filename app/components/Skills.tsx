@@ -20,6 +20,7 @@ const CATEGORIES: Category[] = [
     label: "Frontend",
     items: [
       { name: "React", img: "react" },
+      { name: "React Native", img: "reactnative" },
       { name: "Next.js", img: "nextjs" },
       { name: "TypeScript", img: "typescript" },
       { name: "JavaScript", img: "javascript" },
