@@ -38,21 +38,21 @@ const PROJECTS: Project[] = [
     accent: "#ffd368",
   },
   {
-    title: "Grails",
-    url: "https://grails-react-js.vercel.app/",
-    repo: "https://github.com/ramatc/grails-react-js",
-    image: "grails.jpg",
+    title: "Vame",
+    url: "https://www.vamefutbol.com/",
+    repo: "https://github.com/ramatc/vame-futbol",
+    image: "vame.jpg",
     description:
-      "E-commerce ficticio desarrollado como proyecto final. Tienda online con carrito de compras, componentes de React y Firebase como backend en la nube.",
+      "E-commerce de camisetas de fútbol retro y actuales. Catálogo con stock en vivo, checkout guiado por WhatsApp y carrito que persiste en el dispositivo.",
     highlights: [
-      "Carrito persistente con Firestore",
-      "Catálogo dinámico organizado por categoría",
-      "Checkout con orden confirmada en backend",
+      "Catálogo filtrable por liga, selección y talle",
+      "Carrito persistente en localStorage",
+      "Pedido por WhatsApp cuando el talle está agotado",
     ],
     role: "Frontend",
-    stack: ["react", "javascript", "firebase"],
-    year: "2022",
-    accent: "#b5c98a",
+    stack: ["react", "typescript", "supabase"],
+    year: "2026",
+    accent: "#e0a83e",
   },
 ];
 
