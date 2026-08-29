@@ -38,9 +38,9 @@ const PROJECTS: Project[] = [
     accent: "#ffd368",
   },
   {
-    title: "Vame",
+    title: "Vame Futbol",
     url: "https://www.vamefutbol.com/",
-    repo: "https://github.com/ramatc/vame-futbol",
+    repo: "",
     image: "vame.jpg",
     description:
       "E-commerce de camisetas de fútbol retro y actuales. Catálogo con stock en vivo, checkout guiado por WhatsApp y carrito que persiste en el dispositivo.",

@@ -75,12 +75,14 @@ const CardProject = ({ project, index }: CardProjectProps) => {
             >
               <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
             </IconLink>
-            <IconLink
-              href={project.repo}
-              label={`Ver código de ${project.title} en GitHub`}
-            >
-              <GitHub className="h-3.5 w-3.5" />
-            </IconLink>
+            {project.repo ? (
+              <IconLink
+                href={project.repo}
+                label={`Ver código de ${project.title} en GitHub`}
+              >
+                <GitHub className="h-3.5 w-3.5" />
+              </IconLink>
+            ) : null}
           </div>
         </div>
 
