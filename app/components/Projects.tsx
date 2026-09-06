@@ -4,21 +4,21 @@ import { Project } from "@/app/lib/definitions";
 
 const PROJECTS: Project[] = [
   {
-    title: "Rick and Morty Wiki",
-    url: "https://rick-and-morty-wiki-kappa.vercel.app/",
-    repo: "https://github.com/ramatc/rick-and-morty-wiki",
-    image: "ricky.jpg",
+    title: "Vito",
+    url: "https://vitohabit.vercel.app",
+    repo: "https://github.com/ramatc/vito",
+    image: "vito.jpg",
     description:
-      "Aplicación desarrollada con React y CSS utilizando la API de Rick and Morty. Permite explorar y descubrir el universo completo: personajes, episodios y ubicaciones.",
+      "Habit tracker gamificado desarrollado con React y TypeScript. Tu compañero Vito crece a medida que construís hábitos, con animaciones y persistencia de progreso.",
     highlights: [
-      "Listado paginado con filtros por categoría",
-      "Búsqueda en tiempo real sobre 800+ personajes",
-      "Navegación entre personajes, episodios y ubicaciones",
+      "Sistema de hábitos con seguimiento diario y rachas",
+      "Compañero virtual que evoluciona según tu progreso",
+      "Animaciones fluidas con Framer Motion",
     ],
     role: "Frontend",
-    stack: ["react", "css", "rest-api"],
-    year: "2023",
-    accent: "#d3a6d4",
+    stack: ["react", "typescript", "tailwind"],
+    year: "2026",
+    accent: "#7fc8a9",
   },
   {
     title: "Guess Pokémon",
