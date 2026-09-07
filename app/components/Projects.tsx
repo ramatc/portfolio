@@ -21,23 +21,6 @@ const PROJECTS: Project[] = [
     accent: "#7fc8a9",
   },
   {
-    title: "Guess Pokémon",
-    url: "https://guess-pokemon-iota.vercel.app/",
-    repo: "https://github.com/ramatc/guess-pokemon",
-    image: "poke.jpg",
-    description:
-      "Juego construido con React y TypeScript que desafía a los usuarios a adivinar el nombre de diferentes Pokémon a partir de su silueta.",
-    highlights: [
-      "1000+ siluetas generadas con CSS filter",
-      "Validación de respuesta con tolerancia a typos",
-      "Tipado estricto sobre la respuesta de la PokéAPI",
-    ],
-    role: "Frontend",
-    stack: ["react", "typescript"],
-    year: "2023",
-    accent: "#ffd368",
-  },
-  {
     title: "Vame Futbol",
     url: "https://www.vamefutbol.com/",
     repo: "",
@@ -53,6 +36,23 @@ const PROJECTS: Project[] = [
     stack: ["react", "typescript", "supabase"],
     year: "2026",
     accent: "#e0a83e",
+  },
+  {
+    title: "Guess Pokémon",
+    url: "https://guess-pokemon-iota.vercel.app/",
+    repo: "https://github.com/ramatc/guess-pokemon",
+    image: "poke.jpg",
+    description:
+      "Juego construido con React y TypeScript que desafía a los usuarios a adivinar el nombre de diferentes Pokémon a partir de su silueta.",
+    highlights: [
+      "1000+ siluetas generadas con CSS filter",
+      "Validación de respuesta con tolerancia a typos",
+      "Tipado estricto sobre la respuesta de la PokéAPI",
+    ],
+    role: "Frontend",
+    stack: ["react", "typescript"],
+    year: "2023",
+    accent: "#ffd368",
   },
 ];
 
