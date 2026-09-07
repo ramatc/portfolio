@@ -1,31 +1,47 @@
-# Hi there! <img src="https://user-images.githubusercontent.com/1303154/88677602-1635ba80-d120-11ea-84d8-d263ba5fc3c0.gif" width='28' alt="hi"> I'm [Rama Tanquias](https://www.linkedin.com/in/ramiro-tanquias/).
+# Hi! I'm [Rama Tanquias](https://ramatc.vercel.app/)
 
-[![Linkedin Badge](https://img.shields.io/badge/-Ramiro-0e76a8?style=flat&labelColor=0e76a8&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ramiro-tanquias/)
-[![Github Badge](https://img.shields.io/badge/-ramatc-rgb(36,%2041,%2046)?style=flat&labelColor=rgb(36,%2041,%2046)&logo=github&logoColor=white)](https://github.com/ramatc)
-[![Mail Badge](https://img.shields.io/badge/-rtanquiascornejo-c0392b?style=flat&labelColor=c0392b&logo=gmail&logoColor=white)](mailto:rtanquiascornejo@gmail.com)
-<img align='right' src='https://user-images.githubusercontent.com/5713670/87202985-820dcb80-c2b6-11ea-9f56-7ec461c497c3.gif' width='190'>
+### About Me
 
-### Web Developer Full Stack💻.
+Full Stack Developer with 4 years of experience, currently focused on backend for financial systems. I build microservices with **NestJS** for banking modernization projects and fintech-banking integrations. Previously spent nearly 2 years as a React tutor at Coderhouse.
 
-💪🏼I am a passionate programmer from Argentina.
-- 🕵 I’m currently learning **TypeScript** and **Next.js**
-- 📫 How to reach me: rtanquiascornejo@gmail.com <br>
+Based in Buenos Aires, Argentina. Open to remote opportunities.
 
-**Languages, Frameworks and Tools:**  &nbsp;
+### Tech Stack
 
-![HTML](https://img.shields.io/badge/-HTML-E34F26?style=for-the-badge&logo=html5&logoColor=fafafa)
-![CSS](https://img.shields.io/badge/-CSS-1572B6?style=for-the-badge&logo=css3&logoColor=fafafa)
-![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=333)
-![React](https://img.shields.io/badge/-React-61DAFB?style=for-the-badge&logo=react&logoColor=333)
-![Next.js](https://img.shields.io/badge/-next.js-000?style=for-the-badge&logo=next.js&logoColor=fff)
-![TypeScript](https://img.shields.io/badge/-TypeScript-3178c6?style=for-the-badge&logo=typescript&logoColor=fafafa)
+**Backend**
+
+![NestJS](https://img.shields.io/badge/-NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=FFFFFF)
 ![Node.js](https://img.shields.io/badge/-Node.js-339933?style=for-the-badge&logo=node.js&logoColor=FAFAFA)
-![Express](https://img.shields.io/badge/-Express-FAFAFA?style=for-the-badge&logo=express&logoColor=333)
-![MySQL](https://img.shields.io/badge/-MYSQL-00618b?style=for-the-badge&logo=mysql&logoColor=fafafa)
-![Firebase](https://img.shields.io/badge/-Firebase-0396de?style=for-the-badge&logo=Firebase&logoColor=f5820c)
+![Express](https://img.shields.io/badge/-Express-333333?style=for-the-badge&logo=express&logoColor=FFFFFF)
+![TypeScript](https://img.shields.io/badge/-TypeScript-3178c6?style=for-the-badge&logo=typescript&logoColor=fafafa)
 
-**:octocat: Github Statistics**
-<p>
-    <img align="center" src="https://github-readme-stats.vercel.app/api?username=ramatc&hide=contribs,prs&theme=tokyonight&show_icons=true"/>
-    <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ramatc&layout=compact&theme=tokyonight"/>
-</p>
+**Frontend**
+
+![React](https://img.shields.io/badge/-React-61DAFB?style=for-the-badge&logo=react&logoColor=333)
+![Next.js](https://img.shields.io/badge/-Next.js-000000?style=for-the-badge&logo=next.js&logoColor=fff)
+![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=333)
+![React Query](https://img.shields.io/badge/-React%20Query-FF4154?style=for-the-badge&logo=reactquery&logoColor=fff)
+
+**Databases**
+
+![MongoDB](https://img.shields.io/badge/-MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=fff)
+![Oracle](https://img.shields.io/badge/-Oracle-F80000?style=for-the-badge&logo=oracle&logoColor=fff)
+![MySQL](https://img.shields.io/badge/-MySQL-00618b?style=for-the-badge&logo=mysql&logoColor=fafafa)
+
+
+**Tools**
+
+![Git](https://img.shields.io/badge/-Git-F05032?style=for-the-badge&logo=git&logoColor=fff)
+![GitHub](https://img.shields.io/badge/-GitHub-24292e?style=for-the-badge&logo=github&logoColor=fff)
+
+### Featured Projects
+
+- **[Portfolio](https://ramatc.vercel.app/)** — Personal portfolio built with React and Next.js, deployed on Vercel.
+- **[Coda](https://github.com/ramatc/coda/)** — Music discovery social network. TypeScript monorepo (Next.js + NestJS + Prisma).
+- **[Vito](https://vitohabit.vercel.app/)** — A gamified habit tracker. You build habits, your buddy Vito grows with you.
+
+### Get in Touch
+
+- 💼 Open to backend / full-stack opportunities in **fintech, banking, or corporate systems**
+- 📧 [rtanquiascornejo@gmail.com](mailto:rtanquiascornejo@gmail.com)
+- 🔗 [LinkedIn](https://www.linkedin.com/in/ramiro-tanquias/) · [Portfolio](https://ramatc.vercel.app/)
