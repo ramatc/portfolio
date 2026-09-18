@@ -33,8 +33,8 @@ const CATEGORIES: Category[] = [
     label: "Backend",
     items: [
       { name: "Node.js", img: "nodejs" },
-      { name: "Express", img: "expressjs" },
       { name: "Nest.js", img: "nestjs" },
+      { name: "Express", img: "expressjs" },
     ],
   },
   {
@@ -43,7 +43,6 @@ const CATEGORIES: Category[] = [
       { name: "Oracle", img: "oracle" },
       { name: "MongoDB", img: "mongodb" },
       { name: "MySQL", img: "mysql" },
-      { name: "Sequelize", img: "sequelize" },
       { name: "Firebase", img: "firebase" },
     ],
   },
