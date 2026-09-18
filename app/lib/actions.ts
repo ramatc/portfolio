@@ -2,7 +2,7 @@
 
 export async function sendQuestion(question: string) {
   const data = await fetch(
-    `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${process.env.GEMINI_API_KEY}`,
+    `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
     {
       method: "POST",
       headers: {
@@ -24,6 +24,9 @@ export async function sendQuestion(question: string) {
           topP: 1,
           maxOutputTokens: 2048,
           stopSequences: [],
+          thinkingConfig: {
+            thinkingBudget: 0,
+          },
         },
         safetySettings: [
           {
