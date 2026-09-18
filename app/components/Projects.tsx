@@ -38,21 +38,21 @@ const PROJECTS: Project[] = [
     accent: "#e0a83e",
   },
   {
-    title: "Guess Pokémon",
-    url: "https://guess-pokemon-iota.vercel.app/",
-    repo: "https://github.com/ramatc/guess-pokemon",
-    image: "poke.jpg",
+    title: "Coda",
+    url: "https://github.com/ramatc/coda/",
+    repo: "https://github.com/ramatc/coda/",
+    image: "coda.svg",
     description:
-      "Juego construido con React y TypeScript que desafía a los usuarios a adivinar el nombre de diferentes Pokémon a partir de su silueta.",
+      "Diario musical social hecho con Next.js y NestJS. Registrás lo que escuchás, calificás y reseñás álbumes, armás listas rankeables y recibís recomendaciones explicables basadas en tu gusto.",
     highlights: [
-      "1000+ siluetas generadas con CSS filter",
-      "Validación de respuesta con tolerancia a typos",
-      "Tipado estricto sobre la respuesta de la PokéAPI",
+      "Catálogo unificado (MusicBrainz + Spotify) con búsqueda tolerante a typos vía Meilisearch",
+      "Feed social: seguís gente, ves su actividad y reaccionás a sus reseñas",
+      "Recomendaciones explicables (content-based + colaborativo) sobre un monolito modular con workers para imports de catálogo",
     ],
-    role: "Frontend",
-    stack: ["react", "typescript"],
-    year: "2023",
-    accent: "#ffd368",
+    role: "Fullstack",
+    stack: ["nextjs", "typescript", "nestjs", "prisma", "postgresql"],
+    year: "2026",
+    accent: "#8b7cf6",
   },
 ];
 
