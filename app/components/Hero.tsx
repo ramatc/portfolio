@@ -45,7 +45,7 @@ const Hero = ({ visitor }: HeroProps) => {
           variants={fadeUp(delay(1))}
           className="font-mono text-sm uppercase tracking-[0.22em] text-fg-muted md:text-base"
         >
-          Desarrollador Web Fullstack
+          Software Developer
         </motion.span>
 
         <motion.p

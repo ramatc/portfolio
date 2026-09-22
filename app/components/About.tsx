@@ -46,7 +46,7 @@ const About = () => {
 
         <div className="space-y-4 text-base leading-relaxed text-fg-muted md:text-lg">
           <p className="text-fg">
-            Full Stack Developer con 4 años en el rubro y foco actual en backend
+            Software Developer con 4 años en el rubro y foco actual en backend
             para entornos financieros.
           </p>
           <p>
@@ -65,7 +65,7 @@ const About = () => {
             pasar por muchas manos, como en banca.
           </p>
           <p>
-            Estoy abierto a oportunidades como Full Stack Developer,
+            Estoy abierto a oportunidades como Software Developer,
             especialmente en{" "}
             <span className="text-fg">
               fintech, banking o sistemas corporativos

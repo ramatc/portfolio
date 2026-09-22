@@ -67,7 +67,7 @@ const Footer = () => {
               </span>
             </a>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-fg-muted">
-              Desarrollador Fullstack. Construyo interfaces rápidas y prolijas.
+              Software Developer. Construyo interfaces rápidas y prolijas.
             </p>
           </div>
 
