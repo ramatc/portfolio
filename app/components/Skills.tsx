@@ -54,6 +54,7 @@ const CATEGORIES: Category[] = [
     label: "Tooling",
     items: [
       { name: "Git", img: "git" },
+      { name: "Docker", img: "docker" },
       { name: "Claude Code", img: "claude" },
     ],
   },
