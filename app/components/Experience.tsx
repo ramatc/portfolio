@@ -5,6 +5,14 @@ import { motion, useReducedMotion } from "framer-motion";
 
 import Section from "@/app/components/Section";
 
+interface LinkedHighlight {
+  title: string;
+  url: string;
+  text: string;
+}
+
+type Highlight = string | LinkedHighlight;
+
 interface Role {
   role: string;
   company: string;
@@ -13,7 +21,7 @@ interface Role {
   duration?: string;
   current?: boolean;
   description: string;
-  highlights?: string[];
+  highlights?: Highlight[];
   stack: string[];
 }
 
@@ -49,9 +57,22 @@ const EXPERIENCE: Role[] = [
     description:
       "Desarrollo web para clientes en paralelo a mi trabajo full-time: tiendas online, rediseños y desarrollos a medida, eligiendo la plataforma según lo que necesita cada negocio.",
     highlights: [
-      "Vame Fútbol: e-commerce de camisetas desarrollado desde cero con React y TypeScript; más de 5.800 visitantes y 19.000 páginas vistas en su primer mes, con 97% de tráfico mobile",
-      "Unicanm: sitio a medida en React y TypeScript para una ONG de cannabis medicinal",
-      "Inaria: rediseño en curso en Webflow a partir de diseños en Figma, con un flujo de trabajo asistido por IA mediante Claude Code y el MCP de Webflow",
+      {
+        title: "Vame Fútbol",
+        url: "https://www.vamefutbol.com/",
+        text: "e-commerce de camisetas desarrollado desde cero con React y TypeScript; más de 5.800 visitantes y 19.000 páginas vistas en su primer mes, con 97% de tráfico mobile",
+      },
+      {
+        title: "Unicanm",
+        url: "https://unicanm.org/",
+        text: "sitio a medida en React y TypeScript para una ONG de cannabis medicinal",
+      },
+      // TODO: restore once the Inaria redesign is published.
+      // {
+      //   title: "Inaria",
+      //   url: "https://inaria.ar/",
+      //   text: "rediseño en curso en Webflow a partir de diseños en Figma, con un flujo de trabajo asistido por IA mediante Claude Code y el MCP de Webflow",
+      // },
     ],
     stack: ["react", "typescript", "wordpress", "webflow", "figma"],
   },
@@ -156,14 +177,36 @@ const Experience = () => {
               <ul className="mt-4 space-y-1.5">
                 {role.highlights.map((highlight) => (
                   <li
-                    key={highlight}
+                    key={
+                      typeof highlight === "string"
+                        ? highlight
+                        : highlight.title
+                    }
                     className="flex items-start gap-2 text-xs leading-relaxed text-fg-muted md:text-sm"
                   >
                     <span
                       aria-hidden="true"
                       className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-fg-subtle md:mt-2"
                     />
-                    <span>{highlight}</span>
+                    {typeof highlight === "string" ? (
+                      <span>{highlight}</span>
+                    ) : (
+                      <span>
+                        <a
+                          href={highlight.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group/link inline-flex items-center gap-0.5 font-medium text-fg underline decoration-border underline-offset-2 transition-colors hover:text-brand-soft hover:decoration-brand-soft"
+                        >
+                          {highlight.title}
+                          <ArrowUpRight
+                            className="h-3 w-3 opacity-60 transition-opacity group-hover/link:opacity-100"
+                            aria-hidden="true"
+                          />
+                        </a>
+                        : {highlight.text}
+                      </span>
+                    )}
                   </li>
                 ))}
               </ul>
