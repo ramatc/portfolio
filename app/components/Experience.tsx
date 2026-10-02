@@ -52,7 +52,7 @@ const EXPERIENCE: Role[] = [
   {
     role: "Freelance Developer",
     company: "Independiente",
-    period: "2023 — Presente",
+    period: "Ene 2023 — Presente",
     current: true,
     description:
       "Desarrollo web para clientes en paralelo a mi trabajo full-time: tiendas online, rediseños y desarrollos a medida, eligiendo la plataforma según lo que necesita cada negocio.",
@@ -89,7 +89,7 @@ const EXPERIENCE: Role[] = [
       "Corrección y feedback escrito sobre proyectos entregados, con foco en el por qué de la solución y no solo en si funcionaba",
       "Resolución de dudas de cohorte en sesiones grupales y foros asincrónicos a lo largo de múltiples cohortes",
     ],
-    stack: ["react", "javascript"],
+    stack: ["react", "javascript", "firebase", "mentoría"],
   },
 ];
 
