@@ -42,6 +42,20 @@ const EXPERIENCE: Role[] = [
     ],
   },
   {
+    role: "Freelance Developer",
+    company: "Independiente",
+    period: "2023 — Presente",
+    current: true,
+    description:
+      "Desarrollo web para clientes en paralelo a mi trabajo full-time: tiendas online, rediseños y desarrollos a medida, eligiendo la plataforma según lo que necesita cada negocio.",
+    highlights: [
+      "Vame Fútbol: e-commerce de camisetas desarrollado desde cero con React y TypeScript; más de 5.800 visitantes y 19.000 páginas vistas en su primer mes, con 97% de tráfico mobile",
+      "Effie Store: rediseño de la tienda de una marca de ropa argentina sobre WordPress a partir de diseños en Figma, sumando nuevas funcionalidades",
+      "Inaria: rediseño en curso en Webflow a partir de diseños en Figma, con un flujo de trabajo asistido por IA mediante Claude Code y el MCP de Webflow",
+    ],
+    stack: ["react", "typescript", "wordpress", "webflow", "figma"],
+  },
+  {
     role: "Tutor React.js",
     company: "Coderhouse",
     companyUrl: "https://www.coderhouse.com",
