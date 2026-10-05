@@ -11,7 +11,7 @@ const STATS: Stat[] = [
   { value: "4+", label: "Años desarrollando" },
   { value: "150+", label: "Alumnos" },
   { value: "UTN", label: "Técnico graduado" },
-  { value: "UTC−3", label: "Remoto o híbrido" },
+  { value: "AR", label: "Buenos Aires" },
 ];
 
 const About = () => {
