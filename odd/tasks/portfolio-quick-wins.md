@@ -16,7 +16,7 @@ Out of scope: case-study pages, NDA banking case, chat suggestions, visual rhyth
 
 ## Tasks
 - [x] T1 Unify positioning copy (hero role + tagline, about, footer, metadata, manifest). Route: inline.
-- [ ] T2 Hero metadata strip + availability badge. Route: inline.
+- [x] T2 Hero metadata strip + availability badge. Route: inline.
 - [ ] T3 Project model: kind (client/personal), metrics, "what it proves"; render in card; reorder. Route: inline.
 - [ ] T4 Fix incoherences: Coda demo link, skills (PostgreSQL, Prisma, Supabase). Route: inline.
 

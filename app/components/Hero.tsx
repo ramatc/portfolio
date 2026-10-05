@@ -8,6 +8,12 @@ interface HeroProps {
   visitor?: string;
 }
 
+const FACTS = [
+  { label: "Ahora", value: "Consultoría Global · Banca y fintech" },
+  { label: "Stack", value: "React · Next.js · NestJS" },
+  { label: "Base", value: "Buenos Aires · Remoto o híbrido" },
+];
+
 const fadeUp = (delay = 0) => ({
   hidden: { opacity: 0, y: 12 },
   show: {
@@ -32,6 +38,17 @@ const Hero = ({ visitor }: HeroProps) => {
         animate="show"
         className="flex w-full flex-col items-center gap-5 md:gap-6"
       >
+        <motion.span
+          variants={fadeUp(delay(0))}
+          className="inline-flex items-center gap-2 rounded-full border border-border-subtle bg-bg-elevated/60 px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-fg-muted"
+        >
+          <span className="relative flex h-1.5 w-1.5" aria-hidden="true">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-success opacity-60 motion-reduce:animate-none" />
+            <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-success" />
+          </span>
+          Abierto a oportunidades
+        </motion.span>
+
         <motion.h1
           variants={fadeUp(delay(0))}
           className="text-balance font-semibold tracking-tighter text-fg text-[clamp(3rem,9vw,5rem)] md:text-[clamp(4rem,10vw,7rem)] lg:text-[clamp(5rem,13vw,10.5rem)] [line-height:0.9]"
@@ -88,6 +105,20 @@ const Hero = ({ visitor }: HeroProps) => {
             Descargar CV
           </a>
         </motion.div>
+
+        <motion.dl
+          variants={fadeUp(delay(4))}
+          className="mt-8 grid w-full max-w-3xl grid-cols-1 gap-4 border-t border-border-subtle pt-6 text-center sm:grid-cols-3 sm:gap-6"
+        >
+          {FACTS.map((fact) => (
+            <div key={fact.label}>
+              <dt className="font-mono text-[10px] uppercase tracking-wider text-fg-subtle">
+                {fact.label}
+              </dt>
+              <dd className="mt-1 text-sm text-fg">{fact.value}</dd>
+            </div>
+          ))}
+        </motion.dl>
       </motion.div>
 
       <motion.a
