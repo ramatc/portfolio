@@ -4,13 +4,23 @@ export type FormData = {
   message: string;
 };
 
+export interface ProjectMetric {
+  value: string;
+  label: string;
+}
+
 export interface Project {
   title: string;
+  /** Live demo URL. Empty when the project has no public deployment. */
   url: string;
   repo: string;
   image: string;
+  kind: "client" | "personal";
   description: string;
   highlights: string[];
+  metrics?: ProjectMetric[];
+  /** One-line takeaway about the skills or judgment the project shows. */
+  proves: string;
   role: string;
   stack: string[];
   year: string;
