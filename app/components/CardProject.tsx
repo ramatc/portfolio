@@ -73,9 +73,21 @@ const CardProject = ({ project, index }: CardProjectProps) => {
       <div className="flex flex-col p-5 md:p-7">
         <div className="flex items-start justify-between gap-3">
           <div>
-            <span className="font-mono text-[10px] uppercase tracking-wider text-fg-subtle">
-              {KIND_LABEL[project.kind]}
-            </span>
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="font-mono text-[10px] uppercase tracking-wider text-fg-subtle">
+                {KIND_LABEL[project.kind]}
+              </span>
+              {project.inProgress ? (
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-border-subtle bg-bg-overlay/60 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-fg-muted">
+                  <span
+                    aria-hidden="true"
+                    className="h-1.5 w-1.5 rounded-full"
+                    style={{ backgroundColor: project.accent }}
+                  />
+                  En desarrollo
+                </span>
+              ) : null}
+            </div>
             <h3
               className="mt-1 text-lg font-semibold tracking-tight md:text-xl"
               style={{ color: project.accent }}

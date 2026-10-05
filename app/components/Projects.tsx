@@ -34,6 +34,7 @@ const PROJECTS: Project[] = [
     repo: "https://github.com/ramatc/coda/",
     image: "coda.png",
     kind: "personal",
+    inProgress: true,
     description:
       "Diario musical social hecho con Next.js y NestJS. Registrás lo que escuchás, calificás y reseñás álbumes, armás listas rankeables y recibís recomendaciones explicables basadas en tu gusto.",
     highlights: [

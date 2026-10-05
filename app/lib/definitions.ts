@@ -16,6 +16,7 @@ export interface Project {
   repo: string;
   image: string;
   kind: "client" | "personal";
+  inProgress?: boolean;
   description: string;
   highlights: string[];
   metrics?: ProjectMetric[];
