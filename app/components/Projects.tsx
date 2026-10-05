@@ -8,13 +8,14 @@ const PROJECTS: Project[] = [
     url: "https://www.vamefutbol.com/",
     repo: "",
     image: "vame.jpg",
+    imagePosition: "30% top",
     kind: "client",
     description:
-      "E-commerce de camisetas de fútbol retro y actuales. Catálogo con stock en vivo, checkout guiado por WhatsApp y carrito que persiste en el dispositivo.",
+      "E-commerce de camisetas de fútbol retro y actuales, hecho desde cero para un cliente.",
     highlights: [
-      "Catálogo filtrable por liga, selección y talle",
-      "Carrito persistente en localStorage",
-      "Pedido por WhatsApp cuando el talle está agotado",
+      "Catálogo con stock en vivo, filtrable por liga, selección y talle",
+      "Checkout guiado por WhatsApp, también cuando el talle está agotado",
+      "Carrito persistente en el dispositivo",
     ],
     metrics: [
       { value: "5.800+", label: "Visitantes el 1er mes" },

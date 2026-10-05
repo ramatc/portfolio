@@ -53,7 +53,8 @@ const CardProject = ({ project, index }: CardProjectProps) => {
             src={`/projects/${project.image}`}
             alt={`Vista previa de ${project.title}`}
             fill
-            sizes="(max-width: 768px) 100vw, 480px"
+            sizes="(max-width: 768px) 100vw, 960px"
+            style={{ objectPosition: project.imagePosition ?? "center" }}
             className="object-cover transition-transform duration-700 ease-smooth will-change-transform group-hover:scale-[1.04] motion-reduce:transition-none"
           />
           <div
@@ -108,7 +109,7 @@ const CardProject = ({ project, index }: CardProjectProps) => {
         </p>
 
         {project.metrics?.length ? (
-          <dl className="mt-4 grid grid-cols-3 gap-3 rounded-lg border border-border-subtle bg-bg-overlay/40 px-4 py-3">
+          <dl className="mt-4 grid grid-cols-3 gap-3 border-y border-border-subtle py-2.5">
             {project.metrics.map((metric) => (
               <div key={metric.label} className="flex flex-col-reverse">
                 <dt className="mt-0.5 font-mono text-[10px] uppercase leading-tight tracking-wider text-fg-subtle">

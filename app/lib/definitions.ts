@@ -15,6 +15,8 @@ export interface Project {
   url: string;
   repo: string;
   image: string;
+  /** CSS object-position for the preview crop. Defaults to "center". */
+  imagePosition?: string;
   kind: "client" | "personal";
   description: string;
   highlights: string[];
