@@ -23,7 +23,7 @@ const PROJECTS: Project[] = [
       { value: "97%", label: "Tráfico mobile" },
     ],
     proves:
-      "Llevar un negocio real de cero a producción, con decisiones de producto pensadas para cómo compra su cliente.",
+      "Llevar un negocio real de cero a producción, adaptando el producto a cómo compran sus clientes: desde el celular y cerrando por WhatsApp.",
     role: "Frontend",
     stack: ["react", "typescript", "supabase"],
     year: "2026",
