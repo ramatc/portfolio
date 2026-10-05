@@ -40,9 +40,12 @@ const CATEGORIES: Category[] = [
   {
     label: "Database",
     items: [
+      { name: "PostgreSQL", img: "postgresql" },
       { name: "Oracle", img: "oracle" },
       { name: "MongoDB", img: "mongodb" },
       { name: "MySQL", img: "mysql" },
+      { name: "Prisma", img: "prisma" },
+      { name: "Supabase", img: "supabase" },
       { name: "Firebase", img: "firebase" },
     ],
   },

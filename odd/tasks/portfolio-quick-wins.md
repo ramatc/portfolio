@@ -18,7 +18,7 @@ Out of scope: case-study pages, NDA banking case, chat suggestions, visual rhyth
 - [x] T1 Unify positioning copy (hero role + tagline, about, footer, metadata, manifest). Route: inline.
 - [x] T2 Hero metadata strip + availability badge. Route: inline.
 - [x] T3 Project model: kind (client/personal), metrics, "what it proves"; render in card; reorder. Route: inline.
-- [ ] T4 Fix incoherences: Coda demo link, skills (PostgreSQL, Prisma, Supabase). Route: inline.
+- [x] T4 Fix incoherences: Coda demo link, skills (PostgreSQL, Prisma, Supabase). Route: inline.
 
 Route note: all tasks inline — copy/data edits on already-read files, no research needed.
 
@@ -27,6 +27,14 @@ No test runner in repo (test-first exception). Per task: `npx tsc --noEmit`, `np
 
 ## Progress / evidence
 - Branch: `feat/portfolio-quick-wins`
+- T1 8632d6a, T2 9a7ae37, T3 06366c4, T4 (this commit).
+- Checks: `npx tsc --noEmit` clean, `npm run lint` clean, `npm run build` OK; visual check on localhost (hero, project cards, skills).
+- Review: T1 assessed medium / under_budget.
+
+## Pending decisions for the user
+- Vame role label still "Frontend" (stack includes Supabase).
+- All project years are "2026" (unverified).
+- Coda has no public demo; card now links GitHub only.
 
 ## Next step
-T1.
+Important improvements: case-study pages (Coda, Vame), NDA banking case, chat suggested questions, visual rhythm.
