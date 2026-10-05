@@ -45,7 +45,7 @@ const Hero = ({ visitor }: HeroProps) => {
           variants={fadeUp(delay(1))}
           className="font-mono text-sm uppercase tracking-[0.22em] text-fg-muted md:text-base"
         >
-          Software Developer
+          Full Stack Developer
         </motion.span>
 
         <motion.p
@@ -59,10 +59,9 @@ const Hero = ({ visitor }: HeroProps) => {
           ) : (
             <>Desarrollo</>
           )}{" "}
-          experiencias web que combinan{" "}
-          <span className="text-fg">rendimiento</span>,{" "}
-          <span className="text-fg">usabilidad</span> y una{" "}
-          <span className="text-fg">ejecución técnica sólida</span>.
+          productos web <span className="text-fg">de punta a punta</span>:
+          desde la <span className="text-fg">API y los datos</span> hasta la{" "}
+          <span className="text-fg">interfaz que usa la gente</span>.
         </motion.p>
 
         <motion.div

@@ -11,7 +11,7 @@ const STATS: Stat[] = [
   { value: "4+", label: "Años desarrollando" },
   { value: "150+", label: "Alumnos" },
   { value: "UTN", label: "Técnico graduado" },
-  { value: "AR", label: "Buenos Aires" },
+  { value: "UTC−3", label: "Remoto o híbrido" },
 ];
 
 const About = () => {
@@ -46,8 +46,8 @@ const About = () => {
 
         <div className="space-y-4 text-base leading-relaxed text-fg-muted md:text-lg">
           <p className="text-fg">
-            Software Developer con 4 años en el rubro y foco actual en backend
-            para entornos financieros.
+            Full Stack Developer con 4 años en el rubro. Construyo productos web
+            completos: la API, los datos y la interfaz.
           </p>
           <p>
             Hoy trabajo en{" "}
@@ -65,12 +65,10 @@ const About = () => {
             pasar por muchas manos, como en banca.
           </p>
           <p>
-            Estoy abierto a oportunidades como Software Developer,
-            especialmente en{" "}
-            <span className="text-fg">
-              fintech, banking o sistemas corporativos
-            </span>
-            . Si tenés algo en mente,{" "}
+            Estoy abierto a oportunidades como Full Stack Developer,{" "}
+            <span className="text-fg">remoto o híbrido</span> desde Buenos
+            Aires, en equipos de producto, fintech o sistemas corporativos. Si
+            tenés algo en mente,{" "}
             <a
               href="#contacto"
               className="text-brand-soft underline decoration-brand/30 decoration-1 underline-offset-4 transition-colors hover:text-brand-muted hover:decoration-brand"

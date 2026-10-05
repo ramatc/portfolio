@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "Ramiro Tanquias · Portfolio",
     short_name: "Ramiro Tanquias",
     description:
-      "Portfolio de Ramiro Tanquias — Software Developer. React, Next.js y TypeScript.",
+      "Portfolio de Ramiro Tanquias — Full Stack Developer. Productos web de punta a punta con React, Next.js y NestJS.",
     start_url: "/",
     display: "standalone",
     orientation: "portrait",

@@ -19,9 +19,9 @@ const jetbrainsMono = JetBrains_Mono({
 
 const SITE_URL = "https://ramatc.vercel.app";
 const SITE_NAME = "Ramiro Tanquias";
-const TITLE_DEFAULT = "Ramiro Tanquias · Software Developer";
+const TITLE_DEFAULT = "Ramiro Tanquias · Full Stack Developer";
 const DESCRIPTION =
-  "Software Developer. Construyo experiencias web con React, Next.js y TypeScript — foco en rendimiento, usabilidad y ejecución técnica sólida.";
+  "Full Stack Developer. Construyo productos web de punta a punta con React, Next.js, NestJS y TypeScript — desde la API y los datos hasta la interfaz.";
 
 export const viewport: Viewport = {
   themeColor: "#09090b",
@@ -115,7 +115,7 @@ const personSchema = {
   alternateName: "Ramiro Tanquias",
   url: SITE_URL,
   image: `${SITE_URL}/ramiro.jpg`,
-  jobTitle: "Desarrollador Web Fullstack",
+  jobTitle: "Full Stack Developer",
   description: DESCRIPTION,
   knowsAbout: [
     "React",
