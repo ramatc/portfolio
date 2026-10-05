@@ -15,6 +15,13 @@ const INITIAL_MESSAGES: Message[] = [
   },
 ];
 
+const SUGGESTED_QUESTIONS = [
+  "¿Qué hacés en el sector bancario?",
+  "¿Qué es Coda y cómo está hecho?",
+  "¿Estás disponible para nuevos proyectos?",
+  "¿Con qué stack trabajás?",
+];
+
 const Chat = () => {
   const [messages, setMessages] = useState<Message[]>(INITIAL_MESSAGES);
   const [question, setQuestion] = useState("");
@@ -30,9 +37,15 @@ const Chat = () => {
     });
   }, [messages, isOpen]);
 
-  async function handleSubmit(event: React.FormEvent) {
+  const hasAsked = messages.some((message) => message.type === "user");
+
+  function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
-    const trimmed = question.trim();
+    ask(question);
+  }
+
+  async function ask(text: string) {
+    const trimmed = text.trim();
     if (loading || !trimmed) return;
 
     setLoading(true);
@@ -124,6 +137,24 @@ const Chat = () => {
                   {message.text}
                 </div>
               ))}
+              {!hasAsked && !loading ? (
+                <ul
+                  aria-label="Preguntas sugeridas"
+                  className="flex flex-col items-start gap-2"
+                >
+                  {SUGGESTED_QUESTIONS.map((suggestion) => (
+                    <li key={suggestion}>
+                      <button
+                        type="button"
+                        onClick={() => ask(suggestion)}
+                        className="rounded-full border border-border-subtle px-3 py-1.5 text-left text-xs text-fg-muted transition-colors hover:border-brand/40 hover:bg-brand/10 hover:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60"
+                      >
+                        {suggestion}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
               {loading ? (
                 <div className="inline-flex max-w-[85%] items-center gap-1 self-start rounded-lg border border-border-subtle bg-bg-overlay/60 px-3.5 py-2.5">
                   <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-fg-subtle [animation-delay:0ms]" />
