@@ -1,4 +1,7 @@
+import { ArrowUpRight } from "lucide-react";
+
 import CardProject from "@/app/components/CardProject";
+import GitHub from "@/app/ui/icons/GitHub";
 import Section from "@/app/components/Section";
 import { Project } from "@/app/lib/definitions";
 
@@ -78,6 +81,21 @@ const Projects = () => {
         {PROJECTS.map((project, i) => (
           <CardProject project={project} index={i} key={project.title} />
         ))}
+      </div>
+      <div className="mt-8 flex justify-center">
+        <a
+          href="https://github.com/ramatc"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm text-fg-muted transition-colors hover:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60"
+        >
+          <GitHub className="h-4 w-4" />
+          Más proyectos en GitHub
+          <ArrowUpRight
+            className="h-4 w-4 transition-transform duration-200 ease-smooth group-hover:-translate-y-0.5 group-hover:translate-x-0.5 motion-reduce:transition-none"
+            aria-hidden="true"
+          />
+        </a>
       </div>
     </Section>
   );
