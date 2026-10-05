@@ -1,0 +1,14 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "bounce-easing",
+        "value": "animate-bounce",
+        "createdAt": "2026-10-05T23:54:02.639Z",
+        "reason": "User confirmed animate-bounce on the hero scroll cue is intentional"
+      }
+    ]
+  }
+}
