@@ -4,6 +4,27 @@ import { Project } from "@/app/lib/definitions";
 
 const PROJECTS: Project[] = [
   {
+    title: "Coda",
+    url: "",
+    repo: "https://github.com/ramatc/coda/",
+    image: "coda.png",
+    kind: "personal",
+    inProgress: true,
+    description:
+      "Diario musical social hecho con Next.js y NestJS. Registrás lo que escuchás, calificás y reseñás álbumes, armás listas rankeables y recibís recomendaciones explicables basadas en tu gusto.",
+    highlights: [
+      "Catálogo unificado (MusicBrainz + Spotify) con búsqueda tolerante a typos vía Meilisearch",
+      "Feed social: seguís gente, ves su actividad y reaccionás a sus reseñas",
+      "Recomendaciones explicables (content-based + colaborativo) sobre un monolito modular con workers para imports de catálogo",
+    ],
+    proves:
+      "Diseñar un sistema completo —datos de terceros, búsqueda, recomendaciones y procesos en segundo plano— con una arquitectura proporcional al problema.",
+    role: "Fullstack",
+    stack: ["nextjs", "typescript", "nestjs", "prisma", "postgresql"],
+    year: "2026",
+    accent: "#8b7cf6",
+  },
+  {
     title: "Vame Futbol",
     url: "https://www.vamefutbol.com/",
     repo: "",
@@ -27,27 +48,6 @@ const PROJECTS: Project[] = [
     stack: ["react", "typescript", "supabase"],
     year: "2026",
     accent: "#e0a83e",
-  },
-  {
-    title: "Coda",
-    url: "",
-    repo: "https://github.com/ramatc/coda/",
-    image: "coda.png",
-    kind: "personal",
-    inProgress: true,
-    description:
-      "Diario musical social hecho con Next.js y NestJS. Registrás lo que escuchás, calificás y reseñás álbumes, armás listas rankeables y recibís recomendaciones explicables basadas en tu gusto.",
-    highlights: [
-      "Catálogo unificado (MusicBrainz + Spotify) con búsqueda tolerante a typos vía Meilisearch",
-      "Feed social: seguís gente, ves su actividad y reaccionás a sus reseñas",
-      "Recomendaciones explicables (content-based + colaborativo) sobre un monolito modular con workers para imports de catálogo",
-    ],
-    proves:
-      "Diseñar un sistema completo —datos de terceros, búsqueda, recomendaciones y procesos en segundo plano— con una arquitectura proporcional al problema.",
-    role: "Fullstack",
-    stack: ["nextjs", "typescript", "nestjs", "prisma", "postgresql"],
-    year: "2026",
-    accent: "#8b7cf6",
   },
   {
     title: "Vito",
