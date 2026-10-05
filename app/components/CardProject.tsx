@@ -54,7 +54,6 @@ const CardProject = ({ project, index }: CardProjectProps) => {
             alt={`Vista previa de ${project.title}`}
             fill
             sizes="(max-width: 768px) 100vw, 960px"
-            style={{ objectPosition: project.imagePosition ?? "center" }}
             className="object-cover transition-transform duration-700 ease-smooth will-change-transform group-hover:scale-[1.04] motion-reduce:transition-none"
           />
           <div
