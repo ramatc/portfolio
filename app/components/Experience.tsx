@@ -53,9 +53,8 @@ const EXPERIENCE: Role[] = [
     role: "Freelance Developer",
     company: "Independiente",
     period: "Ene 2023 — Presente",
-    current: true,
     description:
-      "Desarrollo web para clientes en paralelo a mi trabajo full-time: tiendas online, rediseños y desarrollos a medida, eligiendo la plataforma según lo que necesita cada negocio.",
+      "Proyectos para clientes en paralelo a mi rol principal: e-commerce y sitios a medida, desde el diseño hasta producción.",
     highlights: [
       {
         title: "Vame Fútbol",
