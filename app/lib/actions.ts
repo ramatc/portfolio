@@ -47,7 +47,7 @@ Desarrollo de una aplicación web integral, desde la planificación y estimació
 
 Proyectos personales:
 
-Coda (https://github.com/ramatc/coda/): mi proyecto más importante, todavía en desarrollo. Es un diario musical social hecho con Next.js, NestJS, Prisma y PostgreSQL. Registrás lo que escuchás, calificás y reseñás álbumes, armás listas rankeables y recibís recomendaciones explicables basadas en tu gusto. Tiene un catálogo unificado de MusicBrainz y Spotify con búsqueda tolerante a typos vía Meilisearch, un feed social, y recomendaciones content-based y colaborativas sobre un monolito modular con workers para imports de catálogo.
+Coda (https://github.com/ramatc/coda/): mi proyecto más importante, todavía en desarrollo. Es un diario musical social hecho con Next.js, NestJS, Prisma y PostgreSQL. Registrás lo que escuchás, calificás y reseñás álbumes, armás listas rankeables y recibís recomendaciones explicables basadas en tu gusto. Tiene un catálogo unificado de MusicBrainz y Spotify con búsqueda tolerante a typos vía Meilisearch, un feed social, y recomendaciones explicables (una heurística v1 por género, artista y popularidad, precalculada en workers) sobre un monolito modular. El filtrado colaborativo y los embeddings están en el roadmap, todavía no implementados.
 
 Vito (https://vitohabit.vercel.app): habit tracker gamificado hecho con React, TypeScript y Tailwind. Un compañero virtual, Vito, crece a medida que construís hábitos, con rachas y animaciones con Framer Motion.
 

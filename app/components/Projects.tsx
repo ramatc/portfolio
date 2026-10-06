@@ -18,7 +18,7 @@ const PROJECTS: Project[] = [
     highlights: [
       "Catálogo unificado (MusicBrainz + Spotify) con búsqueda tolerante a typos vía Meilisearch",
       "Feed social: seguís gente, ves su actividad y reaccionás a sus reseñas",
-      "Recomendaciones explicables (content-based + colaborativo) sobre un monolito modular con workers para imports de catálogo",
+      "Recomendaciones explicables por género y artista, precalculadas en workers sobre un monolito modular",
     ],
     proves:
       "Diseñar un sistema completo —datos de terceros, búsqueda, recomendaciones y procesos en segundo plano— con una arquitectura proporcional al problema.",
