@@ -48,4 +48,4 @@ Strategy: ask-on-risk. Forecast ~600-800 authored changed lines (one new page wi
 - User asked to push to `main` (2026-10-06).
 
 ## Next step
-Feature closed. Optional follow-up: tests for `sitemap()` and the rendered Vame case-study link (review advisories).
+Feature closed. Review advisories addressed on branch `test/vame-case-study-links`: `sitemap()` test (absolute URLs, no double slash, priorities) and a rendered `Projects` test for the Coda and Vame case-study links. RED observed by removing the Vame `caseStudy` and doubling the sitemap slash; GREEN: `npm test` 11/11, `tsc` 0, lint clean.
