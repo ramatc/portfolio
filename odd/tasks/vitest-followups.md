@@ -36,7 +36,7 @@ Strategy: ask-on-risk. Forecast ~80 authored lines.
 - T3 done. Added url-only and repo-only cases: the present link renders in every copy (desktop + mobile) with the right `href` and `target="_blank"`, the other link is absent, and the total link count equals the present link's copies.
   - RED: inverting the absent-link `toHaveLength(0)` in both tests -> `FAIL ... renders only the demo link when a project has a url but no repo` and `FAIL ... renders only the repo link when a project has a repo but no url` / `AssertionError: expected [] to not have a length of +0`. Restored -> GREEN.
   - `npm test`: 2 files, 7 passed. `npx tsc --noEmit`: exit 0. `npm run lint`: no warnings or errors.
-  - Commit: recorded in the follow-up `docs:` commit.
+  - Commit: `9af460e`.
 
 ## Next step
 Feature complete; native review (if due) and push/PR are the user's decision.
