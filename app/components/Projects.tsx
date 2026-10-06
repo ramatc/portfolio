@@ -22,6 +22,7 @@ const PROJECTS: Project[] = [
     ],
     proves:
       "Diseñar un sistema completo —datos de terceros, búsqueda, recomendaciones y procesos en segundo plano— con una arquitectura proporcional al problema.",
+    caseStudy: "/proyectos/coda",
     role: "Fullstack",
     stack: ["nextjs", "typescript", "nestjs", "prisma", "postgresql"],
     year: "2026",

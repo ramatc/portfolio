@@ -29,7 +29,7 @@ Out of scope: other case studies, NDA banking case, visual rhythm of Projects, t
 - Roadmap (spec-only): Python reco service, collaborative filtering (ALS), embeddings, pgvector, mobile.
 
 ## Tasks
-- [ ] T1 Correct the collaborative-filtering claim in the Coda card and chat context. Route: inline (two one-line copy edits).
+- [x] T1 Correct the collaborative-filtering claim in the Coda card and chat context. Route: inline (two one-line copy edits).
 - [ ] T2 Case-study page `/proyectos/coda` + link from the Coda card + sitemap entry. Route: delegated writer (new route plus edits to 3+ files, design work).
 
 ## Checks
@@ -40,6 +40,7 @@ Strategy: ask-on-risk. Forecast ~400 authored changed lines (T1 ~5, T2 ~350-400)
 
 ## Progress / evidence
 - Branch: `feat/coda-case-study`.
+- T1 9164dae — `tsc` and `lint` clean.
 
 ## Next step
-T1.
+T2.

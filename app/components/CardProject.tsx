@@ -1,8 +1,9 @@
 "use client";
 
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 import GitHub from "@/app/ui/icons/GitHub";
 import { Project } from "@/app/lib/definitions";
@@ -170,6 +171,20 @@ const CardProject = ({ project, index }: CardProjectProps) => {
             {project.proves}
           </p>
         </div>
+
+        {project.caseStudy ? (
+          <Link
+            href={project.caseStudy}
+            className="group/case mt-4 inline-flex w-fit items-center gap-1.5 rounded-md text-sm font-medium text-fg underline decoration-border-strong underline-offset-4 transition-colors hover:decoration-current focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-elevated"
+          >
+            Ver caso de estudio
+            <ArrowRight
+              className="h-4 w-4 transition-transform duration-200 ease-smooth group-hover/case:translate-x-0.5 motion-reduce:transition-none"
+              style={{ color: project.accent }}
+              aria-hidden="true"
+            />
+          </Link>
+        ) : null}
 
         <div className="mt-auto pt-5">
           <ul className="flex flex-wrap gap-1.5">

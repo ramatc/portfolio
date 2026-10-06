@@ -22,6 +22,8 @@ export interface Project {
   metrics?: ProjectMetric[];
   /** One-line takeaway about the skills or judgment the project shows. */
   proves: string;
+  /** Internal href to the project's case-study page, when one exists. */
+  caseStudy?: string;
   role: string;
   stack: string[];
   year: string;

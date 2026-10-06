@@ -3,6 +3,7 @@
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 const NAV_ITEMS = [
   { id: "experiencia", label: "Experiencia" },
@@ -16,8 +17,12 @@ const Navbar = () => {
   const [active, setActive] = useState<string | null>(null);
   const [isOpen, setIsOpen] = useState(false);
   const reduceMotion = useReducedMotion();
+  const pathname = usePathname();
 
+  // Re-observe on route change: sections only exist on the home page, and the
+  // layout keeps this component mounted across client-side navigations.
   useEffect(() => {
+    setActive(null);
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -33,7 +38,7 @@ const Navbar = () => {
     });
 
     return () => observer.disconnect();
-  }, []);
+  }, [pathname]);
 
   useEffect(() => {
     const handleEsc = (event: KeyboardEvent) => {
@@ -64,7 +69,7 @@ const Navbar = () => {
           className="mx-auto flex h-14 max-w-container items-center justify-between px-6 md:h-16 md:px-10"
         >
           <a
-            href="#top"
+            href="/#top"
             aria-label="Volver al inicio"
             onClick={closeMenu}
             className="group flex items-center gap-2 font-mono text-sm transition"
@@ -83,7 +88,7 @@ const Navbar = () => {
               return (
                 <li key={item.id} className="relative">
                   <a
-                    href={`#${item.id}`}
+                    href={`/#${item.id}`}
                     className={`relative inline-flex h-8 items-center rounded-md px-3 text-sm transition-colors ${
                       isActive ? "text-fg" : "text-fg-muted hover:text-fg"
                     }`}
@@ -177,7 +182,7 @@ const Navbar = () => {
                         className="border-b border-border-subtle"
                       >
                         <a
-                          href={`#${item.id}`}
+                          href={`/#${item.id}`}
                           onClick={closeMenu}
                           className={`group flex items-center gap-4 py-5 transition-colors ${
                             isActive ? "text-fg" : "text-fg-muted hover:text-fg"
