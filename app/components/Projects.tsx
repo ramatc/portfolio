@@ -62,7 +62,7 @@ const PROJECTS: Project[] = [
     url: "https://vitohabit.vercel.app",
     repo: "https://github.com/ramatc/vito",
     image: "vito-1.png",
-    gallery: ["vito-1.png", "vito-4.png", "vito-2.png", "vito-3.png"],
+    gallery: ["vito-1.png", "vito-2.png", "vito-3.png", "vito-4.png"],
     tagline: "Habit tracker gamificado",
     kind: "personal",
     description:
