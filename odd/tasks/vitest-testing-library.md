@@ -38,5 +38,11 @@ Strategy: ask-on-risk. Forecast ~250 authored lines (lockfile excluded).
   - RED: inverting `expect(preview.closest("a")).toBeNull()` -> `FAIL ... renders no demo or repo links when a project has neither url nor repo` / `AssertionError: expected null not to be null`. Restored -> GREEN.
   - `npm test`: 2 files, 4 passed. `npx tsc --noEmit`: exit 0. `npm run lint`: no warnings or errors.
 
+- Review: T1+T2 (medium, `slice_budget_reached` from lockfile churn), consent granted; approved and acknowledged (lineage review-cf7e7ca73f15f2d2).
+
+## Follow-ups (non-blocking review findings)
+- Chat tests wait on framer-motion's real exit animation (`AnimatePresence mode="wait"`) with the default 1000 ms `findBy*` timeout; consider `MotionGlobalConfig.skipAnimations` in setup to remove timing dependence.
+- Chat failure path (`sendQuestion` rejects) is not covered.
+
 ## Next step
 Feature complete; push/PR is the user's decision.
