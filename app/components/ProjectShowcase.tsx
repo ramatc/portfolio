@@ -301,7 +301,7 @@ const ProjectDetail = ({
             {project.metrics?.length ? (
               <dl className="grid grid-cols-3 gap-3">
                 {project.metrics.map((metric) => (
-                  <div key={metric.label} className="flex flex-col-reverse">
+                  <div key={metric.label} className="flex flex-col-reverse justify-end">
                     <dt className="mt-1 text-xs leading-snug text-fg-subtle">
                       {metric.label}
                     </dt>
