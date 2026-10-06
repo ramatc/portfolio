@@ -14,7 +14,7 @@ Out of scope: production code changes (if a test exposes a real bug, report firs
 
 ## Tasks
 - [x] T1 Skip framer-motion animations in the test setup (`MotionGlobalConfig.skipAnimations`). Route: delegated (writer trigger: 3 test files across T1-T3).
-- [ ] T2 Test the Chat failure path when `sendQuestion` rejects. Route: delegated (same writer).
+- [x] T2 Test the Chat failure path when `sendQuestion` rejects. Route: delegated (same writer).
 - [ ] T3 Test `ProjectShowcase` url-only and repo-only cases. Route: delegated (same writer).
 
 ## Checks
@@ -28,6 +28,10 @@ Strategy: ask-on-risk. Forecast ~80 authored lines.
 - T1 done. `MotionGlobalConfig` is exported by framer-motion 12.40.0 (re-exported from `motion-utils`, which types `skipAnimations?: boolean`); set to `true` in `vitest.setup.ts`. No test relied on the exit delay; only the Chat helper comment was updated.
   - RED: not applicable (setup change); existing tests must stay green.
   - `npm test`: 2 files, 4 passed. `npx tsc --noEmit`: exit 0. `npm run lint`: no warnings or errors.
+  - Commit: `3116368`.
+- T2 done. Chat already handles rejection (`app/components/Chat.tsx:66-76`: catch appends a fallback bot message, finally clears loading). Test asserts the fallback message, the user's question still shown, and the input re-enabled.
+  - RED: inverting `toBeEnabled()` -> `FAIL ... shows an error message and re-enables the input when sending fails` / `Error: expect(element).not.toBeEnabled()`. Restored -> GREEN.
+  - `npm test`: 2 files, 5 passed. `npx tsc --noEmit`: exit 0. `npm run lint`: no warnings or errors.
 
 ## Next step
-T2.
+T3.

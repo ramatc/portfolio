@@ -60,4 +60,20 @@ describe("Chat suggested questions", () => {
       screen.queryByRole("list", { name: "Preguntas sugeridas" }),
     ).not.toBeInTheDocument();
   });
+
+  it("shows an error message and re-enables the input when sending fails", async () => {
+    mockedSendQuestion.mockRejectedValue(new Error("network down"));
+    const user = await openChat();
+
+    await user.click(
+      screen.getByRole("button", { name: "¿Con qué stack trabaja?" }),
+    );
+
+    expect(mockedSendQuestion).toHaveBeenCalledWith("¿Con qué stack trabaja?");
+    expect(
+      await screen.findByText("Ups, algo salió mal. Probá de nuevo en un rato."),
+    ).toBeInTheDocument();
+    expect(screen.getByText("¿Con qué stack trabaja?")).toBeInTheDocument();
+    expect(screen.getByPlaceholderText("Preguntame algo…")).toBeEnabled();
+  });
 });
