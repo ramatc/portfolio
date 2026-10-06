@@ -101,7 +101,7 @@ const Hero = ({ visitor }: HeroProps) => {
       <motion.div
         initial="hidden"
         animate="show"
-        className="flex min-h-screen w-full flex-col items-center pb-6 supports-[min-height:100svh]:min-h-[100svh] md:pb-8"
+        className="flex min-h-screen w-full flex-col items-center pb-20 supports-[min-height:100svh]:min-h-[100svh] sm:pb-6 md:pb-8"
       >
         {/* Identity and actions, centered in the space above the horizon */}
         <div className="flex w-full flex-1 flex-col items-center justify-center gap-5 pt-20 md:gap-6">
@@ -164,11 +164,11 @@ const Hero = ({ visitor }: HeroProps) => {
         </div>
 
         {/* Facts and scroll cue, anchored to the bottom of the viewport */}
-        <div className="relative mt-12 w-full max-w-3xl pt-10 md:pt-12">
+        <div className="relative mt-8 w-full max-w-3xl pt-8 sm:mt-12 sm:pt-10 md:pt-12">
           <Horizon />
           <motion.dl
             variants={fadeUp(delay(4))}
-            className="relative grid grid-cols-1 gap-4 text-center sm:grid-cols-3 sm:gap-6"
+            className="relative grid grid-cols-1 gap-3 text-center sm:grid-cols-3 sm:gap-6"
           >
             {FACTS.map((fact) => (
               <div key={fact.label}>
@@ -187,7 +187,7 @@ const Hero = ({ visitor }: HeroProps) => {
           initial={reduceMotion ? { opacity: 1 } : { opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2, duration: 0.6 }}
-          className="group mt-10 inline-flex flex-col items-center gap-1.5 text-fg-subtle transition-colors hover:text-fg md:mt-12"
+          className="group mt-10 hidden flex-col sm:inline-flex items-center gap-1.5 text-fg-subtle transition-colors hover:text-fg md:mt-12"
         >
           <span className="font-mono text-[10px] uppercase tracking-[0.2em]">
             Scroll
