@@ -33,7 +33,7 @@ const PROJECTS: Project[] = [
     title: "Vame Futbol",
     url: "https://www.vamefutbol.com/",
     repo: "",
-    image: "vame.png",
+    image: "vame-1.png",
     gallery: ["vame-1.png", "vame-2.png", "vame-3.png"],
     tagline: "E-commerce de camisetas de fútbol",
     kind: "client",
@@ -61,7 +61,8 @@ const PROJECTS: Project[] = [
     title: "Vito",
     url: "https://vitohabit.vercel.app",
     repo: "https://github.com/ramatc/vito",
-    image: "vito.jpg",
+    image: "vito-1.png",
+    gallery: ["vito-1.png", "vito-4.png", "vito-2.png", "vito-3.png"],
     tagline: "Habit tracker gamificado",
     kind: "personal",
     description:
