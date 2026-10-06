@@ -97,6 +97,12 @@ a {
   animation: horizon-rise 1.6s cubic-bezier(0.22, 1, 0.36, 1) 0.45s both;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .hero-horizon {
+    animation: none;
+  }
+}
+
 /* Accesibilidad: respetar prefers-reduced-motion en todas las animaciones */
 @media (prefers-reduced-motion: reduce) {
   html {

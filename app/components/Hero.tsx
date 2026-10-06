@@ -86,7 +86,7 @@ const Hero = ({ visitor }: HeroProps) => {
     <section
       id="top"
       data-section="top"
-      className="relative isolate flex min-h-[100svh] flex-col items-center justify-center overflow-y-clip text-center"
+      className="relative isolate flex min-h-screen flex-col items-center justify-center overflow-y-clip text-center supports-[min-height:100svh]:min-h-[100svh]"
     >
       {/* Faint light behind the name */}
       <div
@@ -101,7 +101,7 @@ const Hero = ({ visitor }: HeroProps) => {
       <motion.div
         initial="hidden"
         animate="show"
-        className="flex min-h-[100svh] w-full flex-col items-center pb-6 md:pb-8"
+        className="flex min-h-screen w-full flex-col items-center pb-6 supports-[min-height:100svh]:min-h-[100svh] md:pb-8"
       >
         {/* Identity and actions, centered in the space above the horizon */}
         <div className="flex w-full flex-1 flex-col items-center justify-center gap-5 pt-20 md:gap-6">
