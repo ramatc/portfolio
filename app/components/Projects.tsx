@@ -50,6 +50,7 @@ const PROJECTS: Project[] = [
     ],
     proves:
       "Llevar un negocio real de cero a producción, adaptando el producto a cómo compran sus clientes: desde el celular y cerrando por WhatsApp.",
+    caseStudy: "/proyectos/vame",
     role: "Fullstack",
     stack: ["react", "typescript", "supabase"],
     year: "2026",
