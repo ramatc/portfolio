@@ -11,7 +11,7 @@ const INITIAL_MESSAGES: Message[] = [
   {
     id: "0",
     type: "bot",
-    text: "Hola! Soy un asistente entrenado para responder cualquier duda sobre Ramiro. Preguntame lo que quieras.",
+    text: "¡Hola! Soy Nodo, el asistente de Ramiro. Estoy para responder cualquier duda sobre él. Preguntame lo que quieras.",
   },
 ];
 
@@ -104,7 +104,10 @@ const Chat = () => {
                 </span>
                 <div className="flex flex-col leading-tight">
                   <span className="text-sm font-medium text-fg">
-                    Asistente · Ramiro
+                    Nodo{" "}
+                    <span className="font-normal text-fg-muted">
+                      · Asistente de Ramiro
+                    </span>
                   </span>
                   <span className="font-mono text-[10px] uppercase tracking-wider text-fg-subtle">
                     Powered by Gemini
