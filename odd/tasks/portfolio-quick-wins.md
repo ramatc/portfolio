@@ -25,6 +25,7 @@ Out of scope: case-study pages, NDA banking case, visual rhythm changes.
 - [x] T4 Fix incoherences: Coda demo link, skills (PostgreSQL, Prisma, Supabase). Route: inline.
 - [x] T5 Follow-up adjustments from user review: tighter card + new Vame mockup, clearer Vame takeaway, "En desarrollo" badge, Coda first, Vame role Fullstack, GitHub link, removed legacy images. Route: inline.
 - [x] T6 Chat: refresh assistant context with current experience/projects, add suggested questions. Route: inline.
+- [x] T7 Review follow-up: `CardProject` renders the preview image without a link when a project has neither `url` nor `repo`. Route: inline.
 
 Route note: all tasks inline — copy/data edits on already-read files, no research needed.
 
@@ -36,12 +37,12 @@ No test runner in repo (test-first exception). Per task: `npx tsc --noEmit`, `np
 - T1 8632d6a, T2 9a7ae37, T3 06366c4, T4 2fb62d4.
 - T5 3a27dfc, 30fea84, 3285fc7, 298565e, 64f6baa, a5a5c9e, ab488be, 15cca45, 7812061, 1471a95.
 - T6 f626d6e, e9c9161.
+- T7 committed with this task-record update (`fix: render project preview without link when no url or repo`); `tsc` and `lint` clean.
 - Checks: `tsc` and `lint` clean on every task; `npm run build` OK after T4; visual checks on localhost; chat verified end to end (suggested question answered with current context).
 - Review: branch base-diff (412 lines, medium) reviewed with consent granted; approved and acknowledged (lineage review-a0aced49a8e417d6).
 
 ## Follow-ups (non-blocking review findings)
-- Chat suggested questions have no automated test (repo has no test runner).
-- `CardProject`: if a project has neither `url` nor `repo`, the preview link falls back to an empty href; render the image without a link in that case.
+- Chat suggested questions have no automated test (repo has no test runner). User decision (2026-10-06): add Vitest + Testing Library at the end of the feature, covering chat suggestions and the `CardProject` no-link case.
 
 ## Next step
 Important improvements: Coda case-study page (needs real technical decisions from the user), NDA banking case, visual rhythm in Projects. Push / PR is the user's decision.

@@ -25,6 +25,29 @@ const CardProject = ({ project, index }: CardProjectProps) => {
     ? `Abrir demo de ${project.title}`
     : `Ver código de ${project.title} en GitHub`;
 
+  const preview = (
+    <div className="relative aspect-[16/10] overflow-hidden md:aspect-auto md:h-full md:min-h-[15rem]">
+      <Image
+        src={`/projects/${project.image}`}
+        alt={`Vista previa de ${project.title}`}
+        fill
+        sizes="(max-width: 768px) 100vw, 960px"
+        className="object-cover transition-transform duration-700 ease-smooth will-change-transform group-hover:scale-[1.04] motion-reduce:transition-none"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-bg-base/40 via-transparent to-transparent md:bg-gradient-to-r"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute inset-x-0 bottom-0 h-px"
+        style={{
+          background: `linear-gradient(to right, transparent, ${project.accent}, transparent)`,
+        }}
+      />
+    </div>
+  );
+
   return (
     <motion.article
       initial={reduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
@@ -41,34 +64,19 @@ const CardProject = ({ project, index }: CardProjectProps) => {
       }
       className="group relative grid grid-cols-1 overflow-hidden rounded-xl border border-border bg-bg-elevated transition-colors duration-300 hover:border-border-strong md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]"
     >
-      <a
-        href={previewHref}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label={previewLabel}
-        className="relative block overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand/60"
-      >
-        <div className="relative aspect-[16/10] overflow-hidden md:aspect-auto md:h-full md:min-h-[15rem]">
-          <Image
-            src={`/projects/${project.image}`}
-            alt={`Vista previa de ${project.title}`}
-            fill
-            sizes="(max-width: 768px) 100vw, 960px"
-            className="object-cover transition-transform duration-700 ease-smooth will-change-transform group-hover:scale-[1.04] motion-reduce:transition-none"
-          />
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-bg-base/40 via-transparent to-transparent md:bg-gradient-to-r"
-          />
-          <div
-            aria-hidden="true"
-            className="absolute inset-x-0 bottom-0 h-px"
-            style={{
-              background: `linear-gradient(to right, transparent, ${project.accent}, transparent)`,
-            }}
-          />
-        </div>
-      </a>
+      {previewHref ? (
+        <a
+          href={previewHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={previewLabel}
+          className="relative block overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand/60"
+        >
+          {preview}
+        </a>
+      ) : (
+        <div className="relative overflow-hidden">{preview}</div>
+      )}
 
       <div className="flex flex-col p-5 md:p-7">
         <div className="flex items-start justify-between gap-3">
