@@ -1,6 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 
-import CardProject from "@/app/components/CardProject";
+import ProjectShowcase from "@/app/components/ProjectShowcase";
 import GitHub from "@/app/ui/icons/GitHub";
 import Section from "@/app/components/Section";
 import { Project } from "@/app/lib/definitions";
@@ -11,6 +11,7 @@ const PROJECTS: Project[] = [
     url: "",
     repo: "https://github.com/ramatc/coda/",
     image: "coda.png",
+    tagline: "Diario musical social",
     kind: "personal",
     inProgress: true,
     description:
@@ -33,6 +34,7 @@ const PROJECTS: Project[] = [
     url: "https://www.vamefutbol.com/",
     repo: "",
     image: "vame.png",
+    tagline: "E-commerce de camisetas de fútbol",
     kind: "client",
     description:
       "E-commerce de camisetas de fútbol retro y actuales, hecho desde cero para un cliente.",
@@ -58,6 +60,7 @@ const PROJECTS: Project[] = [
     url: "https://vitohabit.vercel.app",
     repo: "https://github.com/ramatc/vito",
     image: "vito.jpg",
+    tagline: "Habit tracker gamificado",
     kind: "personal",
     description:
       "Habit tracker gamificado desarrollado con React y TypeScript. Tu compañero Vito crece a medida que construís hábitos, con animaciones y persistencia de progreso.",
@@ -75,21 +78,11 @@ const PROJECTS: Project[] = [
   },
 ];
 
-const [FEATURED, ...REST] = PROJECTS;
 
 const Projects = () => {
   return (
     <Section id="proyectos" number="02" title="Proyectos">
-      <div className="flex flex-col gap-6 md:gap-8">
-        {FEATURED ? (
-          <CardProject project={FEATURED} index={0} variant="featured" />
-        ) : null}
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
-          {REST.map((project, i) => (
-            <CardProject project={project} index={i + 1} key={project.title} />
-          ))}
-        </div>
-      </div>
+      <ProjectShowcase projects={PROJECTS} />
       <div className="mt-8 flex justify-center">
         <a
           href="https://github.com/ramatc"

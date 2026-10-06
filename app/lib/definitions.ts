@@ -14,7 +14,12 @@ export interface Project {
   /** Live demo URL. Empty when the project has no public deployment. */
   url: string;
   repo: string;
+  /** Thumbnail shown in the project selector. */
   image: string;
+  /** Screenshots shown in the detail view. Falls back to `image` when empty. */
+  gallery?: string[];
+  /** Short summary shown under the title in the selector. */
+  tagline: string;
   kind: "client" | "personal";
   inProgress?: boolean;
   description: string;
