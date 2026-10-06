@@ -9,7 +9,7 @@ const REPO_URL = "https://github.com/ramatc/coda";
 const PAGE_PATH = "/proyectos/coda";
 const TITLE = "Coda · Caso de estudio";
 const OG_IMAGE_ALT =
-  "Portfolio de Ramiro Tanquias Cornejo - Software Developer y Técnico Universitario en Programación";
+  "Portfolio de Ramiro Tanquias Cornejo - Full Stack Developer y Técnico Universitario en Programación";
 const DESCRIPTION =
   "Cómo diseñé Coda, un diario musical social: monolito modular en NestJS, pipeline de catálogo con rate limiting, búsqueda en Meilisearch y recomendaciones explicables.";
 
