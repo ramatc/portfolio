@@ -55,10 +55,10 @@ Más proyectos en mi GitHub: https://github.com/ramatc
 
 Habilidades técnicas:
 Frontend: React, React Native, Next.js, TypeScript, JavaScript, HTML, CSS, Tailwind.
-Backend: Node.js, NestJS, Express.
-Bases de datos: PostgreSQL, Oracle, MongoDB, MySQL, Prisma, Supabase, Firebase.
+Backend: Node.js, NestJS, Express, microservicios.
+Bases de datos: PostgreSQL, Oracle, MongoDB, MySQL, Prisma.
 Testing: Jest, React Testing Library.
-Herramientas: Git, Docker, Claude Code.
+Herramientas: Git, Docker, CI/CD, Claude Code.
 
 Formación Académica:
 Tecnicatura Universitaria en Programación - Universidad Tecnológica Nacional. Graduado (Marzo 2022 - Diciembre 2023).

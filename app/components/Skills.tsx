@@ -35,6 +35,7 @@ const CATEGORIES: Category[] = [
       { name: "Node.js", img: "nodejs" },
       { name: "Nest.js", img: "nestjs" },
       { name: "Express", img: "expressjs" },
+      { name: "Microservicios", img: "microservices" },
     ],
   },
   {
@@ -45,8 +46,6 @@ const CATEGORIES: Category[] = [
       { name: "MongoDB", img: "mongodb" },
       { name: "MySQL", img: "mysql" },
       { name: "Prisma", img: "prisma" },
-      { name: "Supabase", img: "supabase" },
-      { name: "Firebase", img: "firebase" },
     ],
   },
   {
@@ -58,6 +57,7 @@ const CATEGORIES: Category[] = [
     items: [
       { name: "Git", img: "git" },
       { name: "Docker", img: "docker" },
+      { name: "CI/CD", img: "cicd" },
       { name: "Claude Code", img: "claude" },
     ],
   },
