@@ -16,7 +16,7 @@ Out of scope: production code changes (unless a test exposes a real bug — repo
 
 ## Tasks
 - [x] T1 Set up Vitest + jsdom + Testing Library (`npm test`), with a test for the Chat suggested questions. Route: delegated (writer trigger: config + setup + test files).
-- [ ] T2 Test `ProjectShowcase` renders without demo/repo links when a project has neither `url` nor `repo`. Route: delegated (same writer).
+- [x] T2 Test `ProjectShowcase` renders without demo/repo links when a project has neither `url` nor `repo`. Route: delegated (same writer).
 
 ## Checks
 Test-first exception: the behavior already exists, so tests are characterization tests; each must be seen failing once by temporarily breaking the asserted condition (or asserting the opposite) before being committed green. Per task: `npm test`, `npx tsc --noEmit`, `npm run lint`.
@@ -32,6 +32,11 @@ Strategy: ask-on-risk. Forecast ~250 authored lines (lockfile excluded).
   - `app/components/__tests__/` is a private folder (`_` prefix) in the App Router, never routed.
   - RED: flipping `.not.toBeInTheDocument()` on the suggestions list after a click -> `FAIL ... sends the clicked suggestion, shows it with the answer, and hides the suggestions` / `Error: expect(received).toBeInTheDocument()`. Restored -> GREEN.
   - `npm test`: 2 passed. `npx tsc --noEmit`: exit 0. `npm run lint`: no warnings or errors.
+  - Commit: `777e596`.
+- T2 done. `ProjectShowcase` takes `projects` as props, so fixtures are passed directly (no module mock). The component renders both the desktop selector and the mobile list, so assertions cover every rendered copy.
+  - Covers: no `url`/`repo` -> zero links and gallery image has no `<a>` ancestor; both set -> demo and repo links with the right `href` and `target="_blank"`.
+  - RED: inverting `expect(preview.closest("a")).toBeNull()` -> `FAIL ... renders no demo or repo links when a project has neither url nor repo` / `AssertionError: expected null not to be null`. Restored -> GREEN.
+  - `npm test`: 2 files, 4 passed. `npx tsc --noEmit`: exit 0. `npm run lint`: no warnings or errors.
 
 ## Next step
-T2.
+Feature complete; push/PR is the user's decision.
