@@ -1,6 +1,11 @@
 import "@testing-library/jest-dom/vitest";
 import { cleanup } from "@testing-library/react";
+import { MotionGlobalConfig } from "framer-motion";
 import { afterEach } from "vitest";
+
+// Make framer-motion animations (including AnimatePresence exits) complete
+// instantly so tests never depend on real animation timing.
+MotionGlobalConfig.skipAnimations = true;
 
 afterEach(() => {
   cleanup();

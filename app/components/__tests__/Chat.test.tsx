@@ -18,7 +18,7 @@ async function openChat() {
     screen.getByRole("button", { name: "Abrir chat con el asistente" }),
   );
   // AnimatePresence runs in "wait" mode, so the panel mounts only after the
-  // trigger's exit animation finishes.
+  // trigger's exit completes (instant here: the setup skips animations).
   await screen.findByRole("list", { name: "Preguntas sugeridas" });
   return user;
 }
