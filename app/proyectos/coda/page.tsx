@@ -244,27 +244,25 @@ export default function CodaCaseStudyPage() {
           y recibís recomendaciones que explican por qué.
         </p>
 
-        <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-[auto_auto_minmax(0,1fr)] md:gap-12">
-          <dl className="contents">
-            <MetaItem label="Rol" value="Fullstack" />
-            <MetaItem label="Año" value="2026" />
-          </dl>
-          <div>
-            <span className="font-mono text-[11px] uppercase tracking-wider text-fg-subtle">
-              Stack
-            </span>
-            <ul className="mt-2 flex flex-wrap gap-1.5">
-              {STACK.map((tech) => (
-                <li
-                  key={tech}
-                  className="rounded-md border border-border-subtle bg-bg-overlay/60 px-2 py-0.5 font-mono text-xs text-fg-muted"
-                >
-                  {tech}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+        <dl className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-[auto_auto_minmax(0,1fr)] md:gap-12">
+          <MetaItem label="Rol" value="Fullstack" />
+          <MetaItem label="Año" value="2026" />
+          <MetaItem
+            label="Stack"
+            value={
+              <ul className="flex flex-wrap gap-1.5">
+                {STACK.map((tech) => (
+                  <li
+                    key={tech}
+                    className="rounded-md border border-border-subtle bg-bg-overlay/60 px-2 py-0.5 font-mono text-xs text-fg-muted"
+                  >
+                    {tech}
+                  </li>
+                ))}
+              </ul>
+            }
+          />
+        </dl>
 
         <a
           href={REPO_URL}
@@ -521,12 +519,21 @@ const Prose = ({
   </div>
 );
 
-const MetaItem = ({ label, value }: { label: string; value: string }) => (
+const MetaItem = ({
+  label,
+  value,
+}: {
+  label: string;
+  value: React.ReactNode;
+}) => (
   <div>
     <dt className="font-mono text-[11px] uppercase tracking-wider text-fg-subtle">
       {label}
     </dt>
-    <dd className="mt-2 text-sm text-fg">{value}</dd>
+    {/* Min height matches a stack chip so text values and chips share a row line */}
+    <dd className="mt-2 flex min-h-[1.375rem] items-center text-sm text-fg">
+      {value}
+    </dd>
   </div>
 );
 
