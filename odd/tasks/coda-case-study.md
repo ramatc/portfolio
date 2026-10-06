@@ -30,17 +30,18 @@ Out of scope: other case studies, NDA banking case, visual rhythm of Projects, t
 
 ## Tasks
 - [x] T1 Correct the collaborative-filtering claim in the Coda card and chat context. Route: inline (two one-line copy edits).
-- [ ] T2 Case-study page `/proyectos/coda` + link from the Coda card + sitemap entry. Route: delegated writer (new route plus edits to 3+ files, design work).
+- [x] T2 Case-study page `/proyectos/coda` + link from the Coda card + sitemap entry. Route: delegated writer (new route plus edits to 3+ files, design work).
 
 ## Checks
 No test runner in repo (test-first exception; tests deferred by user). Per task: `npx tsc --noEmit`, `npm run lint`; at close: `npm run build` + visual check.
 
 ## Delivery
-Strategy: ask-on-risk. Forecast ~400 authored changed lines (T1 ~5, T2 ~350-400).
+Strategy: ask-on-risk. Forecast ~400 authored changed lines (T1 ~5, T2 ~350-400). Actual: ~820 (T2 alone 811 insertions, one new page with its copy) — chain strategy pending user decision.
 
 ## Progress / evidence
 - Branch: `feat/coda-case-study`.
 - T1 9164dae — `tsc` and `lint` clean.
+- T2 27557d1 — writer: `tsc` 0, `lint` clean, `npm run build` OK (`/proyectos/coda` static). Parent spot check: `tsc` 0, `lint` clean. Navbar anchors now `/#x` and the active section resets on route change; page metadata lists share images explicitly. Parent corrected the explanation wording to the real UI strings ("Because you like {genre}" / "Because you follow this artist"). Visual check pending (user).
 
 ## Next step
-T2.
+Visual check of `/proyectos/coda` (diagram desktop/mobile, sticky index at lg, repo button contrast), then native review if due. Push / PR is the user's decision.
