@@ -75,13 +75,20 @@ const PROJECTS: Project[] = [
   },
 ];
 
+const [FEATURED, ...REST] = PROJECTS;
+
 const Projects = () => {
   return (
     <Section id="proyectos" number="02" title="Proyectos">
       <div className="flex flex-col gap-6 md:gap-8">
-        {PROJECTS.map((project, i) => (
-          <CardProject project={project} index={i} key={project.title} />
-        ))}
+        {FEATURED ? (
+          <CardProject project={FEATURED} index={0} variant="featured" />
+        ) : null}
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
+          {REST.map((project, i) => (
+            <CardProject project={project} index={i + 1} key={project.title} />
+          ))}
+        </div>
       </div>
       <div className="mt-8 flex justify-center">
         <a
