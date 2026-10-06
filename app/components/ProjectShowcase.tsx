@@ -2,7 +2,7 @@
 
 import { useId, useRef, useState } from "react";
 import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useInView, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -10,6 +10,7 @@ import GitHub from "@/app/ui/icons/GitHub";
 import { Project } from "@/app/lib/definitions";
 
 const EASE_OUT = [0.23, 1, 0.32, 1] as const;
+const AUTOPLAY_MS = 7000;
 
 const KIND_LABEL: Record<Project["kind"], string> = {
   client: "Cliente real",
@@ -57,10 +58,26 @@ const Selector = ({ projects }: { projects: Project[] }) => {
   const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
   const reduceMotion = useReducedMotion();
   const baseId = useId();
+  const rootRef = useRef<HTMLDivElement>(null);
+  const inView = useInView(rootRef, { amount: 0.4 });
+  const [hovered, setHovered] = useState(false);
+  const [focused, setFocused] = useState(false);
+  const [stopped, setStopped] = useState(false);
+
+  // Autoplay stops for good once the visitor picks a project themselves.
+  const autoplay = !reduceMotion && !stopped;
+  const playing = autoplay && inView && !hovered && !focused;
+
+  const advance = () => setActive((current) => (current + 1) % projects.length);
+
+  const choose = (index: number) => {
+    setStopped(true);
+    setActive(index);
+  };
 
   const select = (next: number) => {
     const index = (next + projects.length) % projects.length;
-    setActive(index);
+    choose(index);
     tabRefs.current[index]?.focus();
   };
 
@@ -78,7 +95,15 @@ const Selector = ({ projects }: { projects: Project[] }) => {
   };
 
   return (
-    <div className="grid grid-cols-[minmax(0,18rem)_minmax(0,1fr)] gap-5 lg:grid-cols-[minmax(0,21rem)_minmax(0,1fr)] lg:gap-6">
+    <div
+      ref={rootRef}
+      onPointerEnter={() => setHovered(true)}
+      onPointerLeave={() => setHovered(false)}
+      onFocus={() => setFocused(true)}
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget)) setFocused(false);
+      }}
+      className="grid grid-cols-[minmax(0,18rem)_minmax(0,1fr)] gap-5 lg:grid-cols-[minmax(0,21rem)_minmax(0,1fr)] lg:gap-6">
       <div
         role="tablist"
         aria-label="Proyectos"
@@ -102,7 +127,7 @@ const Selector = ({ projects }: { projects: Project[] }) => {
               aria-selected={isActive}
               aria-controls={`${baseId}-panel-${i}`}
               tabIndex={isActive ? 0 : -1}
-              onClick={() => setActive(i)}
+              onClick={() => choose(i)}
               className="group relative flex w-full flex-1 flex-col rounded-xl p-3.5 text-left transition-transform duration-150 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 active:scale-[0.985] motion-reduce:transition-none"
             >
               {isLast ? null : (
@@ -179,6 +204,23 @@ const Selector = ({ projects }: { projects: Project[] }) => {
                   sizes="336px"
                   className="object-cover object-top transition-transform duration-500 ease-smooth group-hover:scale-[1.02] motion-reduce:transition-none"
                 />
+                {isActive && autoplay ? (
+                  <span
+                    aria-hidden="true"
+                    className="absolute inset-x-0 bottom-0 h-0.5 bg-bg-base/60"
+                  >
+                    <span
+                      key={active}
+                      onAnimationEnd={advance}
+                      className="block h-full origin-left"
+                      style={{
+                        backgroundColor: project.accent,
+                        animation: `project-progress ${AUTOPLAY_MS}ms linear forwards`,
+                        animationPlayState: playing ? "running" : "paused",
+                      }}
+                    />
+                  </span>
+                ) : null}
               </span>
             </button>
           );
@@ -200,15 +242,15 @@ const Selector = ({ projects }: { projects: Project[] }) => {
                   ? { opacity: 1, y: 0, filter: "blur(0px)", visibility: "visible" }
                   : {
                       opacity: 0,
-                      y: 6,
-                      filter: "blur(4px)",
+                      y: 10,
+                      filter: "blur(6px)",
                       transitionEnd: { visibility: "hidden" },
                     }
               }
               transition={
                 reduceMotion
                   ? { duration: 0 }
-                  : { duration: isActive ? 0.3 : 0.18, ease: EASE_OUT }
+                  : { duration: isActive ? 0.45 : 0.2, ease: EASE_OUT }
               }
               style={{ gridArea: "1 / 1" }}
               className={isActive ? "z-10" : "pointer-events-none"}

@@ -69,6 +69,16 @@ a {
   }
 }
 
+/* Autoplay progress for the projects selector */
+@keyframes project-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
 /* Accesibilidad: respetar prefers-reduced-motion en todas las animaciones */
 @media (prefers-reduced-motion: reduce) {
   html {
