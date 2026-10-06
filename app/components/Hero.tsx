@@ -52,7 +52,7 @@ const Horizon = () => (
         style={{
           height: GLOW_HEIGHT,
           background:
-            "radial-gradient(28% 100% at 50% 100%, hsl(var(--brand) / 0.26), transparent 75%)",
+            "radial-gradient(28% 100% at 50% 100%, hsl(var(--brand) / 0.15), transparent 75%)",
         }}
       />
       {/* Light spilling just below the edge */}
@@ -62,7 +62,7 @@ const Horizon = () => (
           top: GLOW_HEIGHT,
           height: GLOW_HEIGHT,
           background:
-            "radial-gradient(22% 100% at 50% 0%, hsl(var(--brand-soft) / 0.12), transparent 80%)",
+            "radial-gradient(22% 100% at 50% 0%, hsl(var(--brand-soft) / 0.07), transparent 80%)",
         }}
       />
       {/* The lit edge */}
@@ -71,7 +71,7 @@ const Horizon = () => (
         style={{
           top: GLOW_HEIGHT,
           boxShadow:
-            "inset 0 1px 0 0 hsl(var(--brand-soft) / 0.8), 0 -2px 24px -6px hsl(var(--brand) / 0.7)",
+            "inset 0 1px 0 0 hsl(var(--brand-soft) / 0.55), 0 -2px 24px -6px hsl(var(--brand) / 0.4)",
         }}
       />
     </div>
@@ -86,7 +86,7 @@ const Hero = ({ visitor }: HeroProps) => {
     <section
       id="top"
       data-section="top"
-      className="relative isolate flex min-h-screen flex-col items-center justify-center overflow-y-clip text-center"
+      className="relative isolate flex min-h-[100svh] flex-col items-center justify-center overflow-y-clip text-center"
     >
       {/* Faint light behind the name */}
       <div
@@ -101,66 +101,70 @@ const Hero = ({ visitor }: HeroProps) => {
       <motion.div
         initial="hidden"
         animate="show"
-        className="flex w-full flex-col items-center gap-5 md:gap-6"
+        className="flex min-h-[100svh] w-full flex-col items-center pb-6 md:pb-8"
       >
-        <motion.h1
-          variants={fadeUp(delay(0))}
-          className="text-balance font-semibold tracking-tighter text-fg text-[clamp(3rem,9vw,5rem)] md:text-[clamp(4rem,10vw,7rem)] lg:text-[clamp(5rem,13vw,10.5rem)] [line-height:0.9]"
-        >
-          Ramiro
-          <br />
-          Tanquias.
-        </motion.h1>
-
-        <motion.span
-          variants={fadeUp(delay(1))}
-          className="font-mono text-sm uppercase tracking-[0.22em] text-fg-muted md:text-base"
-        >
-          Full Stack Developer
-        </motion.span>
-
-        <motion.p
-          variants={fadeUp(delay(2))}
-          className="mt-1 max-w-2xl text-pretty text-base leading-relaxed text-fg-muted md:text-lg"
-        >
-          {visitor ? (
-            <>
-              Hola, <span className="text-fg">{visitor}</span>. Desarrollo
-            </>
-          ) : (
-            <>Desarrollo</>
-          )}{" "}
-          productos web <span className="text-fg">de punta a punta</span>:
-          desde la <span className="text-fg">API y los datos</span> hasta la{" "}
-          <span className="text-fg">interfaz que usa la gente</span>.
-        </motion.p>
-
-        <motion.div
-          variants={fadeUp(delay(3))}
-          className="mt-3 flex flex-wrap items-center justify-center gap-3"
-        >
-          <Link
-            href="#contacto"
-            className="group inline-flex h-11 items-center gap-2 rounded-md bg-fg px-5 text-sm font-medium text-bg-base shadow-xs transition-all duration-200 ease-smooth hover:bg-brand-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base active:scale-[0.98] motion-reduce:transition-none"
+        {/* Identity and actions, centered in the space above the horizon */}
+        <div className="flex w-full flex-1 flex-col items-center justify-center gap-5 pt-20 md:gap-6">
+          <motion.h1
+            variants={fadeUp(delay(0))}
+            className="text-balance text-[clamp(3rem,9vw,5rem)] font-semibold tracking-tighter text-fg [line-height:0.9] md:text-[clamp(4rem,10vw,7rem)] lg:text-[clamp(5rem,13vw,10.5rem)]"
           >
-            Hablemos
-            <ArrowUpRight
-              className="h-4 w-4 transition-transform duration-200 ease-smooth group-hover:-translate-y-0.5 group-hover:translate-x-0.5 motion-reduce:transition-none"
-              aria-hidden="true"
-            />
-          </Link>
-          <a
-            href="/CV-RAMIRO-TANQUIAS.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex h-11 items-center gap-2 rounded-md border border-border bg-bg-elevated px-5 text-sm font-medium text-fg transition-all duration-200 ease-smooth hover:border-border-strong hover:bg-bg-overlay focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base active:scale-[0.98] motion-reduce:transition-none"
-          >
-            <Download className="h-4 w-4" aria-hidden="true" />
-            Descargar CV
-          </a>
-        </motion.div>
+            Ramiro
+            <br />
+            Tanquias.
+          </motion.h1>
 
-        <div className="relative mt-14 w-full max-w-3xl pt-10 md:mt-20 md:pt-12">
+          <motion.span
+            variants={fadeUp(delay(1))}
+            className="font-mono text-sm uppercase tracking-[0.22em] text-fg-muted md:text-base"
+          >
+            Full Stack Developer
+          </motion.span>
+
+          <motion.p
+            variants={fadeUp(delay(2))}
+            className="mt-1 max-w-2xl text-pretty text-base leading-relaxed text-fg-muted md:text-lg"
+          >
+            {visitor ? (
+              <>
+                Hola, <span className="text-fg">{visitor}</span>. Desarrollo
+              </>
+            ) : (
+              <>Desarrollo</>
+            )}{" "}
+            productos web <span className="text-fg">de punta a punta</span>:
+            desde la <span className="text-fg">API y los datos</span> hasta la{" "}
+            <span className="text-fg">interfaz que usa la gente</span>.
+          </motion.p>
+
+          <motion.div
+            variants={fadeUp(delay(3))}
+            className="mt-3 flex flex-wrap items-center justify-center gap-3"
+          >
+            <Link
+              href="#contacto"
+              className="group inline-flex h-11 items-center gap-2 rounded-md bg-fg px-5 text-sm font-medium text-bg-base shadow-xs transition-all duration-200 ease-smooth hover:bg-brand-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base active:scale-[0.98] motion-reduce:transition-none"
+            >
+              Hablemos
+              <ArrowUpRight
+                className="h-4 w-4 transition-transform duration-200 ease-smooth group-hover:-translate-y-0.5 group-hover:translate-x-0.5 motion-reduce:transition-none"
+                aria-hidden="true"
+              />
+            </Link>
+            <a
+              href="/CV-RAMIRO-TANQUIAS.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-11 items-center gap-2 rounded-md border border-border bg-bg-elevated px-5 text-sm font-medium text-fg transition-all duration-200 ease-smooth hover:border-border-strong hover:bg-bg-overlay focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base active:scale-[0.98] motion-reduce:transition-none"
+            >
+              <Download className="h-4 w-4" aria-hidden="true" />
+              Descargar CV
+            </a>
+          </motion.div>
+        </div>
+
+        {/* Facts and scroll cue, anchored to the bottom of the viewport */}
+        <div className="relative mt-12 w-full max-w-3xl pt-10 md:pt-12">
           <Horizon />
           <motion.dl
             variants={fadeUp(delay(4))}
@@ -176,24 +180,24 @@ const Hero = ({ visitor }: HeroProps) => {
             ))}
           </motion.dl>
         </div>
-      </motion.div>
 
-      <motion.a
-        href="#experiencia"
-        aria-label="Ver experiencia"
-        initial={reduceMotion ? { opacity: 1 } : { opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 0.6 }}
-        className="group absolute bottom-8 left-1/2 inline-flex -translate-x-1/2 flex-col items-center gap-1.5 text-fg-subtle transition-colors hover:text-fg"
-      >
-        <span className="font-mono text-[10px] uppercase tracking-[0.2em]">
-          Scroll
-        </span>
-        <ChevronDown
-          className="h-4 w-4 animate-bounce motion-reduce:animate-none"
-          aria-hidden="true"
-        />
-      </motion.a>
+        <motion.a
+          href="#experiencia"
+          aria-label="Ver experiencia"
+          initial={reduceMotion ? { opacity: 1 } : { opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2, duration: 0.6 }}
+          className="group mt-10 inline-flex flex-col items-center gap-1.5 text-fg-subtle transition-colors hover:text-fg md:mt-12"
+        >
+          <span className="font-mono text-[10px] uppercase tracking-[0.2em]">
+            Scroll
+          </span>
+          <ChevronDown
+            className="h-4 w-4 animate-bounce motion-reduce:animate-none"
+            aria-hidden="true"
+          />
+        </motion.a>
+      </motion.div>
     </section>
   );
 };
