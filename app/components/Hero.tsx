@@ -23,6 +23,61 @@ const fadeUp = (delay = 0) => ({
   },
 });
 
+const GLOW_HEIGHT = 180;
+const HORIZON_MASK =
+  "linear-gradient(to right, transparent 8%, black 36%, black 64%, transparent 92%)";
+
+/**
+ * A wide, shallow horizon of brand light above the facts row: a thin lit
+ * edge with atmosphere rising above it and a faint wash spilling below.
+ * The body stays transparent so the page background carries through.
+ */
+const Horizon = () => (
+  <div
+    aria-hidden="true"
+    className="pointer-events-none absolute left-1/2 top-0 -z-10 w-[max(220vw,2400px)] -translate-x-1/2"
+    style={{ marginTop: -GLOW_HEIGHT }}
+  >
+    <div
+      className="hero-horizon relative"
+      style={{
+        height: GLOW_HEIGHT * 3,
+        maskImage: HORIZON_MASK,
+        WebkitMaskImage: HORIZON_MASK,
+      }}
+    >
+      {/* Atmosphere above the edge */}
+      <div
+        className="absolute inset-x-0 top-0"
+        style={{
+          height: GLOW_HEIGHT,
+          background:
+            "radial-gradient(28% 100% at 50% 100%, hsl(var(--brand) / 0.26), transparent 75%)",
+        }}
+      />
+      {/* Light spilling just below the edge */}
+      <div
+        className="absolute inset-x-0"
+        style={{
+          top: GLOW_HEIGHT,
+          height: GLOW_HEIGHT,
+          background:
+            "radial-gradient(22% 100% at 50% 0%, hsl(var(--brand-soft) / 0.12), transparent 80%)",
+        }}
+      />
+      {/* The lit edge */}
+      <div
+        className="absolute inset-x-0 aspect-[4/1] rounded-[50%]"
+        style={{
+          top: GLOW_HEIGHT,
+          boxShadow:
+            "inset 0 1px 0 0 hsl(var(--brand-soft) / 0.8), 0 -2px 24px -6px hsl(var(--brand) / 0.7)",
+        }}
+      />
+    </div>
+  </div>
+);
+
 const Hero = ({ visitor }: HeroProps) => {
   const reduceMotion = useReducedMotion();
   const delay = (i: number) => (reduceMotion ? 0 : 0.08 + i * 0.08);
@@ -31,8 +86,18 @@ const Hero = ({ visitor }: HeroProps) => {
     <section
       id="top"
       data-section="top"
-      className="relative flex min-h-screen flex-col items-center justify-center text-center"
+      className="relative isolate flex min-h-screen flex-col items-center justify-center overflow-y-clip text-center"
     >
+      {/* Faint light behind the name */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute left-1/2 top-[38%] -z-10 h-[420px] w-[min(900px,120vw)] -translate-x-1/2 -translate-y-1/2"
+        style={{
+          background:
+            "radial-gradient(closest-side, hsl(var(--brand) / 0.09), transparent)",
+        }}
+      />
+
       <motion.div
         initial="hidden"
         animate="show"
@@ -95,19 +160,22 @@ const Hero = ({ visitor }: HeroProps) => {
           </a>
         </motion.div>
 
-        <motion.dl
-          variants={fadeUp(delay(4))}
-          className="mt-8 grid w-full max-w-3xl grid-cols-1 gap-4 border-t border-border-subtle pt-6 text-center sm:grid-cols-3 sm:gap-6"
-        >
-          {FACTS.map((fact) => (
-            <div key={fact.label}>
-              <dt className="font-mono text-[10px] uppercase tracking-wider text-fg-subtle">
-                {fact.label}
-              </dt>
-              <dd className="mt-1 text-sm text-fg">{fact.value}</dd>
-            </div>
-          ))}
-        </motion.dl>
+        <div className="relative mt-14 w-full max-w-3xl pt-10 md:mt-20 md:pt-12">
+          <Horizon />
+          <motion.dl
+            variants={fadeUp(delay(4))}
+            className="relative grid grid-cols-1 gap-4 text-center sm:grid-cols-3 sm:gap-6"
+          >
+            {FACTS.map((fact) => (
+              <div key={fact.label}>
+                <dt className="font-mono text-[10px] uppercase tracking-wider text-fg-subtle">
+                  {fact.label}
+                </dt>
+                <dd className="mt-1 text-sm text-fg">{fact.value}</dd>
+              </div>
+            ))}
+          </motion.dl>
+        </div>
       </motion.div>
 
       <motion.a
