@@ -45,7 +45,7 @@ const Section = ({
             transition={
               reduceMotion
                 ? { duration: 0 }
-                : { duration: 0.8, delay: 0.15, ease: [0.23, 1, 0.32, 1] }
+                : { duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }
             }
             className="h-px flex-1 origin-left bg-gradient-to-r from-fg/25 via-fg/10 to-transparent"
             aria-hidden="true"

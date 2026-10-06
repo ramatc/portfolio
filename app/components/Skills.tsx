@@ -7,7 +7,8 @@ import Section from "@/app/components/Section";
 
 interface Skill {
   name: string;
-  img: string;
+  /** Icon file name(s) in /public/skills; a list renders the icons side by side. */
+  img: string | string[];
 }
 
 interface Category {
@@ -24,8 +25,7 @@ const CATEGORIES: Category[] = [
       { name: "Next.js", img: "nextjs" },
       { name: "TypeScript", img: "typescript" },
       { name: "JavaScript", img: "javascript" },
-      { name: "HTML", img: "html5" },
-      { name: "CSS", img: "css" },
+      { name: "HTML & CSS", img: ["html5", "css"] },
       { name: "Tailwind", img: "tailwindcss" },
     ],
   },
@@ -50,7 +50,10 @@ const CATEGORIES: Category[] = [
   },
   {
     label: "Testing",
-    items: [{ name: "Jest", img: "jest" }],
+    items: [
+      { name: "Jest", img: "jest" },
+      { name: "Vitest", img: "vitest" },
+    ],
   },
   {
     label: "Tooling",
@@ -67,7 +70,12 @@ const Skills = () => {
   const reduceMotion = useReducedMotion();
 
   return (
-    <Section id="habilidades" number="03" title="Habilidades">
+    <Section
+      id="habilidades"
+      number="03"
+      title="Habilidades"
+      description="Stack con el que construyo productos."
+    >
       <ul className="flex flex-col gap-y-6">
         {CATEGORIES.map((category, i) => (
           <motion.li
@@ -86,25 +94,31 @@ const Skills = () => {
                     ease: [0.22, 1, 0.36, 1],
                   }
             }
-            className="grid grid-cols-1 gap-4 md:grid-cols-[140px_1fr] md:items-center md:gap-8"
+            className="grid grid-cols-1 gap-4 md:grid-cols-[140px_1fr] md:items-start md:gap-8"
           >
-            <span className="font-mono text-xs uppercase tracking-wider text-fg-subtle">
+            {/* Box matches chip height so the label aligns with the first row when chips wrap */}
+            <span className="md:flex md:h-[38px] md:items-center font-mono text-xs uppercase tracking-wider text-fg-subtle">
               {category.label}
             </span>
             <ul className="flex flex-wrap gap-2">
               {category.items.map((skill) => (
                 <li
                   key={skill.name}
-                  className="group inline-flex items-center gap-2 rounded-md border border-border-subtle bg-bg-elevated/60 px-3 py-1.5 text-sm text-fg-muted transition-colors hover:border-border hover:bg-bg-elevated hover:text-fg"
+                  className="inline-flex items-center gap-2 rounded-md border border-border-subtle bg-bg-elevated/60 px-3.5 py-2 text-sm text-fg-muted"
                 >
-                  <Image
-                    src={`/skills/${skill.img}.svg`}
-                    alt=""
-                    width={16}
-                    height={16}
-                    className="h-4 w-4 shrink-0 opacity-90 transition-opacity group-hover:opacity-100"
-                    aria-hidden="true"
-                  />
+                  <span className="flex shrink-0 gap-1">
+                    {[skill.img].flat().map((img) => (
+                      <Image
+                        key={img}
+                        src={`/skills/${img}.svg`}
+                        alt=""
+                        width={20}
+                        height={20}
+                        className="h-5 w-5"
+                        aria-hidden="true"
+                      />
+                    ))}
+                  </span>
                   <span>{skill.name}</span>
                 </li>
               ))}
