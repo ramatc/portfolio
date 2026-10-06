@@ -70,12 +70,7 @@ const Skills = () => {
   const reduceMotion = useReducedMotion();
 
   return (
-    <Section
-      id="habilidades"
-      number="03"
-      title="Habilidades"
-      description="Stack con el que construyo productos."
-    >
+    <Section id="habilidades" number="03" title="Habilidades">
       <ul className="flex flex-col gap-y-6">
         {CATEGORIES.map((category, i) => (
           <motion.li
@@ -104,7 +99,7 @@ const Skills = () => {
               {category.items.map((skill) => (
                 <li
                   key={skill.name}
-                  className="inline-flex items-center gap-2 rounded-md border border-border-subtle bg-bg-elevated/60 px-3.5 py-2 text-sm text-fg-muted"
+                  className="inline-flex items-center gap-2 rounded-md border border-border-subtle bg-bg-elevated/60 px-3.5 py-2 text-sm text-fg-muted transition-colors duration-200 ease-out [@media(hover:hover)]:hover:border-border-strong [@media(hover:hover)]:hover:bg-bg-elevated [@media(hover:hover)]:hover:text-fg"
                 >
                   <span className="flex shrink-0 gap-1">
                     {[skill.img].flat().map((img) => (

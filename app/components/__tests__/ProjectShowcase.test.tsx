@@ -79,4 +79,58 @@ describe("ProjectShowcase links", () => {
       expect(link).toHaveAttribute("target", "_blank");
     }
   });
+
+  it("renders only the demo link when a project has a url but no repo", () => {
+    render(
+      <ProjectShowcase
+        projects={[
+          buildProject({ title: "DemoOnly", url: "https://demo.example.com" }),
+        ]}
+      />,
+    );
+
+    const demoLinks = screen.getAllByRole("link", {
+      name: "Abrir demo de DemoOnly",
+    });
+
+    expect(demoLinks.length).toBeGreaterThan(0);
+    for (const link of demoLinks) {
+      expect(link).toHaveAttribute("href", "https://demo.example.com");
+      expect(link).toHaveAttribute("target", "_blank");
+    }
+    expect(
+      screen.queryAllByRole("link", { name: /Ver código de DemoOnly/ }),
+    ).toHaveLength(0);
+    expect(screen.getAllByRole("link")).toHaveLength(demoLinks.length);
+  });
+
+  it("renders only the repo link when a project has a repo but no url", () => {
+    render(
+      <ProjectShowcase
+        projects={[
+          buildProject({
+            title: "RepoOnly",
+            repo: "https://github.com/example/repo-only",
+          }),
+        ]}
+      />,
+    );
+
+    const repoLinks = screen.getAllByRole("link", {
+      name: "Ver código de RepoOnly en GitHub",
+    });
+
+    expect(repoLinks.length).toBeGreaterThan(0);
+    for (const link of repoLinks) {
+      expect(link).toHaveAttribute(
+        "href",
+        "https://github.com/example/repo-only",
+      );
+      expect(link).toHaveAttribute("target", "_blank");
+    }
+    expect(
+      screen.queryAllByRole("link", { name: /Abrir demo de RepoOnly/ }),
+    ).toHaveLength(0);
+    expect(screen.getAllByRole("link")).toHaveLength(repoLinks.length);
+  });
 });
