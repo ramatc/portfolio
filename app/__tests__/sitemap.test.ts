@@ -16,7 +16,9 @@ describe("sitemap", () => {
 
   it("ranks case studies below the home page", () => {
     const entries = sitemap();
-    const home = entries.find((entry) => !entry.url.includes("/proyectos/"));
+    const home = entries.find((entry) =>
+      /^https:\/\/[^/]+\/?$/.test(entry.url),
+    );
     const caseStudies = entries.filter((entry) =>
       entry.url.includes("/proyectos/"),
     );
