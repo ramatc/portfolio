@@ -41,7 +41,7 @@ Strategy: ask-on-risk. Forecast ~400 authored changed lines (T1 ~5, T2 ~350-400)
 ## Progress / evidence
 - Branch: `feat/coda-case-study`.
 - T1 9164dae — `tsc` and `lint` clean.
-- T2 27557d1 — writer: `tsc` 0, `lint` clean, `npm run build` OK (`/proyectos/coda` static). Parent spot check: `tsc` 0, `lint` clean. Navbar anchors now `/#x` and the active section resets on route change; page metadata lists share images explicitly. Parent corrected the explanation wording to the real UI strings ("Because you like {genre}" / "Because you follow this artist"). Visual check pending (user).
+- T2 27557d1 — writer: `tsc` 0, `lint` clean, `npm run build` OK (`/proyectos/coda` static). Parent spot check: `tsc` 0, `lint` clean. Navbar anchors now `/#x` and the active section resets on route change; page metadata lists share images explicitly. Parent corrected the explanation wording to the real UI strings ("Because you like {genre}" / "Because you follow this artist"). Visual check approved by the user (2026-10-06).
 
 ## Next step
-Visual check of `/proyectos/coda` (diagram desktop/mobile, sticky index at lg, repo button contrast), then native review if due. Push / PR is the user's decision.
+Feature closed; page is on `main`. No pending work.
