@@ -2,9 +2,13 @@
 
 ### About Me
 
-Full Stack Developer with 4 years of experience, currently focused on backend for financial systems. I build microservices with **NestJS** for banking modernization projects and fintech-banking integrations. Previously spent nearly 2 years as a React tutor at Coderhouse.
+Full Stack Developer with 4 years of experience, currently specializing in backend development for financial systems.
 
-Based in Buenos Aires, Argentina. Open to remote opportunities.
+I build microservices with **NestJS** for banking modernization initiatives and fintech-banking integrations. My work is focused on designing and maintaining scalable backend services, APIs, integrations, and business-critical systems.
+
+Previously, I spent nearly 2 years as a **React tutor at Coderhouse**, helping students learn frontend development and strengthen their problem-solving skills.
+
+Based in **Buenos Aires, Argentina**. Open to remote opportunities.
 
 ### Tech Stack
 
@@ -28,7 +32,6 @@ Based in Buenos Aires, Argentina. Open to remote opportunities.
 ![Oracle](https://img.shields.io/badge/-Oracle-F80000?style=for-the-badge&logo=oracle&logoColor=fff)
 ![MySQL](https://img.shields.io/badge/-MySQL-00618b?style=for-the-badge&logo=mysql&logoColor=fafafa)
 
-
 **Tools**
 
 ![Git](https://img.shields.io/badge/-Git-F05032?style=for-the-badge&logo=git&logoColor=fff)
@@ -36,9 +39,20 @@ Based in Buenos Aires, Argentina. Open to remote opportunities.
 
 ### Featured Projects
 
-- **[Portfolio](https://ramatc.vercel.app/)** — Personal portfolio built with React and Next.js, deployed on Vercel.
-- **[Coda](https://github.com/ramatc/coda/)** — Music discovery social network. TypeScript monorepo (Next.js + NestJS + Prisma).
-- **[Vito](https://vitohabit.vercel.app/)** — A gamified habit tracker. You build habits, your buddy Vito grows with you.
+- **[Portfolio](https://ramatc.vercel.app/)** — Personal portfolio built with **Next.js** and **TypeScript**, deployed on Vercel.
+- **[Coda](https://github.com/ramatc/coda/)** — Music discovery social network built as a **TypeScript monorepo** with **Next.js, NestJS, and Prisma**.
+- **[Vito](https://vitohabit.vercel.app/)** — A gamified habit tracker where users build habits while their virtual buddy, Vito, grows with them.
+
+### What I'm Interested In
+
+I'm especially interested in projects involving:
+
+- Backend development
+- Microservices and API design
+- Fintech and banking systems
+- Enterprise and business-critical applications
+- System integrations
+- Full-stack product development
 
 ### Get in Touch
 
