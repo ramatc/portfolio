@@ -34,6 +34,7 @@ const PROJECTS: Project[] = [
     url: "https://www.vamefutbol.com/",
     repo: "",
     image: "vame.png",
+    gallery: ["vame-1.png", "vame-2.png", "vame-3.png"],
     tagline: "E-commerce de camisetas de fútbol",
     kind: "client",
     description:
