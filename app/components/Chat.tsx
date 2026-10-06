@@ -16,10 +16,10 @@ const INITIAL_MESSAGES: Message[] = [
 ];
 
 const SUGGESTED_QUESTIONS = [
-  "¿Qué hacés en el sector bancario?",
+  "¿Qué hace Ramiro en el sector bancario?",
   "¿Qué es Coda y cómo está hecho?",
-  "¿Estás disponible para nuevos proyectos?",
-  "¿Con qué stack trabajás?",
+  "¿Está disponible para nuevos proyectos?",
+  "¿Con qué stack trabaja?",
 ];
 
 const Chat = () => {

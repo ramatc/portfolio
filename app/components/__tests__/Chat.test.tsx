@@ -35,27 +35,27 @@ describe("Chat suggested questions", () => {
     const suggestions = within(list).getAllByRole("button");
 
     expect(suggestions.map((button) => button.textContent)).toEqual([
-      "¿Qué hacés en el sector bancario?",
+      "¿Qué hace Ramiro en el sector bancario?",
       "¿Qué es Coda y cómo está hecho?",
-      "¿Estás disponible para nuevos proyectos?",
-      "¿Con qué stack trabajás?",
+      "¿Está disponible para nuevos proyectos?",
+      "¿Con qué stack trabaja?",
     ]);
   });
 
   it("sends the clicked suggestion, shows it with the answer, and hides the suggestions", async () => {
-    mockedSendQuestion.mockResolvedValue("Trabajo con NestJS y React.");
+    mockedSendQuestion.mockResolvedValue("Ramiro trabaja con NestJS y React.");
     const user = await openChat();
 
     await user.click(
-      screen.getByRole("button", { name: "¿Con qué stack trabajás?" }),
+      screen.getByRole("button", { name: "¿Con qué stack trabaja?" }),
     );
 
     expect(mockedSendQuestion).toHaveBeenCalledTimes(1);
-    expect(mockedSendQuestion).toHaveBeenCalledWith("¿Con qué stack trabajás?");
+    expect(mockedSendQuestion).toHaveBeenCalledWith("¿Con qué stack trabaja?");
     expect(
-      await screen.findByText("Trabajo con NestJS y React."),
+      await screen.findByText("Ramiro trabaja con NestJS y React."),
     ).toBeInTheDocument();
-    expect(screen.getByText("¿Con qué stack trabajás?")).toBeInTheDocument();
+    expect(screen.getByText("¿Con qué stack trabaja?")).toBeInTheDocument();
     expect(
       screen.queryByRole("list", { name: "Preguntas sugeridas" }),
     ).not.toBeInTheDocument();
