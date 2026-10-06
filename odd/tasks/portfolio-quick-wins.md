@@ -9,16 +9,22 @@ Benchmark against two reference portfolios showed: inconsistent positioning (her
 ## Decisions
 - Positioning: **Full Stack Developer, end-to-end product** (user choice, 2026-10-05).
 - Availability: **open to opportunities, remote or hybrid** (user choice, 2026-10-05).
+- About stat stays **AR · Buenos Aires** (user rejected "UTC−3").
+- Project order: **Coda, Vame, Vito** — Coda is the most important project even while in progress.
+- Older course projects (Rick and Morty, Guess Pokémon, Memotest, VinylWRLD) are not shown; a "Más proyectos en GitHub" link replaces them.
+- Hero scroll-cue bounce is intentional (user confirmed; detector exception in `.impeccable/config.json`).
 
 ## Scope
-Copy and data in `app/components/{Hero,About,Footer,Projects,CardProject,Skills}.tsx`, `app/lib/definitions.ts`, `app/layout.tsx`, `app/manifest.ts`, new icons in `public/skills/`.
-Out of scope: case-study pages, NDA banking case, chat suggestions, visual rhythm changes.
+Copy and data in `app/components/{Hero,About,Footer,Projects,CardProject,Skills,Chat}.tsx`, `app/lib/{definitions,actions}.ts`, `app/layout.tsx`, `app/manifest.ts`, project and skill images in `public/`.
+Out of scope: case-study pages, NDA banking case, visual rhythm changes.
 
 ## Tasks
 - [x] T1 Unify positioning copy (hero role + tagline, about, footer, metadata, manifest). Route: inline.
 - [x] T2 Hero metadata strip + availability badge. Route: inline.
 - [x] T3 Project model: kind (client/personal), metrics, "what it proves"; render in card; reorder. Route: inline.
 - [x] T4 Fix incoherences: Coda demo link, skills (PostgreSQL, Prisma, Supabase). Route: inline.
+- [x] T5 Follow-up adjustments from user review: tighter card + new Vame mockup, clearer Vame takeaway, "En desarrollo" badge, Coda first, Vame role Fullstack, GitHub link, removed legacy images. Route: inline.
+- [x] T6 Chat: refresh assistant context with current experience/projects, add suggested questions. Route: inline.
 
 Route note: all tasks inline — copy/data edits on already-read files, no research needed.
 
@@ -26,15 +32,16 @@ Route note: all tasks inline — copy/data edits on already-read files, no resea
 No test runner in repo (test-first exception). Per task: `npx tsc --noEmit`, `npm run lint`; at close: `npm run build` + visual check in browser.
 
 ## Progress / evidence
-- Branch: `feat/portfolio-quick-wins`
-- T1 8632d6a, T2 9a7ae37, T3 06366c4, T4 (this commit).
-- Checks: `npx tsc --noEmit` clean, `npm run lint` clean, `npm run build` OK; visual check on localhost (hero, project cards, skills).
-- Review: T1 assessed medium / under_budget.
+- Branch: `feat/portfolio-quick-wins`.
+- T1 8632d6a, T2 9a7ae37, T3 06366c4, T4 2fb62d4.
+- T5 3a27dfc, 30fea84, 3285fc7, 298565e, 64f6baa, a5a5c9e, ab488be, 15cca45, 7812061, 1471a95.
+- T6 f626d6e, e9c9161.
+- Checks: `tsc` and `lint` clean on every task; `npm run build` OK after T4; visual checks on localhost; chat verified end to end (suggested question answered with current context).
+- Review: branch base-diff (412 lines, medium) reviewed with consent granted; approved and acknowledged (lineage review-a0aced49a8e417d6).
 
-## Pending decisions for the user
-- Vame role label still "Frontend" (stack includes Supabase).
-- All project years are "2026" (unverified).
-- Coda has no public demo; card now links GitHub only.
+## Follow-ups (non-blocking review findings)
+- Chat suggested questions have no automated test (repo has no test runner).
+- `CardProject`: if a project has neither `url` nor `repo`, the preview link falls back to an empty href; render the image without a link in that case.
 
 ## Next step
-Important improvements: case-study pages (Coda, Vame), NDA banking case, chat suggested questions, visual rhythm.
+Important improvements: Coda case-study page (needs real technical decisions from the user), NDA banking case, visual rhythm in Projects. Push / PR is the user's decision.
