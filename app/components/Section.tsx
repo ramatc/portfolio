@@ -36,10 +36,18 @@ const Section = ({
         }
         className="mb-12 max-w-2xl md:mb-16"
       >
-        <div className="flex items-baseline gap-3 font-mono text-xs text-fg-subtle">
+        <div className="flex items-center gap-3 font-mono text-xs text-fg-subtle">
           <span aria-hidden="true">{number}</span>
-          <span
-            className="h-px flex-1 bg-border-subtle"
+          <motion.span
+            initial={reduceMotion ? { scaleX: 1 } : { scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true, margin: "-15% 0px" }}
+            transition={
+              reduceMotion
+                ? { duration: 0 }
+                : { duration: 0.8, delay: 0.15, ease: [0.23, 1, 0.32, 1] }
+            }
+            className="h-px flex-1 origin-left bg-gradient-to-r from-fg/25 via-fg/10 to-transparent"
             aria-hidden="true"
           />
         </div>
