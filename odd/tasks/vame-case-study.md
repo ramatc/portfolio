@@ -32,7 +32,7 @@ Out of scope: changes to the Vame repo, NDA banking case, Inaria highlight.
 - Results: 5,800+ visitors and 19,000 page views in the first month, 97% mobile traffic (already in the card).
 
 ## Tasks
-- [ ] T1 Case-study page `/proyectos/vame` + `caseStudy` link on the Vame card + sitemap entry (+ tests following the existing pattern, if any). Route: delegated writer (new route plus edits to 2+ files, design work).
+- [x] T1 Case-study page `/proyectos/vame` + `caseStudy` link on the Vame card + sitemap entry (+ tests following the existing pattern, if any). Route: delegated writer (new route plus edits to 2+ files, design work).
 
 ## Checks
 Per task: `npx tsc --noEmit`, `npm run lint`, `npm test`; at close: `npm run build` + visual check by the user.
@@ -44,5 +44,8 @@ Strategy: ask-on-risk. Forecast ~600-800 authored changed lines (one new page wi
 - Branch: `feat/vame-case-study`.
 - T1 written (delegated writer): `app/proyectos/vame/page.tsx` (632), `ArchitectureDiagram.tsx` (169), Projects.tsx +1, sitemap.ts +6. Writer: `tsc` 0, `lint` clean, `npm test` 7/7, `npm run build` OK (`/proyectos/vame` static). Parent spot check: `tsc` 0. Test skipped: PROJECTS is not exported, fixture-based test could not fail first. Inferred consequence wording (legacy cart bug, SPA rewrite, `.js` imports, tradeoffs) flagged for user review.
 
+- T1 committed 9db4c5c. Native review: risk medium, `slice_budget_reached`, consent granted, reliability lens approved and acknowledged. Advisory (non-blocking) findings: sitemap entry untested (WARNING), Vame card caseStudy link not proved by a rendered test (SUGGESTION).
+- User asked to push to `main` (2026-10-06).
+
 ## Next step
-User visual check of `/proyectos/vame`, then commit T1.
+Feature closed. Optional follow-up: tests for `sitemap()` and the rendered Vame case-study link (review advisories).
