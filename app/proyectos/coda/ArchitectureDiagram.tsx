@@ -111,7 +111,7 @@ const ArchitectureDiagram = () => {
       <motion.div variants={item} className="md:col-start-3 md:row-start-6">
         <div className="rounded-lg border border-border bg-bg-overlay/60 p-3.5">
           <div className="flex items-baseline justify-between gap-2">
-            <span className="text-sm font-medium text-fg">Workers</span>
+            <span className="text-sm font-semibold text-fg">Workers</span>
             <span className="font-mono text-[11px] text-fg-subtle">
               procesos separados
             </span>
@@ -126,7 +126,7 @@ const ArchitectureDiagram = () => {
                   {worker.name}
                 </span>
                 {worker.note ? (
-                  <span className="block font-mono text-[10px] text-fg-subtle">
+                  <span className="block font-mono text-[11px] text-fg-subtle">
                     {worker.note}
                   </span>
                 ) : null}
@@ -167,7 +167,7 @@ const Node = ({
     }`}
     style={tone === "source" ? { borderColor: ACCENT } : undefined}
   >
-    <span className="text-sm font-medium text-fg">{title}</span>
+    <span className="text-sm font-semibold text-fg">{title}</span>
     <span
       className="font-mono text-[11px] text-fg-subtle"
       style={tone === "source" ? { color: ACCENT } : undefined}

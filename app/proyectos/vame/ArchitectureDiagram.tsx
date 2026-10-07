@@ -131,7 +131,7 @@ const Node = ({
     style={tone === "source" ? { borderColor: ACCENT } : undefined}
   >
     <span
-      className={`text-sm font-medium text-fg ${
+      className={`text-sm font-semibold text-fg ${
         tone === "default" ? "" : "font-mono"
       }`}
     >

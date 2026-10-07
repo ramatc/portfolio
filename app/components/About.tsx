@@ -23,7 +23,7 @@ const About = () => {
             <div className="text-2xl font-semibold tracking-tight text-fg md:text-3xl">
               {stat.value}
             </div>
-            <div className="mt-1.5 font-mono text-[10px] uppercase tracking-wider text-fg-subtle md:text-[11px]">
+            <div className="mt-1.5 font-mono text-[11px] uppercase tracking-wider text-fg-subtle md:text-[11px]">
               {stat.label}
             </div>
           </div>

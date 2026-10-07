@@ -224,7 +224,7 @@ export default function CodaCaseStudyPage() {
           <span className="font-mono text-xs uppercase tracking-wider text-fg-subtle">
             Caso de estudio
           </span>
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-border-subtle bg-bg-overlay/60 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-fg-muted">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-border-subtle bg-bg-overlay/60 px-2 py-0.5 font-mono text-[11px] uppercase tracking-wider text-fg-muted">
             <span
               aria-hidden="true"
               className="h-1.5 w-1.5 rounded-full"
@@ -268,7 +268,7 @@ export default function CodaCaseStudyPage() {
           href={REPO_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="group mt-10 inline-flex h-10 items-center gap-2 rounded-md border border-border bg-bg-elevated px-4 text-sm font-medium text-fg transition-colors hover:border-border-strong focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base"
+          className="group mt-10 inline-flex h-10 items-center gap-2 rounded-md border border-border bg-bg-elevated px-4 text-sm font-semibold text-fg transition-colors hover:border-border-strong focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base"
         >
           <GitHub className="h-4 w-4" />
           Ver el código en GitHub
@@ -458,7 +458,7 @@ export default function CodaCaseStudyPage() {
             <div className="flex flex-wrap gap-3">
               <a
                 href="/#proyectos"
-                className="inline-flex h-10 items-center gap-2 rounded-md border border-border bg-bg-overlay px-4 text-sm font-medium text-fg-muted transition-colors hover:border-border-strong hover:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base"
+                className="inline-flex h-10 items-center gap-2 rounded-md border border-border bg-bg-overlay px-4 text-sm font-semibold text-fg-muted transition-colors hover:border-border-strong hover:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base"
               >
                 <ArrowLeft className="h-4 w-4" aria-hidden="true" />
                 Proyectos
@@ -467,7 +467,7 @@ export default function CodaCaseStudyPage() {
                 href={REPO_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-10 items-center gap-2 rounded-md px-4 text-sm font-medium text-bg-base transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base"
+                className="inline-flex h-10 items-center gap-2 rounded-md px-4 text-sm font-semibold text-bg-base transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base"
                 style={{ backgroundColor: ACCENT }}
               >
                 <GitHub className="h-4 w-4" />

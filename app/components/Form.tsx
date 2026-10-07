@@ -145,7 +145,7 @@ const Form: FC = () => {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="group inline-flex h-11 items-center gap-2 rounded-md bg-fg px-5 text-sm font-medium text-bg-base shadow-xs transition-all duration-200 ease-smooth hover:bg-brand-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60 motion-reduce:transition-none"
+          className="group inline-flex h-11 items-center gap-2 rounded-md bg-fg px-5 text-sm font-semibold text-bg-base shadow-xs transition-all duration-200 ease-smooth hover:bg-brand-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60 motion-reduce:transition-none"
         >
           {isSubmitting ? "Enviando…" : "Enviar mensaje"}
           <ArrowUpRight

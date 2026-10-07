@@ -116,7 +116,7 @@ const Navbar = () => {
               href="/CV-RAMIRO-TANQUIAS.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-8 items-center gap-1.5 rounded-md border border-border bg-bg-elevated px-3 text-xs font-medium text-fg-muted transition-colors hover:border-border-strong hover:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60"
+              className="inline-flex h-8 items-center gap-1.5 rounded-md border border-border bg-bg-elevated px-3 text-xs font-semibold text-fg-muted transition-colors hover:border-border-strong hover:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60"
             >
               CV
               <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />

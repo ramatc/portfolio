@@ -204,7 +204,7 @@ const Chat = () => {
               reduceMotion ? { opacity: 0 } : { opacity: 0, y: 8, scale: 0.96 }
             }
             transition={panelTransition}
-            className="group inline-flex items-center gap-2 rounded-full border border-border bg-bg-elevated/80 px-4 py-2 text-sm font-medium text-fg-muted shadow-md backdrop-blur-xl transition-colors hover:border-border-strong hover:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base"
+            className="group inline-flex items-center gap-2 rounded-full border border-border bg-bg-elevated/80 px-4 py-2 text-sm font-semibold text-fg-muted shadow-md backdrop-blur-xl transition-colors hover:border-border-strong hover:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base"
             aria-label="Abrir chat con el asistente"
           >
             <Sparkles

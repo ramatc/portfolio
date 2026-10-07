@@ -136,7 +136,7 @@ const Experience = () => {
                 {role.role}
               </h3>
               {role.current ? (
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-brand/30 bg-brand/10 px-2 py-0.5 text-xs font-medium text-brand-soft">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-brand/30 bg-brand/10 px-2 py-0.5 text-xs font-semibold text-brand-soft">
                   Actualmente
                 </span>
               ) : null}
@@ -148,7 +148,7 @@ const Experience = () => {
                   href={role.companyUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group/link inline-flex items-center gap-1 font-medium text-fg transition-colors hover:text-brand-soft"
+                  className="group/link inline-flex items-center gap-1 font-semibold text-fg transition-colors hover:text-brand-soft"
                 >
                   {role.company}
                   <ArrowUpRight
@@ -157,7 +157,7 @@ const Experience = () => {
                   />
                 </a>
               ) : (
-                <span className="font-medium text-fg">{role.company}</span>
+                <span className="font-semibold text-fg">{role.company}</span>
               )}
               <span className="text-fg-subtle" aria-hidden="true">
                 ·
@@ -181,11 +181,11 @@ const Experience = () => {
                         ? highlight
                         : highlight.title
                     }
-                    className="flex items-start gap-2 text-xs leading-relaxed text-fg-muted md:text-sm"
+                    className="flex items-start gap-2 text-sm leading-relaxed text-fg-muted"
                   >
                     <span
                       aria-hidden="true"
-                      className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-fg-subtle md:mt-2"
+                      className="mt-2 h-1 w-1 shrink-0 rounded-full bg-fg-subtle"
                     />
                     {typeof highlight === "string" ? (
                       <span>{highlight}</span>
@@ -195,7 +195,7 @@ const Experience = () => {
                           href={highlight.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="group/link inline-flex items-center gap-0.5 font-medium text-fg underline decoration-border underline-offset-2 transition-colors hover:text-brand-soft hover:decoration-brand-soft"
+                          className="group/link inline-flex items-center gap-0.5 font-semibold text-fg underline decoration-border underline-offset-2 transition-colors hover:text-brand-soft hover:decoration-brand-soft"
                         >
                           {highlight.title}
                           <ArrowUpRight

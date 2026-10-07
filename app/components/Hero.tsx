@@ -143,7 +143,7 @@ const Hero = ({ visitor }: HeroProps) => {
           >
             <Link
               href="#contacto"
-              className="group inline-flex h-11 items-center gap-2 rounded-md bg-fg px-5 text-sm font-medium text-bg-base shadow-xs transition-all duration-200 ease-smooth hover:bg-brand-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base active:scale-[0.98] motion-reduce:transition-none"
+              className="group inline-flex h-11 items-center gap-2 rounded-md bg-fg px-5 text-sm font-semibold text-bg-base shadow-xs transition-all duration-200 ease-smooth hover:bg-brand-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base active:scale-[0.98] motion-reduce:transition-none"
             >
               Hablemos
               <ArrowUpRight
@@ -155,7 +155,7 @@ const Hero = ({ visitor }: HeroProps) => {
               href="/CV-RAMIRO-TANQUIAS.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-11 items-center gap-2 rounded-md border border-border bg-bg-elevated px-5 text-sm font-medium text-fg transition-all duration-200 ease-smooth hover:border-border-strong hover:bg-bg-overlay focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base active:scale-[0.98] motion-reduce:transition-none"
+              className="inline-flex h-11 items-center gap-2 rounded-md border border-border bg-bg-elevated px-5 text-sm font-semibold text-fg transition-all duration-200 ease-smooth hover:border-border-strong hover:bg-bg-overlay focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base active:scale-[0.98] motion-reduce:transition-none"
             >
               <Download className="h-4 w-4" aria-hidden="true" />
               Descargar CV
@@ -172,7 +172,7 @@ const Hero = ({ visitor }: HeroProps) => {
           >
             {FACTS.map((fact) => (
               <div key={fact.label}>
-                <dt className="font-mono text-[10px] uppercase tracking-wider text-fg-subtle">
+                <dt className="font-mono text-[11px] uppercase tracking-wider text-fg-subtle">
                   {fact.label}
                 </dt>
                 <dd className="mt-1 text-sm text-fg">{fact.value}</dd>
@@ -189,7 +189,7 @@ const Hero = ({ visitor }: HeroProps) => {
           transition={{ delay: 1.2, duration: 0.6 }}
           className="group mt-10 hidden flex-col sm:inline-flex items-center gap-1.5 text-fg-subtle transition-colors hover:text-fg md:mt-12 lg:[@media(max-height:820px)]:mt-6"
         >
-          <span className="font-mono text-[10px] uppercase tracking-[0.2em]">
+          <span className="font-mono text-[11px] uppercase tracking-[0.2em]">
             Scroll
           </span>
           <ChevronDown

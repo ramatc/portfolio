@@ -347,7 +347,7 @@ const ProjectDetail = ({
                     <dt className="mt-1 text-xs leading-snug text-fg-subtle">
                       {metric.label}
                     </dt>
-                    <dd className="font-mono text-lg font-medium tracking-tight text-fg tabular-nums">
+                    <dd className="font-mono text-lg font-semibold tracking-tight text-fg tabular-nums">
                       {metric.value}
                     </dd>
                   </div>
@@ -363,7 +363,7 @@ const ProjectDetail = ({
             {project.caseStudy ? (
               <Link
                 href={project.caseStudy}
-                className="group/case inline-flex w-fit items-center gap-2 rounded-lg border border-border-strong bg-bg-overlay px-4 py-2 text-sm font-medium text-fg transition-[background-color,transform] duration-150 ease-out hover:bg-bg-overlay/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 active:scale-[0.97] motion-reduce:transition-none"
+                className="group/case inline-flex w-fit items-center gap-2 rounded-lg border border-border-strong bg-bg-overlay px-4 py-2 text-sm font-semibold text-fg transition-[background-color,transform] duration-150 ease-out hover:bg-bg-overlay/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 active:scale-[0.97] motion-reduce:transition-none"
               >
                 Ver caso de estudio
                 <ArrowRight
