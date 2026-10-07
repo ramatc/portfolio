@@ -302,9 +302,16 @@ const ProjectDetail = ({
           </div>
           <div className="flex shrink-0 gap-1.5">
             {hasDemo ? (
-              <IconLink href={project.url} label={`Abrir demo de ${project.title}`}>
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Ver demo de ${project.title} (se abre en una pestaña nueva)`}
+                className="inline-flex h-9 items-center gap-1.5 rounded-lg border border-border bg-bg-overlay px-3 text-sm font-semibold text-fg-muted transition-[color,border-color,transform] duration-150 ease-out hover:border-border-strong hover:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 active:scale-[0.97] motion-reduce:transition-none"
+              >
+                Ver demo
                 <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-              </IconLink>
+              </a>
             ) : null}
             {project.repo ? (
               <IconLink
