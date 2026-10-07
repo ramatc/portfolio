@@ -8,15 +8,11 @@ export const contentType = "image/png";
 const BG = "#09090b";
 const FG = "#fafafa";
 const FG_MUTED = "rgb(175, 175, 183)";
-const FG_SUBTLE = "rgb(121, 121, 134)";
 const BORDER = "rgb(34, 34, 38)";
 const BRAND = "rgb(133, 123, 249)";
 
-const FACTS = [
-  { label: "Ahora", value: "Consultoría Global" },
-  { label: "Stack", value: "React · NestJS · Next.js" },
-  { label: "Base", value: "Buenos Aires" },
-];
+const STACK = "React · NestJS · Next.js";
+const URL_LABEL = "ramatc.vercel.app";
 
 /**
  * Loads a Google Font as a TTF subset containing only the given text,
@@ -32,9 +28,7 @@ async function loadGoogleFont(family: string, weight: number, text: string) {
 
 export default async function Image() {
   const title = "Ramiro Tanquias.";
-  const monoText =
-    "FULL STACK DEVELOPER ramatc.vercel.app " +
-    FACTS.map((f) => `${f.label.toUpperCase()} ${f.value}`).join(" ");
+  const monoText = `FULL STACK DEVELOPER ${STACK} ${URL_LABEL}`;
 
   const [onest, mono] = await Promise.all([
     loadGoogleFont("Onest", 600, title),
@@ -73,7 +67,7 @@ export default async function Image() {
           style={{
             position: "absolute",
             left: 200,
-            bottom: 142,
+            bottom: 118,
             width: 800,
             height: 160,
             background:
@@ -106,7 +100,7 @@ export default async function Image() {
           <div
             style={{
               fontFamily: "JetBrains Mono",
-              fontSize: 28,
+              fontSize: 32,
               letterSpacing: "0.22em",
               color: FG_MUTED,
             }}
@@ -120,26 +114,15 @@ export default async function Image() {
             display: "flex",
             width: "100%",
             justifyContent: "space-between",
-            alignItems: "flex-end",
+            alignItems: "center",
             borderTop: `1px solid ${BORDER}`,
             paddingTop: 28,
             fontFamily: "JetBrains Mono",
+            fontSize: 32,
           }}
         >
-          {FACTS.map((fact) => (
-            <div
-              key={fact.label}
-              style={{ display: "flex", flexDirection: "column", gap: 8 }}
-            >
-              <div
-                style={{ fontSize: 16, letterSpacing: "0.18em", color: FG_SUBTLE }}
-              >
-                {fact.label.toUpperCase()}
-              </div>
-              <div style={{ fontSize: 22, color: FG }}>{fact.value}</div>
-            </div>
-          ))}
-          <div style={{ fontSize: 22, color: BRAND }}>ramatc.vercel.app</div>
+          <div style={{ color: FG }}>{STACK}</div>
+          <div style={{ color: BRAND }}>{URL_LABEL}</div>
         </div>
       </div>
     ),
