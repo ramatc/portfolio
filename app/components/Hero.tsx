@@ -193,7 +193,7 @@ const Hero = ({ visitor }: HeroProps) => {
             Scroll
           </span>
           <ChevronDown
-            className="h-4 w-4 animate-bounce motion-reduce:animate-none"
+            className="h-4 w-4 animate-bounce [animation-iteration-count:2.5] motion-reduce:animate-none"
             aria-hidden="true"
           />
         </motion.a>

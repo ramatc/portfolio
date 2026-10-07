@@ -122,10 +122,7 @@ const Experience = () => {
               className="absolute -left-[6px] top-2 flex h-3 w-3 items-center justify-center"
             >
               {role.current ? (
-                <>
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand/50 motion-reduce:hidden" />
-                  <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-brand shadow-[0_0_12px_-1px_hsl(var(--brand)/0.7)]" />
-                </>
+                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-brand shadow-[0_0_12px_-1px_hsl(var(--brand)/0.7)]" />
               ) : (
                 <span className="h-3 w-3 rounded-full bg-bg-elevated ring-2 ring-border" />
               )}
