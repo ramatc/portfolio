@@ -71,7 +71,7 @@ const Skills = () => {
 
   return (
     <Section id="habilidades" number="03" title="Habilidades">
-      <ul className="flex flex-col gap-y-6">
+      <ul className="flex flex-col gap-y-9">
         {CATEGORIES.map((category, i) => (
           <motion.li
             key={category.label}
@@ -89,17 +89,17 @@ const Skills = () => {
                     ease: [0.22, 1, 0.36, 1],
                   }
             }
-            className="grid grid-cols-1 gap-4 md:grid-cols-[140px_1fr] md:items-start md:gap-8"
+            className="grid grid-cols-1 gap-2.5 md:grid-cols-[140px_1fr] md:items-start md:gap-8"
           >
             {/* Box matches chip height so the label aligns with the first row when chips wrap */}
             <span className="md:flex md:h-[38px] md:items-center font-mono text-xs uppercase tracking-wider text-fg-subtle">
               {category.label}
             </span>
-            <ul className="flex flex-wrap gap-2">
+            <ul className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap">
               {category.items.map((skill) => (
                 <li
                   key={skill.name}
-                  className="inline-flex items-center gap-2 rounded-md border border-border-subtle bg-bg-elevated/60 px-3.5 py-2 text-sm text-fg-muted transition-colors duration-200 ease-out [@media(hover:hover)]:hover:border-border-strong [@media(hover:hover)]:hover:bg-bg-elevated [@media(hover:hover)]:hover:text-fg"
+                  className="flex min-w-0 items-center gap-2 rounded-md border border-border-subtle bg-bg-elevated/60 px-3 py-2 sm:px-3.5 text-sm text-fg-muted transition-colors duration-200 ease-out [@media(hover:hover)]:hover:border-border-strong [@media(hover:hover)]:hover:bg-bg-elevated [@media(hover:hover)]:hover:text-fg"
                 >
                   <span className="flex shrink-0 gap-1">
                     {[skill.img].flat().map((img) => (
@@ -114,7 +114,7 @@ const Skills = () => {
                       />
                     ))}
                   </span>
-                  <span>{skill.name}</span>
+                  <span className="min-w-0 break-words">{skill.name}</span>
                 </li>
               ))}
             </ul>

@@ -23,7 +23,7 @@ const Section = ({
     <section
       id={id}
       data-section={id}
-      className="scroll-mt-24 py-16 md:py-24"
+      className="scroll-mt-24 py-12 md:py-24"
     >
       <motion.header
         initial={reduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
