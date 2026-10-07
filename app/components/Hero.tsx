@@ -107,7 +107,7 @@ const Hero = ({ visitor }: HeroProps) => {
         <div className="flex w-full flex-1 flex-col items-center justify-center gap-5 pt-20 md:gap-6">
           <motion.h1
             variants={fadeUp(delay(0))}
-            className="text-balance text-[clamp(3rem,9vw,5rem)] font-semibold tracking-tighter text-fg [line-height:0.9] md:text-[clamp(4rem,10vw,7rem)] lg:text-[clamp(5rem,13vw,10.5rem)]"
+            className="text-balance text-[clamp(3rem,9vw,5rem)] font-semibold tracking-tighter text-fg [line-height:0.9] md:text-[clamp(4rem,10vw,7rem)] lg:text-[clamp(4.5rem,min(13vw,19vh),10.5rem)]"
           >
             Ramiro
             <br />
@@ -164,7 +164,7 @@ const Hero = ({ visitor }: HeroProps) => {
         </div>
 
         {/* Facts and scroll cue, anchored to the bottom of the viewport */}
-        <div className="relative mt-8 w-full max-w-3xl pt-8 sm:mt-12 sm:pt-10 md:pt-12">
+        <div className="relative mt-8 w-full max-w-3xl pt-8 sm:mt-12 sm:pt-10 md:pt-12 lg:[@media(max-height:820px)]:mt-8 lg:[@media(max-height:820px)]:pt-8">
           <Horizon />
           <motion.dl
             variants={fadeUp(delay(4))}
@@ -187,7 +187,7 @@ const Hero = ({ visitor }: HeroProps) => {
           initial={reduceMotion ? { opacity: 1 } : { opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2, duration: 0.6 }}
-          className="group mt-10 hidden flex-col sm:inline-flex items-center gap-1.5 text-fg-subtle transition-colors hover:text-fg md:mt-12"
+          className="group mt-10 hidden flex-col sm:inline-flex items-center gap-1.5 text-fg-subtle transition-colors hover:text-fg md:mt-12 lg:[@media(max-height:820px)]:mt-6"
         >
           <span className="font-mono text-[10px] uppercase tracking-[0.2em]">
             Scroll
