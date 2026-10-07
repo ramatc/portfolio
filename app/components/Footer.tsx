@@ -10,7 +10,7 @@ import Mail from "@/app/ui/icons/Mail";
 const NAV_LINKS = [
   { href: "#experiencia", label: "Experiencia" },
   { href: "#proyectos", label: "Proyectos" },
-  { href: "#habilidades", label: "Skills" },
+  { href: "#habilidades", label: "Habilidades" },
   { href: "#sobre-mi", label: "Sobre mí" },
   { href: "#contacto", label: "Contacto" },
 ];
@@ -56,7 +56,7 @@ const Footer = () => {
           <div>
             <a
               href="#top"
-              className="group inline-flex items-center gap-2 font-mono text-sm"
+              className="group inline-flex items-center gap-2 rounded-md font-mono text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60"
               aria-label="Volver al inicio"
             >
               <span className="grid h-7 w-7 place-items-center rounded-md bg-brand/15 font-semibold text-brand transition-colors group-hover:bg-brand/25">
@@ -80,7 +80,7 @@ const Footer = () => {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-fg-muted transition-colors hover:text-fg"
+                    className="rounded-sm text-fg-muted transition-colors hover:text-fg focus-visible:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60"
                   >
                     {link.label}
                   </a>
@@ -105,7 +105,7 @@ const Footer = () => {
                         : undefined
                     }
                     aria-label={link.label}
-                    className="grid h-9 w-9 place-items-center rounded-md border border-border bg-bg-elevated text-fg-muted transition-colors hover:border-border-strong hover:text-fg"
+                    className="grid h-9 w-9 place-items-center rounded-md border border-border bg-bg-elevated text-fg-muted transition-colors hover:border-border-strong hover:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60"
                   >
                     {link.icon}
                   </a>
@@ -115,7 +115,7 @@ const Footer = () => {
             <button
               type="button"
               onClick={handleCopy}
-              className="mt-4 inline-flex items-center gap-2 rounded-md border border-border-subtle bg-bg-elevated/60 px-3 py-1.5 font-mono text-xs text-fg-muted transition-colors hover:border-border hover:text-fg"
+              className="mt-4 inline-flex h-9 items-center gap-2 rounded-md border border-border bg-bg-elevated px-3 text-sm text-fg-muted transition-colors hover:border-border-strong hover:bg-bg-overlay hover:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60"
               aria-label={copied ? "Copiado" : `Copiar ${EMAIL}`}
             >
               <span>{EMAIL}</span>

@@ -11,7 +11,7 @@ import { sendEmail } from "@/app/lib/utils";
 import "react-toastify/dist/ReactToastify.css";
 
 const inputClass =
-  "peer block h-11 w-full rounded-md border border-border-control bg-bg-elevated pl-10 pr-3 text-sm text-fg placeholder:text-fg-subtle transition-colors focus:border-brand/60 focus:outline-none focus:ring-2 focus:ring-brand/30";
+  "peer block h-11 w-full rounded-md border border-border-control bg-bg-elevated pl-10 pr-3 text-sm text-fg placeholder:text-fg-subtle transition-colors focus:border-brand/60 focus:outline-none focus:ring-2 focus:ring-brand/30 aria-[invalid=true]:border-danger/70";
 
 const iconClass =
   "pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-fg-subtle transition-colors peer-focus:text-brand-soft";
@@ -116,7 +116,7 @@ const Form: FC = () => {
               placeholder="Contame en qué estás pensando…"
               aria-invalid={errors.message ? "true" : "false"}
               aria-describedby={errors.message ? "msg-error" : undefined}
-              className="peer block w-full resize-none rounded-md border border-border-control bg-bg-elevated px-3 py-3 pl-10 text-sm text-fg placeholder:text-fg-subtle transition-colors focus:border-brand/60 focus:outline-none focus:ring-2 focus:ring-brand/30"
+              className="peer block w-full resize-none rounded-md border border-border-control bg-bg-elevated px-3 py-3 pl-10 text-sm text-fg placeholder:text-fg-subtle transition-colors focus:border-brand/60 focus:outline-none focus:ring-2 focus:ring-brand/30 aria-[invalid=true]:border-danger/70"
               {...register("message", { required: true })}
             />
             <MessageSquare

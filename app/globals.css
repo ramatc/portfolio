@@ -58,7 +58,7 @@ html {
 }
 
 body {
-  color: white;
+  color: hsl(var(--text-primary));
 }
 
 a {

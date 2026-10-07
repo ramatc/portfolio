@@ -99,7 +99,7 @@ const Skills = () => {
               {category.items.map((skill) => (
                 <li
                   key={skill.name}
-                  className="flex min-w-0 items-center gap-2 rounded-md border border-border-subtle bg-bg-elevated/60 px-3 py-2 sm:px-3.5 text-sm text-fg-muted transition-colors duration-200 ease-out [@media(hover:hover)]:hover:border-border-strong [@media(hover:hover)]:hover:bg-bg-elevated [@media(hover:hover)]:hover:text-fg"
+                  className="flex min-w-0 items-center gap-2 rounded-md border border-border-subtle bg-bg-elevated/60 px-3 py-2 sm:px-3.5 text-sm text-fg-muted"
                 >
                   <span className="flex shrink-0 gap-1">
                     {[skill.img].flat().map((img) => (

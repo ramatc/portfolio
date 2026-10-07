@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 const NAV_ITEMS = [
   { id: "experiencia", label: "Experiencia" },
   { id: "proyectos", label: "Proyectos" },
-  { id: "habilidades", label: "Skills" },
+  { id: "habilidades", label: "Habilidades" },
   { id: "sobre-mi", label: "Sobre mí" },
   { id: "contacto", label: "Contacto" },
 ] as const;
@@ -72,7 +72,7 @@ const Navbar = () => {
             href="/#top"
             aria-label="Volver al inicio"
             onClick={closeMenu}
-            className="group flex items-center gap-2 font-mono text-sm transition"
+            className="group flex items-center gap-2 rounded-md font-mono text-sm transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60"
           >
             <span className="grid h-7 w-7 place-items-center rounded-md bg-brand/15 font-semibold text-brand transition-colors group-hover:bg-brand/25">
               rt
@@ -89,7 +89,7 @@ const Navbar = () => {
                 <li key={item.id} className="relative">
                   <a
                     href={`/#${item.id}`}
-                    className={`relative inline-flex h-8 items-center rounded-md px-3 text-sm transition-colors ${
+                    className={`relative inline-flex h-8 items-center rounded-md px-3 text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 ${
                       isActive ? "text-fg" : "text-fg-muted hover:text-fg"
                     }`}
                   >
@@ -116,7 +116,7 @@ const Navbar = () => {
               href="/CV-RAMIRO-TANQUIAS.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-8 items-center gap-1.5 rounded-md border border-border bg-bg-elevated px-3 text-xs font-medium text-fg-muted transition-colors hover:border-border-strong hover:text-fg"
+              className="inline-flex h-8 items-center gap-1.5 rounded-md border border-border bg-bg-elevated px-3 text-xs font-medium text-fg-muted transition-colors hover:border-border-strong hover:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60"
             >
               CV
               <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
@@ -127,7 +127,7 @@ const Navbar = () => {
               aria-expanded={isOpen}
               aria-controls="mobile-menu"
               aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
-              className="grid h-8 w-8 place-items-center rounded-md border border-border bg-bg-elevated text-fg-muted transition-colors hover:border-border-strong hover:text-fg md:hidden"
+              className="grid h-8 w-8 place-items-center rounded-md border border-border bg-bg-elevated text-fg-muted transition-colors hover:border-border-strong hover:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 md:hidden"
             >
               {isOpen ? (
                 <X className="h-4 w-4" aria-hidden="true" />
@@ -184,7 +184,7 @@ const Navbar = () => {
                         <a
                           href={`/#${item.id}`}
                           onClick={closeMenu}
-                          className={`group flex items-center gap-4 py-5 transition-colors ${
+                          className={`group flex items-center gap-4 py-5 transition-colors focus-visible:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand/60 ${
                             isActive ? "text-fg" : "text-fg-muted hover:text-fg"
                           }`}
                         >
@@ -226,7 +226,7 @@ const Navbar = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={closeMenu}
-                  className="transition-colors hover:text-fg"
+                  className="rounded-sm transition-colors hover:text-fg focus-visible:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60"
                 >
                   GitHub
                 </a>
@@ -239,7 +239,7 @@ const Navbar = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={closeMenu}
-                  className="transition-colors hover:text-fg"
+                  className="rounded-sm transition-colors hover:text-fg focus-visible:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60"
                 >
                   LinkedIn
                 </a>
@@ -250,7 +250,7 @@ const Navbar = () => {
                 <a
                   href="mailto:rtanquiascornejo@gmail.com"
                   onClick={closeMenu}
-                  className="transition-colors hover:text-fg"
+                  className="rounded-sm transition-colors hover:text-fg focus-visible:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60"
                 >
                   Email
                 </a>
