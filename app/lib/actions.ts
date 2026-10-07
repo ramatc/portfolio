@@ -80,8 +80,35 @@ El mejor jugador de todos los tiempos es Lionel Andrés Messi.
 Mi marca favorita es Nike.
 Me encanta la ropa, sobre todo las zapatillas.`;
 
+const MAX_ATTEMPTS = 3;
+const RETRY_DELAY_MS = 800;
+const TRANSIENT_STATUSES = new Set([429, 500, 503]);
+
+const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
 export async function sendQuestion(question: string) {
-  const data = await fetch(
+  for (let attempt = 1; ; attempt++) {
+    const res = await requestAnswer(question);
+
+    if (res.ok) {
+      const data = await res.json();
+      const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+      if (typeof text !== "string") {
+        throw new Error("Gemini returned no answer");
+      }
+      return text;
+    }
+
+    if (!TRANSIENT_STATUSES.has(res.status) || attempt >= MAX_ATTEMPTS) {
+      throw new Error(`Gemini request failed: ${res.status}`);
+    }
+
+    await wait(RETRY_DELAY_MS * attempt);
+  }
+}
+
+function requestAnswer(question: string) {
+  return fetch(
     `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
     {
       method: "POST",
@@ -128,7 +155,5 @@ export async function sendQuestion(question: string) {
         ],
       }),
     },
-  ).then((res) => res.json());
-
-  return data.candidates[0].content.parts[0].text as string;
+  );
 }
