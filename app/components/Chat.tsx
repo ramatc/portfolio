@@ -179,7 +179,7 @@ const Chat = () => {
                 value={question}
                 onChange={(event) => setQuestion(event.target.value)}
                 disabled={loading}
-                className="block h-9 flex-1 rounded-md border border-border-subtle bg-bg-base px-3 text-sm text-fg placeholder:text-fg-subtle transition-colors focus:border-brand/60 focus:outline-none focus:ring-2 focus:ring-brand/30 disabled:opacity-50"
+                className="block h-9 flex-1 rounded-md border border-border-control bg-bg-base px-3 text-sm text-fg placeholder:text-fg-subtle transition-colors focus:border-brand/60 focus:outline-none focus:ring-2 focus:ring-brand/30 disabled:opacity-50"
               />
               <button
                 type="submit"

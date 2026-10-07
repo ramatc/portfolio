@@ -200,7 +200,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
-        <div className="absolute bottom-0 top-0 z-[-2] min-h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_50%,rgba(120,119,198,0.35),rgba(255,255,255,0))]" />
+        <div className="absolute bottom-0 top-0 z-[-2] min-h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_50%,rgba(120,119,198,0.25),rgba(255,255,255,0))]" />
         <Navbar />
         {children}
         <Footer />

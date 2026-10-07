@@ -16,11 +16,14 @@
     --border-subtle: 240 6% 14%;
     --border-default: 240 6% 20%;
     --border-strong: 240 6% 30%;
+    /* Form controls: deliberately subtle (~2.2:1 against bg-base), below WCAG 1.4.11's 3:1 by design choice */
+    --border-control: 240 5% 30%;
 
     /* Text */
     --text-primary: 0 0% 98%;
     --text-secondary: 240 5% 70%;
-    --text-tertiary: 240 5% 50%;
+    /* >= 4.5:1 on every surface, including the page gradient's center */
+    --text-tertiary: 240 5% 58%;
 
     /* Brand (morado, consolidado a 3 tonos) */
     --brand: 245 92% 73%;

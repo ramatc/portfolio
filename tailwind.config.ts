@@ -18,6 +18,7 @@ const config: Config = {
           DEFAULT: "hsl(var(--border-default) / <alpha-value>)",
           subtle: "hsl(var(--border-subtle) / <alpha-value>)",
           strong: "hsl(var(--border-strong) / <alpha-value>)",
+          control: "hsl(var(--border-control) / <alpha-value>)",
         },
         fg: {
           DEFAULT: "hsl(var(--text-primary) / <alpha-value>)",
