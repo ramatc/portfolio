@@ -83,7 +83,7 @@ const Form: FC = () => {
               id="email"
               type="email"
               autoComplete="email"
-              placeholder="vos@ejemplo.com"
+              placeholder="¿Cuál es tu mail?"
               aria-invalid={errors.email ? "true" : "false"}
               aria-describedby={errors.email ? "email-error" : undefined}
               className={inputClass}
