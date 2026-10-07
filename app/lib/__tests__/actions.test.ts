@@ -42,7 +42,40 @@ describe("sendQuestion", () => {
     expect(fetchMock).toHaveBeenCalledTimes(2);
   });
 
-  it("gives up with a clear error after the retries are exhausted", async () => {
+  it("falls back to the lite model when the primary stays overloaded", async () => {
+    fetchMock
+      .mockResolvedValueOnce(fail(503))
+      .mockResolvedValueOnce(fail(503))
+      .mockResolvedValueOnce(ok("Hola"));
+
+    const result = sendQuestion("hi");
+    await vi.runAllTimersAsync();
+
+    await expect(result).resolves.toBe("Hola");
+    const urls = fetchMock.mock.calls.map(([url]) => String(url));
+    expect(urls[0]).toContain("/models/gemini-3.6-flash:");
+    expect(urls[1]).toContain("/models/gemini-3.6-flash:");
+    expect(urls[2]).toContain("/models/gemini-3.5-flash-lite:");
+  });
+
+  it("only sends the thinking config to the model that supports it", async () => {
+    fetchMock
+      .mockResolvedValueOnce(fail(503))
+      .mockResolvedValueOnce(fail(503))
+      .mockResolvedValueOnce(ok("Hola"));
+
+    const result = sendQuestion("hi");
+    await vi.runAllTimersAsync();
+    await result;
+
+    const configs = fetchMock.mock.calls.map(
+      ([, init]) => JSON.parse(init.body).generationConfig,
+    );
+    expect(configs[0].thinkingConfig).toEqual({ thinkingBudget: 0 });
+    expect(configs[2]).not.toHaveProperty("thinkingConfig");
+  });
+
+  it("gives up with a clear error when every model stays overloaded", async () => {
     fetchMock.mockImplementation(async () => fail(503));
 
     const result = sendQuestion("hi");
@@ -50,7 +83,7 @@ describe("sendQuestion", () => {
     await vi.runAllTimersAsync();
 
     await assertion;
-    expect(fetchMock).toHaveBeenCalledTimes(3);
+    expect(fetchMock).toHaveBeenCalledTimes(4);
   });
 
   it("does not retry non-transient errors", async () => {

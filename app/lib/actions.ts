@@ -80,36 +80,52 @@ El mejor jugador de todos los tiempos es Lionel Andrés Messi.
 Mi marca favorita es Nike.
 Me encanta la ropa, sobre todo las zapatillas.`;
 
-const MAX_ATTEMPTS = 3;
+// Tried in order: the lite model is slower under load but stays available
+// when the primary is overloaded. It rejects thinkingConfig, so only the
+// primary disables thinking.
+const MODELS = [
+  { name: "gemini-3.6-flash", thinkingConfig: { thinkingBudget: 0 } },
+  { name: "gemini-3.5-flash-lite" },
+];
+const ATTEMPTS_PER_MODEL = 2;
 const RETRY_DELAY_MS = 800;
 const TRANSIENT_STATUSES = new Set([429, 500, 503]);
 
 const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 export async function sendQuestion(question: string) {
-  for (let attempt = 1; ; attempt++) {
-    const res = await requestAnswer(question);
+  let lastStatus = 0;
 
-    if (res.ok) {
-      const data = await res.json();
-      const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
-      if (typeof text !== "string") {
-        throw new Error("Gemini returned no answer");
+  for (const model of MODELS) {
+    for (let attempt = 1; attempt <= ATTEMPTS_PER_MODEL; attempt++) {
+      const res = await requestAnswer(model, question);
+
+      if (res.ok) {
+        const data = await res.json();
+        const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+        if (typeof text !== "string") {
+          throw new Error("Gemini returned no answer");
+        }
+        return text;
       }
-      return text;
-    }
 
-    if (!TRANSIENT_STATUSES.has(res.status) || attempt >= MAX_ATTEMPTS) {
-      throw new Error(`Gemini request failed: ${res.status}`);
-    }
+      lastStatus = res.status;
+      if (!TRANSIENT_STATUSES.has(res.status)) {
+        throw new Error(`Gemini request failed: ${res.status}`);
+      }
 
-    await wait(RETRY_DELAY_MS * attempt);
+      if (attempt < ATTEMPTS_PER_MODEL) {
+        await wait(RETRY_DELAY_MS);
+      }
+    }
   }
+
+  throw new Error(`Gemini request failed: ${lastStatus}`);
 }
 
-function requestAnswer(question: string) {
+function requestAnswer(model: (typeof MODELS)[number], question: string) {
   return fetch(
-    `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
+    `https://generativelanguage.googleapis.com/v1beta/models/${model.name}:generateContent?key=${process.env.GEMINI_API_KEY}`,
     {
       method: "POST",
       headers: {
@@ -131,9 +147,9 @@ function requestAnswer(question: string) {
           topP: 1,
           maxOutputTokens: 2048,
           stopSequences: [],
-          thinkingConfig: {
-            thinkingBudget: 0,
-          },
+          ...("thinkingConfig" in model && {
+            thinkingConfig: model.thinkingConfig,
+          }),
         },
         safetySettings: [
           {
