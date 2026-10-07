@@ -250,7 +250,10 @@ export default function VameCaseStudyPage() {
           <span className="font-mono text-xs uppercase tracking-wider text-fg-subtle">
             Caso de estudio
           </span>
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-border-subtle bg-bg-overlay/60 px-2 py-0.5 font-mono text-[11px] uppercase tracking-wider text-fg-muted">
+          <span aria-hidden="true" className="text-xs text-fg-subtle">
+            ·
+          </span>
+          <span className="inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider text-fg-muted">
             <span
               aria-hidden="true"
               className="h-1.5 w-1.5 rounded-full"

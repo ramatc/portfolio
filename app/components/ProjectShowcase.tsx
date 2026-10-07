@@ -178,7 +178,7 @@ const Selector = ({ projects }: { projects: Project[] }) => {
                     {project.tagline}
                   </span>
                 </span>
-                <span className="mt-1 inline-flex shrink-0 items-center gap-1.5 rounded-full border border-border-subtle bg-bg-overlay/60 px-2 py-0.5 text-[11px] text-fg-muted">
+                <span className="mt-1.5 inline-flex shrink-0 items-center gap-1.5 text-[11px] text-fg-muted">
                   <span
                     aria-hidden="true"
                     className={`h-1.5 w-1.5 rounded-full ${status.live ? "bg-success" : ""}`}
