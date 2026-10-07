@@ -341,13 +341,13 @@ const ProjectDetail = ({
 
           <div className="flex flex-col gap-6">
             {project.metrics?.length ? (
-              <dl className="grid grid-cols-3 gap-3">
+              <dl className="grid grid-cols-3 gap-5">
                 {project.metrics.map((metric) => (
                   <div key={metric.label} className="flex flex-col-reverse justify-end">
-                    <dt className="mt-1 text-xs leading-snug text-fg-subtle">
+                    <dt className="mt-1.5 font-mono text-[11px] uppercase leading-snug tracking-wider text-fg-subtle">
                       {metric.label}
                     </dt>
-                    <dd className="font-mono text-lg font-semibold tracking-tight text-fg tabular-nums">
+                    <dd className="text-xl font-semibold tracking-tight text-fg tabular-nums">
                       {metric.value}
                     </dd>
                   </div>
@@ -355,7 +355,9 @@ const ProjectDetail = ({
               </dl>
             ) : null}
             <div>
-              <p className="text-xs text-fg-subtle">Lo que demuestra</p>
+              <p className="font-mono text-[11px] uppercase tracking-wider text-fg-subtle">
+                Lo que demuestra
+              </p>
               <p className="mt-1.5 text-pretty text-sm leading-relaxed text-fg">
                 {project.proves}
               </p>
