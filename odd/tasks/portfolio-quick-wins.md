@@ -45,4 +45,4 @@ No test runner in repo (test-first exception). Per task: `npx tsc --noEmit`, `np
 - Chat suggested questions have no automated test (repo has no test runner). User decision (2026-10-06): add Vitest + Testing Library at the end of the feature, covering chat suggestions and the `CardProject` no-link case.
 
 ## Next step
-Important improvements: Coda case-study page (needs real technical decisions from the user), NDA banking case, visual rhythm in Projects. Push / PR is the user's decision.
+Important improvements: NDA banking case. Done: Coda case-study page (see `coda-case-study.md`); visual rhythm in Projects (closed by the user on 2026-10-09). Push / PR is the user's decision.

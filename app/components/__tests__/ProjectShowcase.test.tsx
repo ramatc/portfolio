@@ -33,7 +33,7 @@ describe("ProjectShowcase links", () => {
 
     expect(screen.queryAllByRole("link")).toHaveLength(0);
     expect(
-      screen.queryAllByRole("link", { name: /Abrir demo de Offline/ }),
+      screen.queryAllByRole("link", { name: /Ver demo de Offline/ }),
     ).toHaveLength(0);
     expect(
       screen.queryAllByRole("link", { name: /Ver código de Offline/ }),
@@ -62,7 +62,7 @@ describe("ProjectShowcase links", () => {
     );
 
     const demoLinks = screen.getAllByRole("link", {
-      name: "Abrir demo de Online",
+      name: /^Ver demo de Online \(/,
     });
     const repoLinks = screen.getAllByRole("link", {
       name: "Ver código de Online en GitHub",
@@ -90,7 +90,7 @@ describe("ProjectShowcase links", () => {
     );
 
     const demoLinks = screen.getAllByRole("link", {
-      name: "Abrir demo de DemoOnly",
+      name: /^Ver demo de DemoOnly \(/,
     });
 
     expect(demoLinks.length).toBeGreaterThan(0);
@@ -129,7 +129,7 @@ describe("ProjectShowcase links", () => {
       expect(link).toHaveAttribute("target", "_blank");
     }
     expect(
-      screen.queryAllByRole("link", { name: /Abrir demo de RepoOnly/ }),
+      screen.queryAllByRole("link", { name: /Ver demo de RepoOnly/ }),
     ).toHaveLength(0);
     expect(screen.getAllByRole("link")).toHaveLength(repoLinks.length);
   });
