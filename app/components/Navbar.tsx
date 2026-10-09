@@ -5,6 +5,8 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
+import { buttonClasses } from "@/app/ui/button";
+
 const NAV_ITEMS = [
   { id: "experiencia", label: "Experiencia" },
   { id: "proyectos", label: "Proyectos" },
@@ -116,7 +118,7 @@ const Navbar = () => {
               href="/CV-RAMIRO-TANQUIAS.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-8 items-center gap-1.5 rounded-md border border-border bg-bg-elevated px-3 text-xs font-semibold text-fg-muted transition-colors hover:border-border-strong hover:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60"
+              className={buttonClasses({ variant: "secondary", size: "sm" })}
             >
               CV
               <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
@@ -127,7 +129,11 @@ const Navbar = () => {
               aria-expanded={isOpen}
               aria-controls="mobile-menu"
               aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
-              className="grid h-8 w-8 place-items-center rounded-md border border-border bg-bg-elevated text-fg-muted transition-colors hover:border-border-strong hover:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 md:hidden"
+              className={buttonClasses({
+                variant: "secondary",
+                size: "icon",
+                className: "md:hidden",
+              })}
             >
               {isOpen ? (
                 <X className="h-4 w-4" aria-hidden="true" />

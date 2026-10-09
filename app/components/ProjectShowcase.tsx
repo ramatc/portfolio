@@ -6,6 +6,7 @@ import { motion, useInView, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
+import { buttonClasses } from "@/app/ui/button";
 import GitHub from "@/app/ui/icons/GitHub";
 import { Project } from "@/app/lib/definitions";
 
@@ -307,7 +308,11 @@ const ProjectDetail = ({
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Ver demo de ${project.title} (se abre en una pestaña nueva)`}
-                className="inline-flex h-9 items-center gap-1.5 rounded-lg border border-border bg-bg-overlay px-3 text-sm font-semibold text-fg-muted transition-[color,border-color,transform] duration-150 ease-out hover:border-border-strong hover:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 active:scale-[0.97] motion-reduce:transition-none"
+                className={buttonClasses({
+                  variant: "secondary",
+                  size: "sm",
+                  surface: "elevated",
+                })}
               >
                 Ver demo
                 <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
@@ -372,7 +377,12 @@ const ProjectDetail = ({
             {project.caseStudy ? (
               <Link
                 href={project.caseStudy}
-                className="group/case inline-flex w-fit items-center gap-2 rounded-lg border border-border-strong bg-bg-overlay px-4 py-2 text-sm font-semibold text-fg transition-[background-color,transform] duration-150 ease-out hover:bg-bg-overlay/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 active:scale-[0.97] motion-reduce:transition-none"
+                className={buttonClasses({
+                  variant: "secondary",
+                  size: "sm",
+                  surface: "elevated",
+                  className: "group/case w-fit",
+                })}
               >
                 Ver caso de estudio
                 <ArrowRight
@@ -557,7 +567,11 @@ const IconLink = ({
     target="_blank"
     rel="noopener noreferrer"
     aria-label={label}
-    className="grid h-9 w-9 place-items-center rounded-lg border border-border bg-bg-overlay text-fg-muted transition-[color,border-color,transform] duration-150 ease-out hover:border-border-strong hover:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 active:scale-[0.95] motion-reduce:transition-none"
+    className={buttonClasses({
+      variant: "secondary",
+      size: "icon",
+      surface: "elevated",
+    })}
   >
     {children}
   </a>

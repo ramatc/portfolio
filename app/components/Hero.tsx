@@ -4,6 +4,8 @@ import { ArrowUpRight, ChevronDown, Download } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import Link from "next/link";
 
+import { buttonClasses } from "@/app/ui/button";
+
 interface HeroProps {
   visitor?: string;
 }
@@ -143,7 +145,11 @@ const Hero = ({ visitor }: HeroProps) => {
           >
             <Link
               href="#contacto"
-              className="group inline-flex h-11 items-center gap-2 rounded-md bg-fg px-5 text-sm font-semibold text-bg-base shadow-xs transition-all duration-200 ease-smooth hover:bg-brand-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base active:scale-[0.98] motion-reduce:transition-none"
+              className={buttonClasses({
+                variant: "primary",
+                size: "md",
+                className: "group",
+              })}
             >
               Hablemos
               <ArrowUpRight
@@ -155,7 +161,7 @@ const Hero = ({ visitor }: HeroProps) => {
               href="/CV-RAMIRO-TANQUIAS.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-11 items-center gap-2 rounded-md border border-border bg-bg-elevated px-5 text-sm font-semibold text-fg transition-all duration-200 ease-smooth hover:border-border-strong hover:bg-bg-overlay focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base active:scale-[0.98] motion-reduce:transition-none"
+              className={buttonClasses({ variant: "secondary", size: "md" })}
             >
               <Download className="h-4 w-4" aria-hidden="true" />
               Descargar CV

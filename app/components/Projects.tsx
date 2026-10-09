@@ -1,6 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 
 import ProjectShowcase from "@/app/components/ProjectShowcase";
+import { buttonClasses } from "@/app/ui/button";
 import GitHub from "@/app/ui/icons/GitHub";
 import Section from "@/app/components/Section";
 import { Project } from "@/app/lib/definitions";
@@ -92,7 +93,11 @@ const Projects = () => {
           href="https://github.com/ramatc"
           target="_blank"
           rel="noopener noreferrer"
-          className="group inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm text-fg-muted transition-colors hover:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60"
+          className={buttonClasses({
+            variant: "ghost",
+            size: "sm",
+            className: "group",
+          })}
         >
           <GitHub className="h-4 w-4" />
           Más proyectos en GitHub

@@ -3,6 +3,7 @@
 import { Check, Copy } from "lucide-react";
 import { useState } from "react";
 
+import { buttonClasses } from "@/app/ui/button";
 import GitHub from "@/app/ui/icons/GitHub";
 import LinkedIn from "@/app/ui/icons/LinkedIn";
 import Mail from "@/app/ui/icons/Mail";
@@ -105,7 +106,10 @@ const Footer = () => {
                         : undefined
                     }
                     aria-label={link.label}
-                    className="grid h-9 w-9 place-items-center rounded-md border border-border bg-bg-elevated text-fg-muted transition-colors hover:border-border-strong hover:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60"
+                    className={buttonClasses({
+                      variant: "secondary",
+                      size: "icon",
+                    })}
                   >
                     {link.icon}
                   </a>
@@ -115,7 +119,11 @@ const Footer = () => {
             <button
               type="button"
               onClick={handleCopy}
-              className="mt-4 inline-flex h-9 items-center gap-2 rounded-md border border-border bg-bg-elevated px-3 text-sm text-fg-muted transition-colors hover:border-border-strong hover:bg-bg-overlay hover:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60"
+              className={buttonClasses({
+                variant: "secondary",
+                size: "sm",
+                className: "mt-4",
+              })}
               aria-label={copied ? "Copiado" : `Copiar ${EMAIL}`}
             >
               <span>{EMAIL}</span>

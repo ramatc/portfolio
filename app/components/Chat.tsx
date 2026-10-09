@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 
 import { Message } from "@/app/lib/definitions";
 import { sendQuestion } from "@/app/lib/actions";
+import { buttonClasses } from "@/app/ui/button";
 
 const INITIAL_MESSAGES: Message[] = [
   {
@@ -185,7 +186,12 @@ const Chat = () => {
                 type="submit"
                 disabled={loading || !question.trim()}
                 aria-label="Enviar pregunta"
-                className="grid h-9 w-9 shrink-0 place-items-center rounded-md bg-fg text-bg-base transition-all duration-150 hover:bg-brand-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-elevated active:scale-95 disabled:cursor-not-allowed disabled:opacity-40 motion-reduce:transition-none"
+                className={buttonClasses({
+                  variant: "primary",
+                  size: "icon",
+                  surface: "elevated",
+                  className: "shrink-0",
+                })}
               >
                 <ArrowUp className="h-4 w-4" aria-hidden="true" />
               </button>
