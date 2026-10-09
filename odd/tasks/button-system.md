@@ -53,5 +53,9 @@ Strategy: ask-on-risk. Forecast ~250 authored changed lines.
 - T3 judgment: "Volver a proyectos" ghost sm gets `-ml-3` so the label stays flush with the page content after gaining px-3.
 - T3 judgment: "Ver caso de estudio" drops its bespoke border-strong/text-fg look for standard secondary sm (elevated); Chat submit disabled opacity goes 40 → 60 per the shared system.
 
+## Review
+- Assess (base 55a37e4, committed-only): medium, 328 lines; consent granted; one lens (reliability) approved and acknowledged (lineage review-b7d00a947de54928).
+- Follow-up (SUGGESTION R3-001): the "appends className last" test and the doc example use `hidden sm:inline-flex`, which conflicts with base `inline-flex`; without tailwind-merge the stylesheet order decides, not string order. Use a non-conflicting example.
+
 ## Next step
-Parent: RDD assessment of the T2/T3 commits; decide on the pre-existing OG-image build failure (separate task).
+User decision on secondary text color (fg-muted vs fg for "Descargar CV" / "Ver caso de estudio"); then R3-001 follow-up; pre-existing OG-image build failure as a separate task.
