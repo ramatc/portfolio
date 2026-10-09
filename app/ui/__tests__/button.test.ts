@@ -60,12 +60,13 @@ describe("buttonClasses", () => {
     expect(classes).toContain("hover:opacity-90");
   });
 
-  it("appends the caller className last", () => {
+  it("appends the caller's layout classes after the helper classes", () => {
     const value = buttonClasses({
       variant: "ghost",
       size: "sm",
-      className: "hidden sm:inline-flex",
+      className: "shrink-0 mt-4",
     });
-    expect(value.endsWith("hidden sm:inline-flex")).toBe(true);
+    expect(value.endsWith("shrink-0 mt-4")).toBe(true);
+    expect(tokens(value)).toContain("h-9");
   });
 });

@@ -8,9 +8,11 @@ export type ButtonClassesOptions = {
   size: ButtonSize;
   surface?: ButtonSurface;
   /**
-   * Layout-only classes appended last (e.g. `shrink-0`, `hidden sm:inline-flex`).
-   * There is no tailwind-merge, so never pass utilities that override the
-   * helper's own height, padding, radius, color or typography.
+   * Layout-only classes appended last (e.g. `shrink-0`, `mt-4`, `group`).
+   * There is no tailwind-merge: string order does not decide conflicts, the
+   * stylesheet order does. Never pass unprefixed utilities that clash with the
+   * helper's own display, height, padding, radius, color or typography; a
+   * responsive override such as `md:hidden` is fine.
    */
   className?: string;
 };
