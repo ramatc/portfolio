@@ -28,7 +28,7 @@ Shared: rounded-md, text-sm font-semibold, transition-colors duration-150, activ
 
 ## Tasks
 - [x] T1 Fix stale ProjectShowcase demo-link names ("Abrir demo" → "Ver demo") broken since f984374; the two negative asserts were passing vacuously. Route: inline.
-- [ ] T2 Add `app/ui/button.ts` with `buttonClasses` + unit test (test-first). Route: delegated (writer trigger: T2+T3 span 10+ non-trivial files).
+- [x] T2 Add `app/ui/button.ts` with `buttonClasses` + unit test (test-first). Route: delegated (writer trigger: T2+T3 span 10+ non-trivial files).
 - [ ] T3 Migrate in-scope components and case-study pages to `buttonClasses`. Route: delegated (same writer).
 
 ## Acceptance criteria
@@ -40,6 +40,11 @@ Strategy: ask-on-risk. Forecast ~250 authored changed lines.
 
 ## Progress / evidence
 - T1: `npm test` 18/18 (was 2 failing in ProjectShowcase.test.tsx).
+- T1 commit: bd66d2c.
+- T2: RED observed (`npx vitest run app/ui` failed: module `../button` missing), then GREEN 9/9. Commit: `feat: add shared buttonClasses helper`.
+- T2 judgment: primary keeps the site's existing `bg-fg text-bg-base shadow-xs` fill; hover `bg-brand-muted`.
+- T2 judgment: transition lists color/bg/border/opacity/transform so `active:scale` eases; reduced motion via `motion-reduce:transition-none` plus the existing global rule in globals.css.
+- T2 judgment: secondary text is `text-fg-muted` → `text-fg` on hover at every size; on elevated surfaces it is already `bg-bg-overlay`, so hover changes border and text only.
 
 ## Next step
-T2.
+T3.
