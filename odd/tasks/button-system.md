@@ -29,7 +29,7 @@ Shared: rounded-md, text-sm font-semibold, transition-colors duration-150, activ
 ## Tasks
 - [x] T1 Fix stale ProjectShowcase demo-link names ("Abrir demo" → "Ver demo") broken since f984374; the two negative asserts were passing vacuously. Route: inline.
 - [x] T2 Add `app/ui/button.ts` with `buttonClasses` + unit test (test-first). Route: delegated (writer trigger: T2+T3 span 10+ non-trivial files).
-- [ ] T3 Migrate in-scope components and case-study pages to `buttonClasses`. Route: delegated (same writer).
+- [x] T3 Migrate in-scope components and case-study pages to `buttonClasses`. Route: delegated (same writer).
 
 ## Acceptance criteria
 - Every in-scope element uses `buttonClasses`; no in-scope hand-written height/radius/hover classes remain.
@@ -45,6 +45,13 @@ Strategy: ask-on-risk. Forecast ~250 authored changed lines.
 - T2 judgment: primary keeps the site's existing `bg-fg text-bg-base shadow-xs` fill; hover `bg-brand-muted`.
 - T2 judgment: transition lists color/bg/border/opacity/transform so `active:scale` eases; reduced motion via `motion-reduce:transition-none` plus the existing global rule in globals.css.
 - T2 judgment: secondary text is `text-fg-muted` → `text-fg` on hover at every size; on elevated surfaces it is already `bg-bg-overlay`, so hover changes border and text only.
+- T2 commit: fcba076.
+- T3 commits: 55408ca `refactor: use buttonClasses for site buttons` (components), plus `refactor: use buttonClasses on case-study pages` (vame/coda pages + this doc).
+- T3 checks: `npm test` 27/27 pass; `npx tsc --noEmit` exit 0; `npm run lint` no warnings or errors; `npm run build` compiles, then FAILS prerendering `/opengraph-image` and `/twitter-image` (`TypeError: Invalid URL` in `fileURLToPath` inside `next/dist/compiled/@vercel/og`). The same failure reproduces with base `app/components` and pages restored, so it is pre-existing/environmental, not caused by this feature.
+- T3 judgment: Navbar CV/menu move from h-8 to h-9 (36px) inside a h-14/h-16 bar, which fits; CV text goes text-xs → text-sm per the system.
+- T3 judgment: case-study header link ("Ver la tienda en vivo" / repo) is a header CTA → secondary md; footer pair ("Proyectos" + accent) → md on surface elevated (the section is bg-bg-elevated; old ring offset bg-base was wrong there).
+- T3 judgment: "Volver a proyectos" ghost sm gets `-ml-3` so the label stays flush with the page content after gaining px-3.
+- T3 judgment: "Ver caso de estudio" drops its bespoke border-strong/text-fg look for standard secondary sm (elevated); Chat submit disabled opacity goes 40 → 60 per the shared system.
 
 ## Next step
-T3.
+Parent: RDD assessment of the T2/T3 commits; decide on the pre-existing OG-image build failure (separate task).

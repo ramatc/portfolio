@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ArrowLeft, ArrowUpRight, Check } from "lucide-react";
 
+import { buttonClasses } from "@/app/ui/button";
 import GitHub from "@/app/ui/icons/GitHub";
 import ArchitectureDiagram from "@/app/proyectos/coda/ArchitectureDiagram";
 
@@ -210,7 +211,11 @@ export default function CodaCaseStudyPage() {
     >
       <a
         href="/#proyectos"
-        className="group inline-flex items-center gap-2 rounded-md text-sm text-fg-muted transition-colors hover:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60"
+        className={buttonClasses({
+          variant: "ghost",
+          size: "sm",
+          className: "group -ml-3",
+        })}
       >
         <ArrowLeft
           className="h-4 w-4 transition-transform duration-200 ease-smooth group-hover:-translate-x-0.5 motion-reduce:transition-none"
@@ -271,7 +276,11 @@ export default function CodaCaseStudyPage() {
           href={REPO_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="group mt-10 inline-flex h-10 items-center gap-2 rounded-md border border-border bg-bg-elevated px-4 text-sm font-semibold text-fg transition-colors hover:border-border-strong focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base"
+          className={buttonClasses({
+            variant: "secondary",
+            size: "md",
+            className: "group mt-10",
+          })}
         >
           <GitHub className="h-4 w-4" />
           Ver el código en GitHub
@@ -461,7 +470,11 @@ export default function CodaCaseStudyPage() {
             <div className="flex flex-wrap gap-3">
               <a
                 href="/#proyectos"
-                className="inline-flex h-10 items-center gap-2 rounded-md border border-border bg-bg-overlay px-4 text-sm font-semibold text-fg-muted transition-colors hover:border-border-strong hover:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base"
+                className={buttonClasses({
+                  variant: "secondary",
+                  size: "md",
+                  surface: "elevated",
+                })}
               >
                 <ArrowLeft className="h-4 w-4" aria-hidden="true" />
                 Proyectos
@@ -470,7 +483,11 @@ export default function CodaCaseStudyPage() {
                 href={REPO_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-10 items-center gap-2 rounded-md px-4 text-sm font-semibold text-bg-base transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base"
+                className={buttonClasses({
+                  variant: "accent",
+                  size: "md",
+                  surface: "elevated",
+                })}
                 style={{ backgroundColor: ACCENT }}
               >
                 <GitHub className="h-4 w-4" />
