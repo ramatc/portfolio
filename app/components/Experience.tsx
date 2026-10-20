@@ -69,7 +69,7 @@ const EXPERIENCE: Role[] = [
       {
         title: "Lizorzo",
         url: "https://www.lizorzo.com/",
-        text: "sitio oficial de un artista musical en React, con próximas fechas, entradas y lanzamientos",
+        text: "sitio oficial de un artista musical en React y TypeScript, con próximas fechas, entradas y lanzamientos",
       },
     ],
     stack: ["react", "typescript", "wordpress", "webflow", "figma"],
