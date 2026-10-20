@@ -66,12 +66,11 @@ const EXPERIENCE: Role[] = [
         url: "https://unicanm.org/",
         text: "sitio a medida en React y TypeScript para una ONG de cannabis medicinal",
       },
-      // TODO: restore once the Inaria redesign is published.
-      // {
-      //   title: "Inaria",
-      //   url: "https://inaria.ar/",
-      //   text: "rediseño en curso en Webflow a partir de diseños en Figma, con un flujo de trabajo asistido por IA mediante Claude Code y el MCP de Webflow",
-      // },
+      {
+        title: "Lizorzo",
+        url: "https://www.lizorzo.com/",
+        text: "sitio oficial de un artista musical en React, con próximas fechas, entradas y lanzamientos",
+      },
     ],
     stack: ["react", "typescript", "wordpress", "webflow", "figma"],
   },
