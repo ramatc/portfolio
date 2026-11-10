@@ -59,7 +59,7 @@ const EXPERIENCE: Role[] = [
       {
         title: "Vame Fútbol",
         url: "https://www.vamefutbol.com/",
-        text: "e-commerce de camisetas desarrollado desde cero con React y TypeScript; más de 5.800 visitantes y 19.000 páginas vistas en su primer mes, con 97% de tráfico mobile",
+        text: "e-commerce de camisetas desarrollado desde cero con React y TypeScript, con checkout propio por transferencia o Mercado Pago; más de 5.800 visitantes y 19.000 páginas vistas en su primer mes, con 97% de tráfico mobile",
       },
       {
         title: "Unicanm",

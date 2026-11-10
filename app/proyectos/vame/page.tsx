@@ -12,7 +12,7 @@ const TITLE = "Vame Fútbol · Caso de estudio";
 const OG_IMAGE_ALT =
   "Portfolio de Ramiro Tanquias Cornejo - Full Stack Developer y Técnico Universitario en Programación";
 const DESCRIPTION =
-  "Cómo llevé Vame Fútbol de un HTML estático a una tienda en React: stock por talle desde Supabase, checkout por WhatsApp e imágenes livianas para un público que compra desde el celular.";
+  "Cómo llevé Vame Fútbol de un HTML estático a una tienda en React: stock por talle desde Supabase, checkout propio con transferencia o Mercado Pago, reserva de stock y precios calculados en el servidor, para un público que compra desde el celular.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -45,7 +45,7 @@ const SECTIONS = [
   { id: "problemas", label: "Problemas difíciles" },
   { id: "testing", label: "Testing" },
   { id: "resultados", label: "Resultados" },
-  { id: "en-camino", label: "En camino" },
+  { id: "lo-que-sigue", label: "Lo que sigue" },
 ] as const;
 
 const STACK = [
@@ -54,7 +54,8 @@ const STACK = [
   "Vite 6",
   "React Router 7",
   "Supabase",
-  "Vercel",
+  "Vercel Functions",
+  "Mercado Pago",
 ];
 
 interface Decision {
@@ -96,33 +97,65 @@ const DECISIONS: Decision[] = [
     ),
   },
   {
-    title: "Carrito en el dispositivo y cierre por WhatsApp",
+    title: "El cliente nunca manda un precio",
     decision: (
       <>
-        El carrito vive en <Code>localStorage</Code> (<Code>vame:cart</Code>)
-        a través de un hook genérico <Code>useLocalStorage</Code> con un
-        validador de tipos: si el JSON está roto, tiene otra forma o el storage
-        no está disponible, vuelve al valor por defecto. El checkout arma un
-        mensaje por línea (equipo, temporada, variante, talle, dorsal y
-        cantidad) más el total, y lo abre en WhatsApp.
+        El checkout en <Code>/checkout</Code> manda solo productos, talles,
+        dorsales y datos de envío. <Code>api/orders/create</Code>, una función
+        de Vercel, recalcula precio, recargo por dorsal, descuento de las
+        Mystery Box, seña del 10% para los encargos y envío (gratis desde 3
+        prendas), y guarda el pedido con una función SQL atómica,{" "}
+        <Code>place_storefront_order</Code>, que valida el stock y lo reserva
+        en la misma transacción.
       </>
     ),
     why: (
       <>
-        Así compran los clientes de Vame: desde el celular y conversando. Cada
-        línea se identifica por <Code>key|size|dorsalName|dorsalNumber</Code>, lo
-        que corrigió un bug heredado: cantidad y borrar usaban solo el
-        producto, así que dos líneas de la misma camiseta se pisaban. El
-        mensaje se codifica una sola vez con <Code>encodeURIComponent</Code>,
-        para que un dorsal con <Code>&amp;</Code>, <Code>#</Code> o{" "}
-        <Code>%</Code> no rompa la URL.
+        Un precio que llega del navegador se puede editar. Y si dos personas
+        compran el último talle a la vez, solo una transacción puede
+        quedárselo: el stock de un pedido sin pagar queda reservado unas
+        horas, y las unidades que ya no alcanzan pasan a encargo en vez de
+        rechazar el pedido. Las reglas de seña y envío viven en un módulo
+        compartido, así carrito, checkout y API nunca muestran montos
+        distintos.
       </>
     ),
     tradeoff: (
       <>
-        No hay pago en el sitio: el pedido se confirma a mano, fuera de la
-        tienda. Y el carrito queda en ese dispositivo, sin sincronizarse entre
-        celular y computadora.
+        Más reglas en la base: límite de 50 prendas por pedido, de dos pedidos
+        pendientes por teléfono y un cron diario que vence los impagos. Cada
+        regla nueva pide una migración revisada y su test contra SQL real.
+      </>
+    ),
+  },
+  {
+    title: "Mercado Pago: el webhook es la fuente de verdad",
+    decision: (
+      <>
+        Al elegir Mercado Pago, la API crea una preferencia de Checkout Pro
+        por lo que se cobra ahora y el cliente paga en la página de Mercado
+        Pago. El resultado no se toma de la vuelta del navegador: un webhook
+        verifica la firma <Code>x-signature</Code>, consulta el pago a la API
+        de Mercado Pago (nunca confía en el cuerpo de la notificación) y lo
+        registra con <Code>record_storefront_mp_payment</Code>.
+      </>
+    ),
+    why: (
+      <>
+        La URL de retorno la puede abrir cualquiera; el webhook firmado no. Al
+        volver, la página consulta el estado del pedido unos segundos hasta
+        que llega el webhook y muestra “¡Recibimos tu pago!” o la opción de
+        reintentar. Se excluyen efectivo y cajero para que el pago se resuelva
+        dentro de la ventana de reserva, y las cuotas, hasta 12, llevan el
+        interés de Mercado Pago a cargo del comprador.
+      </>
+    ),
+    tradeoff: (
+      <>
+        Un pago aprobado no cierra solo el pedido: se confirma a mano en
+        kitstock-pro con “Marcar como pagada”, igual que una transferencia.
+        Es un paso manual a propósito, para que caja y encargos se registren
+        en un solo lugar.
       </>
     ),
   },
@@ -161,6 +194,39 @@ const DECISIONS: Decision[] = [
 
 const HARD_PROBLEMS = [
   {
+    title: "Notificaciones que llegan desordenadas",
+    body: (
+      <>
+        Mercado Pago puede avisar un <Code>pending</Code> después de un{" "}
+        <Code>approved</Code>. Una vez cobrado, un estado anterior se ignora;{" "}
+        <Code>refunded</Code> y <Code>charged_back</Code> son finales, y un
+        cobro por otro monto queda como <Code>approved_amount_mismatch</Code>:
+        no cuenta como pagado, pero el pedido nunca vence.
+      </>
+    ),
+  },
+  {
+    title: "Un redirect que se comía los webhooks",
+    body: (
+      <>
+        El dominio sin <Code>www</Code> redirige con un 308, y Mercado Pago no
+        sigue redirects: los avisos se perdían en silencio. Ahora{" "}
+        <Code>SITE_URL</Code> es obligatorio, apunta al host canónico y nunca
+        se toma del request.
+      </>
+    ),
+  },
+  {
+    title: "Dos líneas de la misma camiseta se pisaban",
+    body: (
+      <>
+        Cantidad y borrar usaban solo el producto. Cada línea del carrito
+        pasó a identificarse por{" "}
+        <Code>key|size|dorsalName|dorsalNumber</Code>.
+      </>
+    ),
+  },
+  {
     title: "Supabase no adivina la otra dimensión",
     body: (
       <>
@@ -191,16 +257,6 @@ const HARD_PROBLEMS = [
       </>
     ),
   },
-  {
-    title: "Extensiones .js en el servidor",
-    body: (
-      <>
-        Las funciones de Node en Vercel necesitan la extensión{" "}
-        <Code>.js</Code> explícita en los imports. Sin ella, el import no
-        resuelve.
-      </>
-    ),
-  },
 ];
 
 const RESULTS = [
@@ -209,26 +265,22 @@ const RESULTS = [
   { value: "97%", label: "tráfico mobile" },
 ];
 
-const IN_PROGRESS: React.ReactNode[] = [
+const SHIPPED: React.ReactNode[] = [
+  <>Checkout propio con transferencia bancaria o Mercado Pago</>,
+  <>Hasta 12 cuotas con tarjeta vía Checkout Pro</>,
+  <>Reserva de stock mientras el pedido espera el pago</>,
+  <>Seña del 10% para los talles por encargo</>,
+  <>Envío por Correo Argentino o moto, con entrega al día hábil siguiente</>,
   <>
-    Checkout en <Code>/checkout</Code> con transferencia bancaria
-  </>,
-  <>
-    <Code>api/orders/create</Code> valida el pedido y recalcula precio,
-    descuento y recargo por dorsal en el servidor: el cliente nunca manda un
-    precio
-  </>,
-  <>
-    Chequeo de stock para productos <Code>inmediato</Code>, con un{" "}
-    <Code>409</Code> si no alcanza
-  </>,
-  <>
-    Los pedidos vencen a las 24 h con un cron protegido por{" "}
+    Pedidos impagos que vencen con un cron protegido por{" "}
     <Code>CRON_SECRET</Code>
   </>,
 ];
 
-const NOT_YET = ["Pago con tarjeta vía Mercado Pago", "Reserva de stock"];
+const NEXT_UP = [
+  "Badge “Pagado por MP” en kitstock-pro",
+  "Correr los tests en CI",
+];
 
 export default function VameCaseStudyPage() {
   return (
@@ -276,7 +328,8 @@ export default function VameCaseStudyPage() {
         </h1>
         <p className="mt-5 max-w-[46ch] text-balance text-xl leading-snug text-fg md:text-2xl">
           Una tienda de camisetas de fútbol hecha para cómo compran sus
-          clientes: desde el celular y cerrando por WhatsApp.
+          clientes: desde el celular, pagando por transferencia o Mercado
+          Pago.
         </p>
 
         <dl className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-[auto_auto_minmax(0,1fr)] md:gap-12">
@@ -346,8 +399,16 @@ export default function VameCaseStudyPage() {
                 encadenados</strong>, con un commit base para poder volver
                 atrás en cualquier momento. Después, el catálogo pasó a vivir
                 solo en Supabase, las fotos en Supabase Storage, y el stock
-                empezó a sincronizarse por talle. En total fueron 121 commits
-                entre julio y septiembre de 2026.
+                empezó a sincronizarse por talle.
+              </p>
+              <p>
+                Al principio la venta se cerraba por WhatsApp: el carrito
+                armaba un mensaje y el pedido se confirmaba a mano. Después
+                llegó un <strong>checkout propio</strong>, con transferencia
+                bancaria o Mercado Pago, reserva de stock y precios calculados
+                en el servidor. WhatsApp quedó para lo que hace bien: mandar el
+                comprobante y resolver dudas. En total, 260 commits entre julio
+                y noviembre de 2026.
               </p>
             </Prose>
           </CaseSection>
@@ -356,9 +417,9 @@ export default function VameCaseStudyPage() {
             <figure className="rounded-xl border border-border bg-bg-elevated p-5 md:p-8">
               <ArchitectureDiagram />
               <figcaption className="mt-6 border-t border-border-subtle pt-4 text-xs leading-relaxed text-fg-subtle">
-                La tienda no escribe en la base: lee una vista que es de la app
-                de inventario. El catálogo se pide una vez al cargar, no en
-                tiempo real.
+                El navegador solo lee: el catálogo sale de una vista de la app
+                de inventario, y los pedidos se escriben desde funciones del
+                servidor con la service role.
               </figcaption>
             </figure>
             <Prose className="mt-8">
@@ -370,6 +431,13 @@ export default function VameCaseStudyPage() {
                 esa vista.
               </p>
               <p>
+                Lo que escribe pasa por <strong>funciones de Vercel</strong>:
+                crear un pedido, consultar su estado, recibir el webhook de
+                Mercado Pago y vencer los impagos. Cada una llama a funciones
+                SQL que validan y reservan stock de forma atómica, y los
+                pedidos aparecen en kitstock-pro para confirmarlos.
+              </p>
+              <p>
                 Cada vez que el catálogo llega bien, se guarda en{" "}
                 <Code>localStorage</Code>. Si Supabase falla, la tienda muestra
                 esa última copia en lugar de una página vacía. Para el estado
@@ -379,7 +447,7 @@ export default function VameCaseStudyPage() {
             </Prose>
           </CaseSection>
 
-          <CaseSection id="decisiones" title="Tres decisiones técnicas">
+          <CaseSection id="decisiones" title="Cuatro decisiones técnicas">
             <ol className="divide-y divide-border-subtle border-y border-border-subtle">
               {DECISIONS.map((item, i) => (
                 <li key={item.title} className="py-8 md:py-10">
@@ -422,23 +490,30 @@ export default function VameCaseStudyPage() {
             <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-[auto_minmax(0,1fr)] md:gap-12">
               <p className="flex items-baseline gap-2">
                 <span className="text-5xl font-semibold tracking-tight text-fg md:text-6xl">
-                  200+
+                  599
                 </span>
                 <span className="font-mono text-xs uppercase tracking-wider text-fg-subtle">
-                  tests unitarios
+                  tests
                 </span>
               </p>
               <Prose>
                 <p>
-                  Más de 200 tests unitarios y de componentes con{" "}
-                  <strong>Vitest</strong>, jsdom y React Testing Library,
-                  repartidos en 26 archivos.
+                  599 tests con <strong>Vitest</strong>, jsdom y React Testing
+                  Library, repartidos en 38 archivos: componentes, reglas de
+                  carrito y envío, endpoints de la API y el webhook de Mercado
+                  Pago.
+                </p>
+                <p>
+                  Las funciones SQL de los pedidos corren sobre{" "}
+                  <strong>PGlite</strong>, un Postgres en memoria: reservar
+                  stock, pasar unidades a encargo o registrar un pago se
+                  prueban contra SQL real, no contra un mock.
                 </p>
                 <p>
                   Arriba de eso, <strong>Playwright</strong> recorre la tienda
-                  de punta a punta: 6 specs y 19 tests que corren contra el
-                  build de producción, no contra el servidor de desarrollo.
-                  Por ahora se ejecutan de forma local; todavía no hay CI.
+                  contra el build de producción, no contra el servidor de
+                  desarrollo. Por ahora se ejecuta de forma local; todavía no
+                  hay CI.
                 </p>
               </Prose>
             </div>
@@ -464,29 +539,29 @@ export default function VameCaseStudyPage() {
               <p>
                 Son los números del <strong>primer mes</strong>. El 97% de
                 tráfico mobile confirma lo que guió el diseño: una tienda que
-                tiene que ser liviana y cómoda en el celular, y que cierra la
-                venta donde el cliente ya conversa.
+                tiene que ser liviana y cómoda en el celular, también a la
+                hora de pagar.
               </p>
             </Prose>
           </CaseSection>
 
-          <CaseSection id="en-camino" title="En camino: checkout online">
+          <CaseSection id="lo-que-sigue" title="Checkout online y lo que sigue">
             <Prose>
               <p>
-                El siguiente paso es cobrar dentro del sitio. Está construido en
-                una rama aparte (<Code>feat/checkout-pagos</Code>) y todavía no
-                está mergeado. Mientras tanto, <strong>WhatsApp sigue siendo el
-                canal principal</strong> hasta que el nuevo demuestre que
-                funciona.
+                El checkout empezó en una rama aparte y salió a producción
+                cuando estuvo listo. <strong>Hoy la tienda cobra sola</strong>:
+                por transferencia, con los datos y botones para copiarlos, o
+                con Mercado Pago, que devuelve al cliente al sitio con el
+                resultado de su pago.
               </p>
             </Prose>
             <div className="mt-10 grid grid-cols-1 gap-10 md:grid-cols-2">
               <div>
                 <h3 className="font-mono text-xs uppercase tracking-wider text-fg-subtle">
-                  En la rama
+                  En producción
                 </h3>
                 <ul className="mt-4 space-y-2.5">
-                  {IN_PROGRESS.map((entry, i) => (
+                  {SHIPPED.map((entry, i) => (
                     <li
                       key={i}
                       className="flex items-start gap-2.5 text-sm leading-relaxed text-fg"
@@ -503,10 +578,10 @@ export default function VameCaseStudyPage() {
               </div>
               <div>
                 <h3 className="font-mono text-xs uppercase tracking-wider text-fg-subtle">
-                  Todavía no
+                  Lo que sigue
                 </h3>
                 <ul className="mt-4 space-y-2.5">
-                  {NOT_YET.map((entry) => (
+                  {NEXT_UP.map((entry) => (
                     <li
                       key={entry}
                       className="flex items-start gap-2.5 text-sm leading-relaxed text-fg-muted"
@@ -519,9 +594,6 @@ export default function VameCaseStudyPage() {
                     </li>
                   ))}
                 </ul>
-                <p className="mt-5 text-xs leading-relaxed text-fg-subtle">
-                  Sin construir todavía.
-                </p>
               </div>
             </div>
           </CaseSection>

@@ -8,7 +8,9 @@ const ACCENT = "#e0a83e";
 const DIAGRAM_LABEL =
   "Diagrama de arquitectura de Vame Fútbol. La app de inventario kitstock-pro es dueña de la vista de solo lectura storefront_products en Supabase. " +
   "La tienda, una SPA en React desplegada en Vercel, lee esa vista con la anon key, que solo tiene permiso de select. " +
-  "La SPA guarda una copia del catálogo en localStorage para usarla si Supabase falla, y el pedido se cierra con un mensaje armado hacia WhatsApp.";
+  "La SPA guarda una copia del catálogo en localStorage para usarla si Supabase falla. " +
+  "El pedido viaja sin precios a la API en Vercel Functions, que recalcula los montos y reserva stock en Supabase con la service role. " +
+  "Si el cliente elige Mercado Pago, la API crea un Checkout Pro y un webhook firmado registra el pago.";
 
 type NodeTone = "default" | "source" | "fallback";
 
@@ -55,7 +57,7 @@ const ArchitectureDiagram = () => {
         variants={item}
         className="mb-3 hidden font-mono text-[11px] uppercase tracking-wider text-fg-subtle md:col-start-3 md:row-start-1 md:block"
       >
-        En el dispositivo
+        Fuera del servidor
       </motion.p>
 
       {/* Data path */}
@@ -79,13 +81,19 @@ const ArchitectureDiagram = () => {
         <Node title="React SPA" meta="Vercel" />
       </motion.div>
       <motion.div variants={item} className="md:col-start-1 md:row-start-7">
-        <VerticalLink label="mensaje armado por línea" />
+        <VerticalLink label="pedido sin precios" />
       </motion.div>
       <motion.div variants={item} className="md:col-start-1 md:row-start-8">
-        <Node title="WhatsApp" meta="cierre de la venta" />
+        <Node title="api/orders" meta="Vercel Functions" />
+      </motion.div>
+      <motion.div variants={item} className="md:col-start-1 md:row-start-9">
+        <VerticalLink label="service role · SQL atómico" />
+      </motion.div>
+      <motion.div variants={item} className="md:col-start-1 md:row-start-10">
+        <Node title="storefront_orders" meta="pedido + stock reservado" />
       </motion.div>
 
-      {/* Cross link (desktop) */}
+      {/* Cross link to device cache (desktop) */}
       <motion.div
         variants={item}
         className="hidden md:col-start-2 md:row-start-6 md:flex"
@@ -93,7 +101,7 @@ const ArchitectureDiagram = () => {
         <HorizontalLink label="cachea" />
       </motion.div>
 
-      {/* Cross link (mobile) */}
+      {/* Cross link to device cache (mobile) */}
       <motion.div variants={item} className="md:hidden">
         <VerticalLink label="la SPA también cachea el catálogo" />
       </motion.div>
@@ -105,6 +113,29 @@ const ArchitectureDiagram = () => {
       <motion.div variants={item} className="md:col-start-3 md:row-start-7">
         <p className="pl-5 pt-2 font-mono text-[11px] leading-relaxed text-fg-subtle">
           copia desactualizada si Supabase falla
+        </p>
+      </motion.div>
+
+      {/* Cross link to payment provider (desktop) */}
+      <motion.div
+        variants={item}
+        className="hidden md:col-start-2 md:row-start-8 md:flex"
+      >
+        <HorizontalLink label="Checkout Pro" />
+      </motion.div>
+
+      {/* Cross link to payment provider (mobile) */}
+      <motion.div variants={item} className="md:hidden">
+        <VerticalLink label="si elige Mercado Pago, la API crea un Checkout Pro" />
+      </motion.div>
+
+      {/* Payment provider */}
+      <motion.div variants={item} className="md:col-start-3 md:row-start-8">
+        <Node title="Mercado Pago" meta="pago" />
+      </motion.div>
+      <motion.div variants={item} className="md:col-start-3 md:row-start-9">
+        <p className="pl-5 pt-2 font-mono text-[11px] leading-relaxed text-fg-subtle">
+          webhook firmado registra el pago
         </p>
       </motion.div>
     </motion.div>

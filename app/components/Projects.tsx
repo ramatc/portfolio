@@ -43,8 +43,8 @@ const PROJECTS: Project[] = [
       "E-commerce de camisetas de fútbol retro y actuales, hecho desde cero para un cliente.",
     highlights: [
       "Catálogo con stock en vivo, filtrable por liga, selección y talle",
-      "Checkout guiado por WhatsApp, también cuando el talle está agotado",
-      "Carrito persistente en el dispositivo",
+      "Checkout propio con transferencia o Mercado Pago, hasta 12 cuotas",
+      "Reserva de stock y precios recalculados en el servidor",
     ],
     metrics: [
       { value: "5.800+", label: "Visitantes el 1er mes" },
@@ -52,7 +52,7 @@ const PROJECTS: Project[] = [
       { value: "97%", label: "Tráfico mobile" },
     ],
     proves:
-      "Llevar un negocio real de cero a producción, adaptando el producto a cómo compran sus clientes: desde el celular y cerrando por WhatsApp.",
+      "Llevar un negocio real de cero a producción y hacerlo crecer: de cerrar ventas por WhatsApp a cobrar online con Mercado Pago, sin perder de vista que sus clientes compran desde el celular.",
     caseStudy: "/proyectos/vame",
     role: "Fullstack",
     stack: ["react", "typescript", "supabase"],

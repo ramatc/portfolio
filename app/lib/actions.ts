@@ -31,7 +31,7 @@ Tests automatizados con Jest y React Testing Library, code reviews y decisiones 
 Freelance Developer - Independiente
 Enero 2023 - Presente
 Desarrollo web para clientes en paralelo a mi trabajo full-time: tiendas online, rediseños y desarrollos a medida, eligiendo la plataforma según lo que necesita cada negocio.
-Vame Fútbol (https://www.vamefutbol.com/): e-commerce de camisetas de fútbol que desarrollé de punta a punta con React, TypeScript y Supabase. Tuvo más de 5.800 visitantes y 19.000 páginas vistas en su primer mes, con 97% de tráfico mobile. El checkout se cierra por WhatsApp porque así compran sus clientes.
+Vame Fútbol (https://www.vamefutbol.com/): e-commerce de camisetas de fútbol que desarrollé de punta a punta con React, TypeScript y Supabase. Tuvo más de 5.800 visitantes y 19.000 páginas vistas en su primer mes, con 97% de tráfico mobile. Empezó cerrando ventas por WhatsApp y hoy tiene checkout propio: transferencia bancaria o Mercado Pago (Checkout Pro, hasta 12 cuotas, pagos confirmados por webhook firmado), con precios recalculados en el servidor y stock reservado mientras el pedido espera el pago.
 Unicanm (https://unicanm.org/): sitio a medida en React y TypeScript para una ONG de cannabis medicinal.
 También trabajo con WordPress, Webflow y Figma según el proyecto.
 
