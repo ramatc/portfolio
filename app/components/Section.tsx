@@ -34,7 +34,10 @@ const Section = ({
         }
         className="mb-12 max-w-2xl md:mb-16"
       >
-        <div className="flex items-center">
+        <h2 className="text-balance text-3xl font-semibold tracking-tight text-fg md:text-4xl">
+          {title}
+        </h2>
+        <div className="mt-4 flex items-center">
           <motion.span
             initial={reduceMotion ? { scaleX: 1 } : { scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
@@ -48,11 +51,8 @@ const Section = ({
             aria-hidden="true"
           />
         </div>
-        <h2 className="mt-3 text-balance text-3xl font-semibold tracking-tight text-fg md:text-4xl">
-          {title}
-        </h2>
         {description ? (
-          <p className="mt-3 max-w-[40ch] text-pretty text-base text-fg-muted md:text-lg">
+          <p className="mt-4max-w-[40ch] text-pretty text-base text-fg-muted md:text-lg">
             {description}
           </p>
         ) : null}
