@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUpRight, ChevronDown, Download } from "lucide-react";
+import { ArrowUpRight, Download } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import Link from "next/link";
 
@@ -169,7 +169,7 @@ const Hero = ({ visitor }: HeroProps) => {
           </motion.div>
         </div>
 
-        {/* Facts and scroll cue, anchored to the bottom of the viewport */}
+        {/* Facts, anchored to the bottom of the viewport */}
         <div className="relative mt-8 w-full max-w-3xl pt-8 sm:mt-12 sm:pt-10 md:pt-12 lg:[@media(max-height:820px)]:mt-8 lg:[@media(max-height:820px)]:pt-8">
           <Horizon />
           <motion.dl
@@ -186,23 +186,6 @@ const Hero = ({ visitor }: HeroProps) => {
             ))}
           </motion.dl>
         </div>
-
-        <motion.a
-          href="#experiencia"
-          aria-label="Ver experiencia"
-          initial={reduceMotion ? { opacity: 1 } : { opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2, duration: 0.6 }}
-          className="group mt-10 hidden flex-col sm:inline-flex items-center gap-1.5 text-fg-subtle transition-colors hover:text-fg md:mt-12 lg:[@media(max-height:820px)]:mt-6"
-        >
-          <span className="font-mono text-[11px] uppercase tracking-[0.2em]">
-            Scroll
-          </span>
-          <ChevronDown
-            className="h-4 w-4 animate-bounce [animation-iteration-count:2.5] motion-reduce:animate-none"
-            aria-hidden="true"
-          />
-        </motion.a>
       </motion.div>
     </section>
   );
