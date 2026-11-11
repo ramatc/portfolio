@@ -5,7 +5,6 @@ const Contact = () => {
   return (
     <Section
       id="contacto"
-      number="05"
       title="Contacto"
       description="¿Tenés un proyecto en mente o una propuesta laboral? Escribime y conversemos."
     >

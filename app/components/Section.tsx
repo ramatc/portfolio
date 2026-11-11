@@ -4,7 +4,6 @@ import { motion, useReducedMotion } from "framer-motion";
 
 interface SectionProps {
   id: string;
-  number: string;
   title: string;
   description?: string;
   children: React.ReactNode;
@@ -12,7 +11,6 @@ interface SectionProps {
 
 const Section = ({
   id,
-  number,
   title,
   description,
   children,
@@ -36,8 +34,7 @@ const Section = ({
         }
         className="mb-12 max-w-2xl md:mb-16"
       >
-        <div className="flex items-center gap-3 font-mono text-xs text-fg-subtle">
-          <span aria-hidden="true">{number}</span>
+        <div className="flex items-center">
           <motion.span
             initial={reduceMotion ? { scaleX: 1 } : { scaleX: 0 }}
             whileInView={{ scaleX: 1 }}

@@ -16,7 +16,7 @@ const STATS: Stat[] = [
 
 const About = () => {
   return (
-    <Section id="sobre-mi" number="04" title="Sobre mí">
+    <Section id="sobre-mi" title="Sobre mí">
       <div className="mb-12 grid grid-cols-2 gap-6 md:mb-16 md:grid-cols-4 md:gap-8">
         {STATS.map((stat) => (
           <div key={stat.label}>

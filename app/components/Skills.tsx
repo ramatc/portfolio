@@ -70,7 +70,7 @@ const Skills = () => {
   const reduceMotion = useReducedMotion();
 
   return (
-    <Section id="habilidades" number="03" title="Habilidades">
+    <Section id="habilidades" title="Habilidades">
       <ul className="flex flex-col gap-y-9">
         {CATEGORIES.map((category, i) => (
           <motion.li

@@ -95,7 +95,7 @@ const Experience = () => {
   const reduceMotion = useReducedMotion();
 
   return (
-    <Section id="experiencia" number="01" title="Experiencia">
+    <Section id="experiencia" title="Experiencia">
       <ol className="relative ml-2 space-y-12 border-l border-border">
         {EXPERIENCE.map((role, i) => (
           <motion.li

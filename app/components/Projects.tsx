@@ -86,7 +86,7 @@ const PROJECTS: Project[] = [
 
 const Projects = () => {
   return (
-    <Section id="proyectos" number="02" title="Proyectos">
+    <Section id="proyectos" title="Proyectos">
       <ProjectShowcase projects={PROJECTS} />
       <div className="mt-8 flex justify-center">
         <a
